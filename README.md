@@ -23,7 +23,7 @@ Description: Create 3D binary images of left- and right- handed helices. Used as
 
 ### project_ROI_front_and_save.m
 
-Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Front hemi-volume is projected inwards onto the middle plane and saved as an image (Fig. 3 a).
+Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input here is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Front hemi-volume is projected inwards onto the middle plane and saved as an image (Fig. 3 a).
 
 ### project_ROI_back_and_save.m
 
