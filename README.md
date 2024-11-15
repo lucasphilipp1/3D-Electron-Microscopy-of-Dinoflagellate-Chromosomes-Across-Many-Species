@@ -37,6 +37,5 @@ Description: Used to corroborate manually extracted surface ridge angles. Superi
 
 Description: Synthesizes output from save_clock_images.m into a single .pdf document (one .pdf per cell).
 
-
 # Questions:
 If you have questions about this repository please contact Lucas Philipp (lucas.philipp@mail.mcgill.ca).
