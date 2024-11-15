@@ -5,6 +5,10 @@ bioRxiv link to pre-print: __________
 
 # Data Availability:
 
+https://www.ebi.ac.uk/bioimage-archive/submit/ 
+
+Datasets are available in an interactive format online at: https://www.petapixelproject.com/
+
 # Descriptions of code:
 
 ### CropAndRotateAndExportChromosomes.py
