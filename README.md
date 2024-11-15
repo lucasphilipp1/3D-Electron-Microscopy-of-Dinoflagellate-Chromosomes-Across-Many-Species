@@ -19,7 +19,7 @@ To load the menu option: Close Dragonfly. Navigate to: C:\Users\Username\AppData
 
 ### helix.m
 
-Description: Create 3D binary images of left- and right- handed helices. Used as a positive control to ensure image analysis pipeline correctly infers helical handedness.
+Description: Create 3D binary images of left- and right- handed helices. Used as a positive control to ensure CropAndRotateAndExportChromosomes.py does not alter the helical handedness of processed ROIs.
 
 ### project_ROI_front_and_save.m
 
