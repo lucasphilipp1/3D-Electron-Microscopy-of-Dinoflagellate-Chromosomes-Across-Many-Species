@@ -1,4 +1,4 @@
-# This GitHub repository contains the code to recreate the analyses of:
+![image](https://github.com/user-attachments/assets/b3f3d616-290f-4276-b2c6-41cf9eccd525)# This GitHub repository contains the code to recreate the analyses of:
 Philipp, L., Ittah E., Schumann D., Reznikov N., Weber S. C., 3D Electron Microscopy of Dinoflagellate Chromosomes Across Many Species. In review.
 
 bioRxiv link to pre-print: __________
@@ -13,32 +13,30 @@ Datasets are available in an interactive format online at: https://www.petapixel
 
 ### CropAndRotateAndExportChromosomes.py
 
+Description: A custom menu option to re-orient each ROI (chromosome) in a multi-ROI so the chromosome long axis corresponds to the z-axis. Saves everychromosome as binary 3D .tiff files in a folder.
+
 To load the menu option: Close Dragonfly. Navigate to: C:\Users\Username\AppData\Local\ORS\Dragonfly2022.2\pythonUserExtensions\GenericMenultems. Place CropAndRotateAndExportChromosomes.py in this folder. Start Dragonfly. The menu option should be accessible after right-clicking on a multi-ROI.
 
-### save_chromosome_volshow_views.m
+### helix.m
+
+Description: Create 3D binary images of left- and right- handed helices. Used as a positive control to ensure image analysis pipeline correctly infers helical handedness.
 
 ### project_ROI_front_and_save.m
 
+Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Front hemi-volume is projected inwards onto the middle plane and saved as an image (Fig. 3 a).
+
 ### project_ROI_back_and_save.m
 
-### Apply_ROI_As_Mask_To_Image.m
+Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Back hemi-volume is projected inwards onto the middle plane and saved as an image (Fig. 3 a).
 
-### check_ridge_angle_distribution.m
+### save_clock_images.m
 
-### check_ridge_angle_dominant_direction.m
+Description: Used to corroborate manually extracted surface ridge angles. Superimposes surface ridge angles onto projection images.
 
-### chromosome_rotating_gif.m
+### make_clock_pdf.m
 
-### extract_ridges_from_3D_chromosomes.m
+Description: Synthesizes output from save_clock_images.m into a single .pdf document (one .pdf per cell).
 
-### FIB_SEM_segmentation_analysis.m
-
-### FIB_SEM_segmentation_crop.m
-
-### plot_ImageJ_angles.m
-
-### name_of_code.
-Description: adsf See: Fig S3 A & G in paper.
 
 # Questions:
 If you have questions about this repository please contact Lucas Philipp (lucas.philipp@mail.mcgill.ca).
