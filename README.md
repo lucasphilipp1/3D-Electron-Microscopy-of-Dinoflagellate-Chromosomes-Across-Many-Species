@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/b3f3d616-290f-4276-b2c6-41cf9eccd525)# This GitHub repository contains the code to recreate the analyses of:
+This GitHub repository contains the code to recreate the analyses of:
 Philipp, L., Ittah E., Schumann D., Reznikov N., Weber S. C., 3D Electron Microscopy of Dinoflagellate Chromosomes Across Many Species. In review.
 
 bioRxiv link to pre-print: __________
