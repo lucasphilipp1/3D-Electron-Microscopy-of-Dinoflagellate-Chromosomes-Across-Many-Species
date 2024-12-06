@@ -38,7 +38,7 @@ Description: Used to corroborate manually extracted surface ridge angles. Superi
 Description: Synthesizes output from save_clock_images.m into a single .pdf document (one .pdf per cell).
 
 ### 3D mask to extract raw EM intensities within volume:
-Input the following commands in Dragonfly's python console.
+Input the following commands in Dragonfly's python console:
 
 ```
 Image = *drag and drop image object from object list (top right menu)*
