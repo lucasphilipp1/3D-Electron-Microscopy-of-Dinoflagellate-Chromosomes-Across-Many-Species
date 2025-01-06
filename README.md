@@ -17,11 +17,17 @@ Description: A custom menu option to re-orient each ROI (chromosome) in a multi-
 
 To load the menu option: Close Dragonfly. Navigate to: C:\Users\Username\AppData\Local\ORS\Dragonfly2022.2\pythonUserExtensions\GenericMenultems
 
-%LocalAppData%/ORS/Dragonfly(version)/pythonUserExtensions/GenericMenuItems (available for the current user)
-%ProgramData%/ORS/Dragonfly(version)/pythonAllUsersExtensions/GenericMenuItems (available for all users)
-%ProgramData%/ORS/Dragonfly(version)/python/OrsPythonPlugins/OrsGenericMenuItems/menuItems (distributed with the application)
+OR
 
-. To help locate this folder in Dragonfly try from the top-left drop down menu: Utilities -> Open All Users Folder in File Browser. Place CropAndRotateAndExportChromosomes.py in this folder. Start Dragonfly. The menu option should be accessible after right-clicking on a multi-ROI.
+%LocalAppData%/ORS/Dragonfly(version)/pythonUserExtensions/GenericMenuItems
+%ProgramData%/ORS/Dragonfly(version)/pythonAllUsersExtensions/GenericMenuItems
+%ProgramData%/ORS/Dragonfly(version)/python/OrsPythonPlugins/OrsGenericMenuItems/menuItems
+
+(it varies from system to system)
+
+To help locate the folder, in Dragonfly try: Utilities -> Open All Users Folder in File Browser.
+
+Place CropAndRotateAndExportChromosomes.py in this folder. Start Dragonfly. The menu option should be accessible after right-clicking on a multi-ROI.
 
 ### helix.m
 
