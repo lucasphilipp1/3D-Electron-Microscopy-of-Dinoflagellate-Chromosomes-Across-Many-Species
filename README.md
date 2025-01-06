@@ -15,7 +15,7 @@ Datasets are available in an interactive format online at: https://www.petapixel
 
 Description: A custom menu option to re-orient each ROI (chromosome) in a multi-ROI so the chromosome long axis corresponds to the z-axis. Saves everychromosome as binary 3D .tiff files in a folder.
 
-To load the menu option: Close Dragonfly. Navigate to: C:\Users\Username\AppData\Local\ORS\Dragonfly2022.2\pythonUserExtensions\GenericMenultems. Place CropAndRotateAndExportChromosomes.py in this folder. Start Dragonfly. The menu option should be accessible after right-clicking on a multi-ROI.
+To load the menu option: Close Dragonfly. Navigate to: C:\Users\Username\AppData\Local\ORS\Dragonfly2022.2\pythonUserExtensions\GenericMenultems. To help locate this folder in Dragonfly try from the top-left drop down menu: Utilities -> Open All Users Folder in File Browser. Place CropAndRotateAndExportChromosomes.py in this folder. Start Dragonfly. The menu option should be accessible after right-clicking on a multi-ROI.
 
 ### helix.m
 
