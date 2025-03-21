@@ -21,7 +21,7 @@ https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cel
 https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cell-3/ROI
 https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cell-3/Overview
 
-Symbiodinium (Breviolum) minutum
+_Symbiodinium (Breviolum) minutum_ <br />
 https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-1/ROI
 https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-1/Overview
 
@@ -31,7 +31,7 @@ https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-2/Over
 https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-3/ROI
 https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-3/Overview
 
-Symbiodinium (Fugacium) kawagutii
+_Symbiodinium (Fugacium) kawagutii_ <br />
 https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-1/ROI
 https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-1/Overview
 
@@ -41,7 +41,7 @@ https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-2/Ov
 https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-3/ROI
 https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-3/Overview
 
-Crypthecodinium cohnii
+_Crypthecodinium cohnii_ <br />
 https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-1/ROI
 https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-1/Overview
 
@@ -51,7 +51,7 @@ https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-2/Overv
 https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-3/ROI
 https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-3/Overview
 
-Symbiodinium pilosum
+_Symbiodinium pilosum_ <br />
 https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-1/ROI
 https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-1/Overview
 
@@ -61,7 +61,7 @@ https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-2/Over
 https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-3/ROI
 https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-3/Overview
 
-Brandtodinium nutricula
+_Brandtodinium nutricula_ <br />
 https://petapixelproject.com/mosaics/biology/dinoflagellates/brandtodinium/cell-1/ROI/
 https://petapixelproject.com/mosaics/biology/dinoflagellates/brandtodinium/cell-1/Overview/
 
