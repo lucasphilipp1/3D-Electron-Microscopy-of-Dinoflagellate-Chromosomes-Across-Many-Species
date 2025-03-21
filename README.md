@@ -11,7 +11,7 @@ Datasets are available in an interactive format online at: https://www.petapixel
 
 use the K and L keys to scroll through the z stacks
 
-_Symbiodinium microadriaticum_
+_Symbiodinium microadriaticum_ \\
 https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cell-1/ROI
 https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cell-1/Overview
 
