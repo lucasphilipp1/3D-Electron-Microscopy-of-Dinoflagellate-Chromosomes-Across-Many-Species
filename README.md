@@ -27,6 +27,8 @@ To help locate the folder, in Dragonfly try: Utilities -> Open All Users Folder 
 
 Place CropAndRotateAndExportChromosomes.py in this folder. Start Dragonfly. The menu option should be accessible after right-clicking on a multi-ROI.
 
+NEED TO UPDATE CropAndRotateAndExportChromosomes.py, PyQt5 -> PyQt6 import issue 
+
 ### helix.m
 
 Description: Create 3D binary images of left- and right- handed helices. Used as a positive control to ensure CropAndRotateAndExportChromosomes.py does not alter the helical handedness of processed ROIs.
