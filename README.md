@@ -289,7 +289,7 @@ for i in range(0,15):  # Repeat a sufficient number of times to fill the volume,
 aMultiROI.setDataDirty()
 ```
 Then take the union of Nucleus ROI (downsampled) and the ROI_COM, remove the intersection of ROI_COM and Nucleolus ROI (downsampled).
-Compute volume of voronoi cells. Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad. Chromosomes are clustered.
+Compute volume of voronoi cells. Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad -> chromosomes are clustered.
 ### Write coloured segmentation into image:
 Make 3 copies of the image, name them R, G, B respectively
 Export all ROIs from multiROI
