@@ -120,6 +120,36 @@ inverted_ROI = *drag and drop inverted ROI from object list (top right menu)*
 Image.overwriteValueWithROI(inverted_ROI,0)
 Image.setDataDirty()
 ```
+### Voronoi simulation (Are chromosomes spatially clustered or homogenous?):
+Input the following commands in Dragonfly's python console:
 
+```
+first code block
+```
+
+```
+second code block
+```
+### Write coloured segmentation into image:
+Make 3 copies of the image, name them R, G, B respectively
+Export all ROIs from multiROI
+Select all ROIs from drop down menu
+In dragonfly python console
+```
+ROI_list = *drag and drop ROIs from drop down menu*
+R = *drag image copy 1*
+B = *drag image copy 2*
+G = *drag image copy 3*
+for i in range(len(ROI_list)):
+        ROI = ROI_list[i]
+	color = ROI.getInitialColor()
+	R.overwriteValueWithROI(ROI,round(color.getRed()*255))
+	R.setDataDirty()
+	G.overwriteValueWithROI(ROI,round(color.getGreen()*255))
+	G.setDataDirty()
+	B.overwriteValueWithROI(ROI,round(color.getBlue()*255))
+	B.setDataDirty()
+```
+Select R,G,B images in dropdown. Export->as RGB->.png
 # Questions:
 If you have questions about this repository please contact Lucas Philipp (lucas.philipp@mail.mcgill.ca).
