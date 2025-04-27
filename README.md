@@ -122,7 +122,9 @@ Image.overwriteValueWithROI(inverted_ROI,0)
 Image.setDataDirty()
 ```
 ### Voronoi simulation (Are chromosomes spatially clustered or homogenous?):
-CITE Dr. Deering's Paper!!!
+CITE Dr. Deering's Paper!!!  <br />
+Downsample Nucleus ROI, Nucleolus ROI, chromosome multiROI to 40nmx40nmx40nm (from 4nmx4nmx4nm).
+Initialize an empty ROI, call it ROI_COM (center of mass) with the geometry of Nucleus ROI (downsampled). The voronoi simulation will continue until all voxels in this geometry are painted so check that the extent of this ROI is a tight box crop around the nucleus and not the whole cell or a larger volume.
 Input the following commands in Dragonfly's python console:
 ```
 ROI_list = *drag and drop ROIs from drop down menu*
@@ -286,6 +288,8 @@ for i in range(0,15):  # Repeat a sufficient number of times to fill the volume,
 
 aMultiROI.setDataDirty()
 ```
+Then take the union of Nucleus ROI (downsampled) and the ROI_COM, remove the intersection of ROI_COM and Nucleolus ROI (downsampled).
+Compute volume of voronoi cells. Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad. Chromosomes are clustered.
 ### Write coloured segmentation into image:
 Make 3 copies of the image, name them R, G, B respectively
 Export all ROIs from multiROI
