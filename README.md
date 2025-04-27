@@ -276,7 +276,7 @@ uniConvolutionKernel.setValueAt(4,4,4,0)
 
 aProgress = None  # No progress bar for the process, have not figured out this aspect of Dragonfly yet
 theOutputChannel = None  # My script overwrites the existing MultiROI, no need to create a new one but it is required as an argument for the method
-labelRange = range(1,aMultiROI.getLabelCount())  # My MultiROI has 827 unique ROIs inside of it, adjust this number to match your MultiROI
+labelRange = range(1,aMultiROI.getLabelCount())
 aSetOfLabels = None  # Initialize the label names within the MultiROI
 aSetOfLabels = aMultiROI.getNonEmptyLabels(aSetOfLabels)  # Get the label names that Dragonfly uses for each ROI in the MultiROI
 
