@@ -135,6 +135,7 @@ for i in range(len(ROI_list)):
 	center_of_mass = ROI.getCenterOfMass(0)
 	voxel_coords = ROI.getWorldToVoxelCoordinates(center_of_mass)
 	ROI_COM.paintSubset(voxel_coords[0],voxel_coords[1],voxel_coords[2],voxel_coords[0],voxel_coords[1],voxel_coords[2],1,0)
+ROI_COM.setDataDirty()
 ```
 Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
 ```
