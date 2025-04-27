@@ -138,13 +138,10 @@ ROI_COM.setDataDirty()
 ```
 Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
 ```
-from ORSModel import ConvolutionKernel
-
-# Your MultiROI should contain a cloud of single-voxel points (each as their own unique ROI in the MultiROI) to serve as the seeds for Voronoi tessellation
-from ORSModel import ConvolutionKernel
-
 # Your MultiROI should contain a cloud of single-voxel points (each as their own unique ROI in the MultiROI) to serve as the seeds for Voronoi tessellation
 COM_multiROI = *drag and drop COM_multiROI from drop down menu to set object identifier*
+
+from ORSModel import ConvolutionKernel
 
 # Initialize the kernel for normal isotropic Voronoi tessellation
 uniConvolutionKernel = ConvolutionKernel()
