@@ -290,8 +290,8 @@ for i in range(0,20):  # Repeat a sufficient number of times to fill the volume
 
 COM_multiROI.setDataDirty()
 ```
-Then take the union of Nucleus ROI (downsampled) and the ROI_COM, remove the intersection of ROI_COM and Nucleolus ROI (downsampled).
-Compute volume of voronoi cells. Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad -> chromosomes are clustered.
+1. A-B of COM_multiROI (A) - Nucleus ROI (downsampled) (B) -> outside_nucleus (save to new). 2. A-B of COM_multiROI (A) - outside_nucleus (B) = COM_multiROI (overwrite). 3. A-B of COM_multiROI (A) - Nucleolus ROI (downsampled) (B) = COM_multiROI (overwrite).
+4. Compute volume of voronoi cells. <br /> Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad -> chromosomes are clustered.
 ### Write coloured segmentation into image:
 Make 3 copies of the image, name them R, G, B respectively
 Export all ROIs from multiROI
