@@ -134,12 +134,15 @@ for i in range(len(ROI_list)):
 	voxel_coords = ROI.getWorldToVoxelCoordinates(center_of_mass)
 	ROI_COM.paintSubset(voxel_coords[0],voxel_coords[1],voxel_coords[2],voxel_coords[0],voxel_coords[1],voxel_coords[2],1,0)
 ```
-
+Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
 ```
 from ORSModel import ConvolutionKernel
 
 # Your MultiROI should contain a cloud of single-voxel points (each as their own unique ROI in the MultiROI) to serve as the seeds for Voronoi tessellation
-aMultiROI =   # Use the object identifier for your Dragonfly MultiROI here
+from ORSModel import ConvolutionKernel
+
+# Your MultiROI should contain a cloud of single-voxel points (each as their own unique ROI in the MultiROI) to serve as the seeds for Voronoi tessellation
+COM_multiROI = *drag and drop COM_multiROI from drop down menu to set object identifier*
 
 # Initialize the kernel for normal isotropic Voronoi tessellation
 uniConvolutionKernel = ConvolutionKernel()
@@ -278,15 +281,14 @@ uniConvolutionKernel.setValueAt(4,4,4,0)
 
 aProgress = None  # No progress bar for the process, have not figured out this aspect of Dragonfly yet
 theOutputChannel = None  # My script overwrites the existing MultiROI, no need to create a new one but it is required as an argument for the method
-labelRange = range(1,aMultiROI.getLabelCount())
+labelRange = range(1,COM_multiROI.getLabelCount()) 
 aSetOfLabels = None  # Initialize the label names within the MultiROI
-aSetOfLabels = aMultiROI.getNonEmptyLabels(aSetOfLabels)  # Get the label names that Dragonfly uses for each ROI in the MultiROI
+aSetOfLabels = COM_multiROI.getNonEmptyLabels(aSetOfLabels)  # Get the label names that Dragonfly uses for each ROI in the MultiROI
 
-for i in range(0,15):  # Repeat a sufficient number of times to fill the volume, 60 was sufficient for my tessellation volume
-	# getErodedWithKernel also works as a function for MultiROIs though it will probably remove all voxels if taken too far
-	aMultiROI.getDilatedWithKernel(uniConvolutionKernel, aSetOfLabels, 0, aProgress, aMultiROI)
+for i in range(0,20):  # Repeat a sufficient number of times to fill the volume
+	COM_multiROI.getDilatedWithKernel(uniConvolutionKernel, aSetOfLabels, 0, aProgress, COM_multiROI)
 
-aMultiROI.setDataDirty()
+COM_multiROI.setDataDirty()
 ```
 Then take the union of Nucleus ROI (downsampled) and the ROI_COM, remove the intersection of ROI_COM and Nucleolus ROI (downsampled).
 Compute volume of voronoi cells. Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad -> chromosomes are clustered.
