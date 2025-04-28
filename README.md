@@ -311,5 +311,13 @@ for i in range(len(ROI_list)):
 	B.setDataDirty()
 ```
 Select R,G,B images in dropdown. Export->as RGB->.png
+### protocol for measuring distance of toroids/rods or chromosomes to membrane:
+segment nucleus <br />
+create contour mesh <br />
+create ROI from contour mesh (boundary). 1. create empty ROI 2. export mesh to empty ROI <br />
+create distance map of boundary ROI (make sure geometry of ROI is of the tight crop around the nucleus, or the same as the geometry of the chromosome multi-ROI and DNA rods and toroids multi-ROI) <br />
+on multi-ROI: compute measurements, basic measurements with dataset, min-intensity values, select distance map of nuclear membrane <br />
+export as csv
+
 # Questions:
 If you have questions about this repository please contact Lucas Philipp (lucas.philipp@mail.mcgill.ca).
