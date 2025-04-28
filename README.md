@@ -145,7 +145,7 @@ ROI_COM.setDataDirty()
 ```
 Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
 
-![centroids](https://github.com/user-attachments/assets/5743bb29-ab93-42d2-b12d-c1eb5ac20bb7)
+![seed points](https://github.com/user-attachments/assets/e8c62466-8134-470e-94d2-3348fea41876)
 
 ```
 # Your MultiROI should contain a cloud of single-voxel points (each as their own unique ROI in the MultiROI) to serve as the seeds for Voronoi tessellation
