@@ -116,8 +116,8 @@ Dragonfly 2024.1 See documentation: https://dev.theobjects.com/dragonfly_2024_1_
 Input the following commands in Dragonfly's python console:
 
 ```
-Image = *drag and drop image object from object list (top right menu)*
-inverted_ROI = *drag and drop inverted ROI from object list (top right menu)*   
+Image = *drag and drop image object from object list (top right of screen)*
+inverted_ROI = *drag and drop inverted ROI from object list (top right of screen)*   
 Image.overwriteValueWithROI(inverted_ROI,0)
 Image.setDataDirty()
 ```
@@ -128,7 +128,8 @@ Downsample Nucleus ROI, Nucleolus ROI, chromosome multiROI to 40nmx40nmx40nm (fr
 Initialize an empty ROI, call it ROI_COM (center of mass) with the geometry of Nucleus ROI (downsampled). The voronoi simulation will continue until all voxels in this geometry are painted so check that the extent of this ROI is a tight box crop around the nucleus and not the whole cell or a larger volume. Extract ROIs from chromosome multiROI (downsampled).
 Input the following commands in Dragonfly's python console:
 ```
-ROI_list = *drag and drop chromosome ROIs from drop down menu*
+ROI_list = *drag and drop chromosome ROIs from drop down menu (top right of screen)*
+ROI_COM = *drag and drop empty ROI from drop down menu (top right of screen)*
 for i in range(len(ROI_list)):
         ROI = ROI_list[i]
 	center_of_mass = ROI.getCenterOfMass(0)
