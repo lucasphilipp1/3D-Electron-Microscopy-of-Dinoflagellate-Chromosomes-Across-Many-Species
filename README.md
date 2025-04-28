@@ -306,8 +306,8 @@ Voronoi cells should not extend outside nucleus or overlap with nucleolus. <br /
 ![nucleolus crop with chromosomes and nucleolus](https://github.com/user-attachments/assets/4505bd72-b6a3-4106-924d-5bbcf75de952)
 ![2D view](https://github.com/user-attachments/assets/1a3fb76d-593f-46e7-94ce-f31c537e4dca)
 
-### Write coloured segmentation into image:
-Make 3 copies of the image, name them R, G, B respectively
+### Write coloured segmentation into image stack:
+Make 3 copies of the image stacks, name them R, G, B respectively
 Export all ROIs from multiROI
 Select all ROIs from drop down menu
 In dragonfly python console
