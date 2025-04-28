@@ -311,7 +311,7 @@ for i in range(len(ROI_list)):
 	B.setDataDirty()
 ```
 Select R,G,B images in dropdown. Export->as RGB->.png
-### protocol for measuring distance of toroids/rods or chromosomes to nuclear membrane/nucleolus/nearest distance to both:
+### Protocol for measuring distance of toroids/rods or chromosomes to nuclear membrane/nucleolus/nearest distance to both:
 segment nucleus <br />
 create contour mesh <br />
 create ROI from contour mesh (boundary). 1. create empty ROI 2. export mesh to empty ROI <br />
