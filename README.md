@@ -279,7 +279,7 @@ uniConvolutionKernel.setValueAt(2,4,4,0)
 uniConvolutionKernel.setValueAt(3,4,4,0)
 uniConvolutionKernel.setValueAt(4,4,4,0)
 
-aProgress = None  # No progress bar for the process, have not figured out this aspect of Dragonfly yet
+aProgress = None  # No progress bar
 theOutputChannel = None  # My script overwrites the existing MultiROI, no need to create a new one but it is required as an argument for the method
 labelRange = range(1,COM_multiROI.getLabelCount()) 
 aSetOfLabels = None  # Initialize the label names within the MultiROI
