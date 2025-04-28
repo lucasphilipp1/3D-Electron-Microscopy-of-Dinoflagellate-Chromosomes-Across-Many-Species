@@ -141,6 +141,9 @@ for i in range(len(ROI_list)):
 ROI_COM.setDataDirty()
 ```
 Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
+
+![centroids](https://github.com/user-attachments/assets/5743bb29-ab93-42d2-b12d-c1eb5ac20bb7)
+
 ```
 # Your MultiROI should contain a cloud of single-voxel points (each as their own unique ROI in the MultiROI) to serve as the seeds for Voronoi tessellation
 COM_multiROI = *drag and drop COM_multiROI from drop down menu to set object identifier*
@@ -293,28 +296,15 @@ for i in range(0,25):  # Repeat a sufficient number of times to fill the volume
 
 COM_multiROI.setDataDirty()
 ```
+![cube](https://github.com/user-attachments/assets/2a4d371a-949f-486c-94cc-13de31539afc)
+
 Voronoi cells should not extend outside nucleus or overlap with nucleolus. <br /> 1. A-B of COM_multiROI (A) - Nucleus ROI (downsampled) (B) -> outside_nucleus (save to new). <br /> 2. A-B of COM_multiROI (A) - outside_nucleus (B) = COM_multiROI (overwrite). <br /> 3. A-B of COM_multiROI (A) - Nucleolus ROI (downsampled) (B) = COM_multiROI (overwrite). <br /> 4. Compute volume of voronoi cells. <br /> Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad -> chromosomes are clustered.
 
 ![nucleus crop](https://github.com/user-attachments/assets/74c102f9-c997-45ce-a69a-054084d4836f)
 ![nucleolus crop](https://github.com/user-attachments/assets/9ccc8bca-d45f-4127-b25c-54853478fa99)
 ![nucleolus crop with chromosomes](https://github.com/user-attachments/assets/51ef2dff-9e5c-44c7-89a8-dcee6a788b0f)
 ![nucleolus crop with chromosomes and nucleolus](https://github.com/user-attachments/assets/4505bd72-b6a3-4106-924d-5bbcf75de952)
-
-
 ![2D view](https://github.com/user-attachments/assets/1a3fb76d-593f-46e7-94ce-f31c537e4dca)
-
-![centroids](https://github.com/user-attachments/assets/5743bb29-ab93-42d2-b12d-c1eb5ac20bb7)
-
-![cube](https://github.com/user-attachments/assets/2a4d371a-949f-486c-94cc-13de31539afc)
-
-<img width="1055" alt="writing_segmentation_into_image" src="https://github.com/user-attachments/assets/825b3bd0-ea48-4792-951e-b6d1d374b500" />
-
-<img width="1792" alt="RGB" src="https://github.com/user-attachments/assets/1820a837-e22a-439e-b5bb-b9a921aa8b98" />
-
-<img width="1783" alt="Toroid Positioning" src="https://github.com/user-attachments/assets/4a56d90f-f7ad-443a-9879-667c5ae6d42b" />
-
-<img width="1784" alt="distance maps" src="https://github.com/user-attachments/assets/b4b29acd-a39e-4c95-ac22-e8631b34467e" />
-
 
 ### Write coloured segmentation into image:
 Make 3 copies of the image, name them R, G, B respectively
@@ -337,6 +327,8 @@ for i in range(len(ROI_list)):
 	B.setDataDirty()
 ```
 Select R,G,B images in dropdown. Export->as RGB->.png
+<img width="1792" alt="RGB" src="https://github.com/user-attachments/assets/1820a837-e22a-439e-b5bb-b9a921aa8b98" />
+<img width="1055" alt="writing_segmentation_into_image" src="https://github.com/user-attachments/assets/825b3bd0-ea48-4792-951e-b6d1d374b500" />
 ### Protocol for measuring distance of toroids/rods or chromosomes to nuclear membrane/nucleolus/nearest distance to both:
 You can identify toroids in multiROIs by computing the Euler characteristic for all objects: https://dev.theobjects.com/dragonfly_2024_1_release/ORSModel/sphinxIndexORSModelClasses/sphinxIndexORSModelMesh.html#ORSModel.ors.Mesh.getEulerCharacteristicNumber getEulerCharacteristicNumber(self, iTIndex: int) → int. 0 is toroid. 2 is topolically equilvalent to a sphere. <br />
 segment nucleus <br />
@@ -346,5 +338,7 @@ create distance map of boundary ROI (make sure geometry of ROI is of the tight c
 on multi-ROI: compute measurements, basic measurements with dataset, min-intensity values, select distance map of nuclear membrane <br />
 export as csv
 
+<img width="1784" alt="distance maps" src="https://github.com/user-attachments/assets/b4b29acd-a39e-4c95-ac22-e8631b34467e" />
+<img width="1783" alt="Toroid Positioning" src="https://github.com/user-attachments/assets/4a56d90f-f7ad-443a-9879-667c5ae6d42b" />
 # Questions:
 If you have questions about this repository please contact Lucas Philipp (lucas.philipp@mail.mcgill.ca).
