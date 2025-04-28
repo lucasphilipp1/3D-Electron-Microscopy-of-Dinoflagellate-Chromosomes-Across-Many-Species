@@ -312,6 +312,7 @@ for i in range(len(ROI_list)):
 ```
 Select R,G,B images in dropdown. Export->as RGB->.png
 ### Protocol for measuring distance of toroids/rods or chromosomes to nuclear membrane/nucleolus/nearest distance to both:
+You can identify toroids in multiROIs by computing the Euler characteristic for all objects: https://dev.theobjects.com/dragonfly_2024_1_release/ORSModel/sphinxIndexORSModelClasses/sphinxIndexORSModelMesh.html#ORSModel.ors.Mesh.getEulerCharacteristicNumber getEulerCharacteristicNumber(self, iTIndex: int) → int. 0 is toroid. 2 is topolically equilvalent to a sphere. <br />
 segment nucleus <br />
 create contour mesh <br />
 create ROI from contour mesh (boundary). 1. create empty ROI 2. export mesh to empty ROI <br />
