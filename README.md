@@ -3,6 +3,9 @@ Philipp, L.*, Ittah, E.*, Schumann D., de Fourestier J., Reznikov N., Weber S. C
 
 bioRxiv link to pre-print: __________
 
+<img width="1791" alt="Screenshot 2025-04-28 at 3 19 13 PM" src="https://github.com/user-attachments/assets/29d5d495-f6f0-4fd5-9321-bbb04a5d17c0" />
+
+
 # Data Availability:
 
 Raw data is available from EMPIAR: https://www.ebi.ac.uk/bioimage-archive/submit/ 
