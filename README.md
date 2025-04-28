@@ -285,7 +285,7 @@ labelRange = range(1,COM_multiROI.getLabelCount())
 aSetOfLabels = None  # Initialize the label names within the MultiROI
 aSetOfLabels = COM_multiROI.getNonEmptyLabels(aSetOfLabels)  # Get the label names that Dragonfly uses for each ROI in the MultiROI
 
-for i in range(0,20):  # Repeat a sufficient number of times to fill the volume
+for i in range(0,25):  # Repeat a sufficient number of times to fill the volume
 	COM_multiROI.getDilatedWithKernel(uniConvolutionKernel, aSetOfLabels, 0, aProgress, COM_multiROI)
 
 COM_multiROI.setDataDirty()
