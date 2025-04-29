@@ -16,63 +16,45 @@ use the K and L keys to scroll through the z stacks
 
 _Symbiodinium microadriaticum_ <br />
 https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cell-1/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cell-1/Overview
 
 https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cell-2/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cell-2/Overview
 
 https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cell-3/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cell-3/Overview
 
 _Symbiodinium (Breviolum) minutum_ <br />
 https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-1/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-1/Overview
 
 https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-2/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-2/Overview
 
 https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-3/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-3/Overview
 
 _Symbiodinium (Fugacium) kawagutii_ <br />
 https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-1/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-1/Overview
 
 https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-2/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-2/Overview
 
 https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-3/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-3/Overview
 
 _Crypthecodinium cohnii_ <br />
 https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-1/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-1/Overview
 
 https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-2/ROI/
-https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-2/Overview/
 
 https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-3/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-3/Overview
 
 _Symbiodinium pilosum_ <br />
 https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-1/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-1/Overview
 
 https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-2/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-2/Overview
 
 https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-3/ROI
-https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-3/Overview
 
 _Brandtodinium nutricula_ <br />
 https://petapixelproject.com/mosaics/biology/dinoflagellates/brandtodinium/cell-1/ROI/
-https://petapixelproject.com/mosaics/biology/dinoflagellates/brandtodinium/cell-1/Overview/
 
 https://petapixelproject.com/mosaics/biology/dinoflagellates/brandtodinium/cell-2/ROI/
-https://petapixelproject.com/mosaics/biology/dinoflagellates/brandtodinium/cell-2/Overview/
 
 https://petapixelproject.com/mosaics/biology/dinoflagellates/brandtodinium/cell-3/ROI/
-https://petapixelproject.com/mosaics/biology/dinoflagellates/brandtodinium/cell-3/Overview/
 
 # Descriptions of code:
 
