@@ -1,5 +1,5 @@
 # This GitHub repository contains code related to:
-Philipp, L.*, Ittah, E.*, Schumann D., de Fourestier J., Reznikov N., Weber S. C., 3D Electron Microscopy of Dinoflagellate Chromosomes Across Many Species. In review. (* means equal contribution).
+Philipp, L.*, Ittah, E.*, Schumann D., de Fourestier J., Reznikov N., Weber S. C., 3D Electron Microscopy of Dinoflagellate Chromosomes Across Many Species. In preparation. (* means equal contribution).
 
 bioRxiv link to pre-print: __________
 
