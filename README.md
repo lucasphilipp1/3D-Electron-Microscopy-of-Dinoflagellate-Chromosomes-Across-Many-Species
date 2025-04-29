@@ -111,6 +111,9 @@ inverted_ROI = *drag and drop inverted ROI from object list (top right of screen
 Image.overwriteValueWithROI(inverted_ROI,0)
 Image.setDataDirty()
 ```
+ADD FIGURE OF KAWAGUTII GENOME
+ADD FIGURE COMPARING TOROID AND ROD EM INTENSITIES TO CHROMOSOME INTENSITIES AND TO NUCLEOLUS INTENSITIES
+
 ### Voronoi simulation using Dragonfly's python console:
 Are chromosomes spatially clustered or homogenous? <br />
 CITE Dr. Deering's Paper!!!  <br />
