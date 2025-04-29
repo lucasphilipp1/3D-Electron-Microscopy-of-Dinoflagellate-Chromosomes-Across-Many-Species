@@ -1,4 +1,4 @@
-# Work in progress! Please excuse the mess :) :
+# Work in progress! Please excuse the mess:
 
 # This GitHub repository contains code related to:
 Philipp, L.*, Ittah, E.*, Schumann D., de Fourestier J., Reznikov N., Weber S. C., 3D Electron Microscopy of Dinoflagellate Chromosomes Across Many Species. In preparation. (* means equal contribution).
