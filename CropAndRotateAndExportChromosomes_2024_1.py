@@ -1,7 +1,5 @@
 """
-Crop and rotate chromosomes and export the individual chromosomes as 3D Tiff files.
-
-Take a MultiROI containing cleaned chromosomes, crop them, rotate them to be aligned with the Z axis and export as 3D TIFF image.
+Take a MultiROI containing chromosomes, crop them, rotate them to be aligned with the Z axis and export as 3D TIFF image. Works with any multi-ROI objects (not just chromosomes). Specific to Dragonfly version 2024.1
 
 :author: Lucas Philipp, Benjamin Z. Rudski
 :contact: 
@@ -10,7 +8,7 @@ Take a MultiROI containing cleaned chromosomes, crop them, rotate them to be ali
 :address: 
 :copyright: 
 :date: Feb 22 2024 09:23
-:dragonflyVersion: 2022.2.0.1409
+:dragonflyVersion: 2024.1
 :UUID: ee6b6e04d18d11ee93ecc45ab1da15d2
 """
 
@@ -18,11 +16,10 @@ __version__ = '1.0.0'
 
 import os.path
 
-from PyQt5.QtWidgets import QFileDialog
-
 from ORSServiceClass.menuItems.contextualMenuItem import ContextualMenuItem
 from ORSServiceClass.actionAndMenu.menu import Menu
 from ORSServiceClass.decorators.infrastructure import interfaceMethod
+from ORSServiceClass.ORSWidget.orsfiledialog import OrsFileDialog
 from OrsHelpers.ListHelper import ListHelper
 from OrsHelpers.roihelper import ROIHelper
 from ORSModel.ors import MultiROI, VisualBox
@@ -41,25 +38,8 @@ class CropAndRotateAndExportChromosomes_ee6b6e04d18d11ee93ecc45ab1da15d2(Context
 
     @classmethod
     def getIsSelectionValid(cls, aCollectionOfObjects, implementation):
-        """
-        :param aCollectionOfObjects: a list of objects currently being selected, i.e. on which the menu item could be applied.
-        :param implementation: a subclass of AbstractPlugin in the current context.
-        :return: if True, the menu item will be displayed.
-        """
-        
-        """
-        # Example: the selection should be made of exactly 2 Channels
-        from ORSModel.ors import Channel
-        if aCollectionOfObjects is None or len(aCollectionOfObjects) != 2:
-            return False
-        selectionIsOnlyChannels = all([isinstance(obj, Channel) for obj in aCollectionOfObjects])
-        return selectionIsOnlyChannels
-        """
-        
-        # Put your code here
-
-        # We only want this menu item to run on a single MultiROI. First, check to see if the
-        # user has only selected one item.
+        # We only want this menu item to run on a single MultiROI. 
+	#First, check to see if the user has only selected one item.
         if len(aCollectionOfObjects) != 1:
             return False
 
@@ -70,13 +50,6 @@ class CropAndRotateAndExportChromosomes_ee6b6e04d18d11ee93ecc45ab1da15d2(Context
 
     @classmethod
     def getMenuItemForSelection(cls, aCollectionOfObjects, implementation):
-        """
-        Returns the menu item
-        :param aCollectionOfObjects: a list of objects currently being selected, i.e. on which the menu item will be applied.
-        :param implementation: a subclass of AbstractPlugin in the current context.
-        :return: Menu
-        """
-        
         collectionString = ListHelper.asPythonCollectionString(aCollectionOfObjects)
         myMenu = Menu(title='Crop, Rotate and Export Chromosomes',
                       id_='CropAndRotateAndExportChromosomes_ee6b6e04d18d11ee93ecc45ab1da15d2',
@@ -85,49 +58,26 @@ class CropAndRotateAndExportChromosomes_ee6b6e04d18d11ee93ecc45ab1da15d2(Context
         return myMenu
 
     @classmethod
-    def menuItemEntryPoint(cls, collectionString, implementation):
-        """
-        Will be executed when the menu item is selected.
-        :param collectionString: a list of objects representation currently being selected, i.e. on which the menu item will be applied.
-        :param implementation: a subclass of AbstractPlugin in the current context.
-        """
-        
+    def menuItemEntryPoint(cls, collectionString, implementation):        
         # aCollectionOfObjects is a Python list of objects currently being selected
         aCollectionOfObjects = ListHelper.fromPythonCollection(collectionString, asPythonList=True)
-        # Put your code here
-        
-        # If logging is relevant (used for macro recording and playing), a call to an interface methods is mandatory.
-        # A prototype of such an interface method is written below (method "execute").
-        # A full example is given in the demonstration file:
-        # %ORSPYTHON%/OrsPythonPlugins/OrsGenericMenuItems/menuItems/demo_c18408e83c9511e7a502448a5b5d70c0.py
-        """
-        # Example: calling an interface method to copy the first dataset into the second.
-        firstDataset = aCollectionOfObjects[0]
-        secondDataset = aCollectionOfObjects[1]
-        cls.copyInto(firstDataset, secondDataset)
-        """
-
+       
         # Prompt the user for an output folder
-
-        outputFolder = QFileDialog.getExistingDirectory(WorkingContext.getCurrentContextWindow(),
-                                                         caption="Select output folder",
-                                                         options=QFileDialog.ShowDirsOnly)
-
+        outputFolder = OrsFileDialog.getExistingDirectory(WorkingContext.getCurrentContextWindow(),
+                                                         caption="Select output folder")
         # Select the chromosome MultiROI
         chromosomeMultiROI = aCollectionOfObjects[0]
 
         # Extract ROIs from MultiROI
         chromosomeROIList = ROIHelper.extractROISFromMultiROI(source_multiROI=chromosomeMultiROI)
 
-        # Now we have a list of ROIs! We can run the macro code on each of them
-        # to produce the transformed result.
+        # rotate and crop each chromosome in the list
         for i, chromosomeROI in enumerate(chromosomeROIList):
             chrosomeName = f"ROI {i + 1}"
             transformedChromosome = cls.rotateAndCropChromosome(
                 chromosomeROI=chromosomeROI,
                 chromosomeName=chrosomeName
             )
-
             # Convert the ROI to binary
             voxelValue = 255
             chromosomeChannel = transformedChromosome.convertToChannel(value=voxelValue)
@@ -141,12 +91,6 @@ class CropAndRotateAndExportChromosomes_ee6b6e04d18d11ee93ecc45ab1da15d2(Context
                                                   fileName=filename,
                                                   useLZWCompression=False, exportMultiFrameFile=True, showProgress=True,
                                                   wlw=0, wlc=0, gamma=0)
-
-            # Delete the channel
-            # chromosomeChannel.deleteObject()
-            # del chromosomeChannel
-
-
 
     @classmethod
     def rotateAndCropChromosome(cls, chromosomeROI, chromosomeName=None, deleteBox=False, publishDataset=True):
@@ -184,7 +128,7 @@ class CropAndRotateAndExportChromosomes_ee6b6e04d18d11ee93ecc45ab1da15d2(Context
         invertY = False
         invertZ = False
         invertData = False
-        axisTransformation = 4
+        axisTransformation = 4 #0 -> XYZ (no transformation) 1 -> XZY 2 -> YXZ 3 -> YZX 4 -> ZXY 5 -> ZYX
         createNewDataset = True
 
         transformedChromosome = OrsDatasetInvertor.invert(
@@ -207,32 +151,3 @@ class CropAndRotateAndExportChromosomes_ee6b6e04d18d11ee93ecc45ab1da15d2(Context
             del visualBox
 
         return transformedChromosome
-
-    # This is the prototype of an interface method:
-    # @classmethod
-    # @interfaceMethod
-    # def execute(cls):
-    #     """
-    #     Doing this and that.
-    #     """
-    #     
-    #     # Put your code here
-    #     pass
-
-    # This is an example of an interface method:
-    # @classmethod
-    # @interfaceMethod
-    # def copyInto(cls, sourceDataset, destinationDataset):
-    #     """
-    #     Copies the first dataset into the second dataset.
-    #     
-    #     :param sourceDataset: source dataset
-    #     :type sourceDataset: ORSModel.ors.Channel
-    #     :param destinationDataset: destination dataset
-    #     :type destinationDataset: ORSModel.ors.Channel
-    #     """
-    #     
-    #     sourceDataset.copyInto(destinationDataset)
-    #     destinationDataset.setDataDirty()
-    #     destinationDataset.propagateDataDirty()
-
