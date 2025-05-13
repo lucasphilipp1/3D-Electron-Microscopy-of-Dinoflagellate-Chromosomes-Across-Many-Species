@@ -1,5 +1,6 @@
 """
-Take a MultiROI containing chromosomes, crop them, rotate them to be aligned with the Z axis and export as 3D TIFF image. Works with any multi-ROI objects (not just chromosomes). Specific to Dragonfly version 2024.1
+Take a MultiROI containing chromosomes, crop them, rotate them to be aligned with the Z axis and export as 3D TIFF image.
+ Works with any multi-ROI objects (not just chromosomes). Specific to Dragonfly version 2024.1
 
 :author: Lucas Philipp, Benjamin Z. Rudski
 :contact: 
@@ -15,6 +16,9 @@ Take a MultiROI containing chromosomes, crop them, rotate them to be aligned wit
 __version__ = '1.0.0'
 
 import os.path
+import numpy as np
+import skimage
+import skimage.io
 
 from ORSServiceClass.menuItems.contextualMenuItem import ContextualMenuItem
 from ORSServiceClass.actionAndMenu.menu import Menu
@@ -65,6 +69,10 @@ class CropAndRotateAndExportChromosomes_ee6b6e04d18d11ee93ecc45ab1da15d2(Context
         # Prompt the user for an output folder
         outputFolder = OrsFileDialog.getExistingDirectory(WorkingContext.getCurrentContextWindow(),
                                                          caption="Select output folder")
+        
+        if not outputFolder:
+            return
+        
         # Select the chromosome MultiROI
         chromosomeMultiROI = aCollectionOfObjects[0]
 
@@ -73,24 +81,17 @@ class CropAndRotateAndExportChromosomes_ee6b6e04d18d11ee93ecc45ab1da15d2(Context
 
         # rotate and crop each chromosome in the list
         for i, chromosomeROI in enumerate(chromosomeROIList):
-            chrosomeName = f"ROI {i + 1}"
+            chromosomeName = f"ROI {i + 1}"
             transformedChromosome = cls.rotateAndCropChromosome(
                 chromosomeROI=chromosomeROI,
-                chromosomeName=chrosomeName
+                chromosomeName=chromosomeName
             )
             # Convert the ROI to binary
             voxelValue = 255
-            chromosomeChannel = transformedChromosome.convertToChannel(value=voxelValue)
 
-            # Give the channel the same title as the ROI
-            chromosomeChannel.setTitle(chrosomeName)
-
-            # Save as 3D tiff in the specified output folder
-            filename = os.path.join(outputFolder, f"{chrosomeName}.tiff")
-            OrsImageSaver.exportDatasetToTiffFile(dataset=chromosomeChannel.getGUID(),
-                                                  fileName=filename,
-                                                  useLZWCompression=False, exportMultiFrameFile=True, showProgress=True,
-                                                  wlw=0, wlc=0, gamma=0)
+            chromosomeArray = transformedChromosome.getNDArray() * voxelValue
+            filename = f"{outputFolder}/{chromosomeName}.tiff"
+            skimage.io.imsave(filename, chromosomeArray)
 
     @classmethod
     def rotateAndCropChromosome(cls, chromosomeROI, chromosomeName=None, deleteBox=False, publishDataset=True):

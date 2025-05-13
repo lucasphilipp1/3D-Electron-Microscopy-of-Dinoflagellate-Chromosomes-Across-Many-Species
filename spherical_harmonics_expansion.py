@@ -15,6 +15,7 @@ from vtk.util import numpy_support as vtknp
 import tifffile
 from skimage import feature
 import matplotlib.colors as mcolors
+from matplotlib.font_manager import FontProperties
 
 import napari
 #viewer = napari.view_image(numpy_data)
@@ -22,13 +23,32 @@ import napari
 from PIL import Image
 import warnings
 
+from matplotlib.colors import ListedColormap, to_rgb
+
 def values(x):
     return x.str.extract(r'([0-9]+)')
+
+def normalize_to_uint8(img):
+    img = img.astype(np.float32)
+    img -= img.min()
+    if img.max() != 0:
+        img /= img.max()
+    return (img * 255).astype(np.uint8)
+
+def generate_shades(base_color, n_shades):
+    """Generate n_shades from light to dark of a base RGB color."""
+    shades = []
+    for i in range(n_shades):
+        factor = 0.5 + 1.5 * (i / (n_shades - 1))  # avoid pure white
+        shaded = tuple(np.clip(factor * np.array(base_color), 0, 1))
+        shades.append(shaded)
+    return shades
 
 #get images and angles and perform spherical harmonic expansion
 def spherical_harmonic_expansion(ROI_start,ROI_end,image_path,angle_csv_path,cell_num,species_name,lmax):
     images = []
     ROI = []
+    flag = []
     for i in range(ROI_start,ROI_end+1):
         images.append(imread(image_path+'ROI {}.tiff'.format(i)))
         ROI.append(i)
@@ -61,9 +81,9 @@ def spherical_harmonic_expansion(ROI_start,ROI_end,image_path,angle_csv_path,cel
     for i in range(len(images)):
         # with warnings.catch_warnings(record=True) as caught_warnings:
         #     warnings.simplefilter("always")
-        (coeffs, _), _ = shparam.get_shcoeffs(image=images[i], lmax=lmax)
-        #     if caught_warnings:
-        #         warnings_iter.append(i)
+        (coeffs, _), _ , flag = shparam.get_shcoeffs(image=images[i], lmax=lmax)
+        if flag == True:
+            warnings_iter.append(i)
         volume.append((4**3)*np.sum(images[i]/np.max(images[i]))) #volume in units [nm^3] assuming 4nmx4nm4xnm voxels 
         aspect_ratio.append(np.size(images[i],axis=0)/np.size(images[i],axis=1))      
         df_coeffs_list.append(coeffs)
@@ -90,16 +110,10 @@ def spherical_harmonic_expansion(ROI_start,ROI_end,image_path,angle_csv_path,cel
     df_coeffs['aspect_ratio']=aspect_ratio
     #add toroid/rod label
     #...
+    #return df_coeffs
+    df_coeffs = df_coeffs.drop(index=warnings_iter)
+    print(warnings_iter)
     return df_coeffs
-    #df_coeffs = df_coeffs.drop(index=warnings_iter)
-    #return df_coeffs, warnings_iter
-
-def normalize_to_uint8(img):
-    img = img.astype(np.float32)
-    img -= img.min()
-    if img.max() != 0:
-        img /= img.max()
-    return (img * 255).astype(np.uint8)
 
 # Compute spherical harmonics coefficients of shape and store them in a pandas dataframe.
 lmax = 40 #number of expansion terms (sort of)
@@ -126,11 +140,43 @@ cohnii_cell3 = spherical_harmonic_expansion(2,135,'/Users/lucasphilipp/Desktop/R
 
 tyrrhenica_cell1 = spherical_harmonic_expansion(2,113,'/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ensiculifera tyrrhenica/ensiculifera tyrrhenica chromosomes 4nm sampling/','/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ensiculifera tyrrhenica/ET Cell 1.csv',1,'tyrrhenica',lmax)
 
-#print(warn1)
-#print(warn2)
-#print(warn3)
-
 SHE_all = pd.concat([microadriaticum_cell1, microadriaticum_cell2, microadriaticum_cell3, pilosum_cell1, pilosum_cell2, pilosum_cell3, minutum_cell1, minutum_cell2, minutum_cell3, nutricula_cell1, nutricula_cell2, nutricula_cell3, cohnii_cell1, cohnii_cell2, cohnii_cell3, tyrrhenica_cell1], ignore_index=True, sort=False)
+
+#ensure PCA is fed an equal # of chromosomes per species
+num_chroms = []
+num_chroms.append((SHE_all['species'] == 'microadriaticum').sum())
+num_chroms.append((SHE_all['species'] == 'pilosum').sum())
+num_chroms.append((SHE_all['species'] == 'minutum').sum())
+num_chroms.append((SHE_all['species'] == 'nutricula').sum())
+num_chroms.append((SHE_all['species'] == 'cohnii').sum())
+num_chroms.append((SHE_all['species'] == 'tyrrhenica').sum())
+
+match_rows = SHE_all[SHE_all['species'] == 'microadriaticum']
+rows_to_drop = match_rows.sample(n=num_chroms[0]-min(num_chroms))
+SHE_all = SHE_all.drop(rows_to_drop.index)
+
+match_rows = SHE_all[SHE_all['species'] == 'pilosum']
+rows_to_drop = match_rows.sample(n=num_chroms[1]-min(num_chroms))
+SHE_all = SHE_all.drop(rows_to_drop.index)
+
+match_rows = SHE_all[SHE_all['species'] == 'minutum']
+rows_to_drop = match_rows.sample(n=num_chroms[2]-min(num_chroms))
+SHE_all = SHE_all.drop(rows_to_drop.index)
+
+match_rows = SHE_all[SHE_all['species'] == 'nutricula']
+rows_to_drop = match_rows.sample(n=num_chroms[3]-min(num_chroms))
+SHE_all = SHE_all.drop(rows_to_drop.index)
+
+
+match_rows = SHE_all[SHE_all['species'] == 'cohnii']
+rows_to_drop = match_rows.sample(n=num_chroms[4]-min(num_chroms))
+SHE_all = SHE_all.drop(rows_to_drop.index)
+
+match_rows = SHE_all[SHE_all['species'] == 'tyrrhenica']
+rows_to_drop = match_rows.sample(n=num_chroms[5]-min(num_chroms))
+SHE_all = SHE_all.drop(rows_to_drop.index)
+
+SHE_all = SHE_all.reset_index(drop=True)
 
 # Vizualize the resulting dataframe
 with pd.option_context('display.max_rows', 5, 'display.max_columns', 5):
@@ -162,38 +208,62 @@ df_trans['aspect_ratio'] = SHE_all.aspect_ratio
 with pd.option_context('display.max_rows', 5, 'display.max_columns', 5):
     print(df_trans)
     # Scatter plot to show how similar shapes are grouped together.
-fig, ax = plt.subplots(1,1, figsize=(3,3))
+fig, ax = plt.subplots(1,1, figsize=(8,8))
 for label, df_label in df_trans.groupby('is_angle_ext'):
-    ax.scatter(df_label.PC1, df_label.PC2, label=label, s=1)
-plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1))
-plt.xlabel('PC1')
-plt.ylabel('PC2')
+    ax.scatter(df_label.PC1, df_label.PC2, label=label, s=30)
+ax.tick_params(axis='both', which='major', labelsize=16)
+plt.legend(['No Surface Ridges', 'Surface Ridges'], loc='upper left', bbox_to_anchor=(1.05, 1), fontsize=20)
+plt.xlabel('PC1', fontsize=20)
+plt.ylabel('PC2', fontsize=20)
 left, right = plt.xlim()
 up, down = plt.ylim()
-plt.xlim((left,100)) 
+#plt.xlim((left,100)) 
 left, right = plt.xlim()
 plt.show()
 
 #color by volume
-fig, ax = plt.subplots(1,1, figsize=(3,3))
-sc = ax.scatter(df_trans.PC1, df_trans.PC2, c=df_trans['volume'], cmap='hsv', norm='log', s=1)
+fig, ax = plt.subplots(1,1, figsize=(8,8))
+sc = ax.scatter(df_trans.PC1, df_trans.PC2, c=df_trans['volume'], cmap='hsv', norm='log', s=20)
+ax.tick_params(axis='both', which='major', labelsize=16)
 cbar = fig.colorbar(sc, ax=ax)
-cbar.set_label('Volume [nm³]')
-plt.xlabel('PC1')
-plt.ylabel('PC2')
+cbar.set_label('Volume [nm³]', fontsize=20)
+cbar.ax.tick_params(labelsize=16)
+plt.xlabel('PC1', fontsize=20)
+plt.ylabel('PC2', fontsize=20)
 plt.xlim((left, right))
 plt.ylim((up, down))
 plt.show()
 
+vmin = 1
+vmax = 3
+norm = mcolors.Normalize(vmin=vmin, vmax=vmax)
+
+# Define 8 base hues (manually picked or derived from a colormap like 'tab20')
+base_hues = [
+    "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728",
+]
+base_colors = [to_rgb(color) for color in base_hues]
+
+# Generate 5 shades per base color
+custom_colors = []
+for base in base_colors:
+    custom_colors.extend(generate_shades(base, 5))
+
+# Create the new colormap
+custom_cmap = ListedColormap(custom_colors)
+
 #color by aspect ratio
-fig, ax = plt.subplots(1,1, figsize=(3,3))
-sc = ax.scatter(df_trans.PC1, df_trans.PC2, c=df_trans['aspect_ratio'], cmap='binary', s=1)
+fig, ax = plt.subplots(1,1, figsize=(8,8))
+sc = ax.scatter(df_trans.PC1, df_trans.PC2, c=df_trans['aspect_ratio'], norm=norm, cmap=custom_cmap, s=20)
+ax.tick_params(axis='both', which='major', labelsize=16)
 cbar = fig.colorbar(sc, ax=ax)
 cbar.set_label('Aspect ratio')
-plt.xlabel('PC1')
-plt.ylabel('PC2')
+plt.xlabel('PC1', fontsize=20)
+plt.ylabel('PC2', fontsize=20)
 plt.xlim((left, right))
 plt.ylim((up, down))
+cbar.set_ticks([1, 1.5, 2, 2.5, 3])
+cbar.set_ticklabels(['1', '1.5', '2', '2.5', '>3'])
 plt.show()
 
 #color by delta_angle
@@ -201,12 +271,14 @@ vmin = -90
 vmax = 90
 norm = mcolors.Normalize(vmin=vmin, vmax=vmax)
 
-fig, ax = plt.subplots(1,1, figsize=(3,3))
-sc = ax.scatter(df_trans.PC1, df_trans.PC2, c=df_trans['delta_angle'], norm=norm, cmap='cool', s=1)
+fig, ax = plt.subplots(1,1, figsize=(8,8))
+sc = ax.scatter(df_trans.PC1, df_trans.PC2, c=df_trans['delta_angle'], norm=norm, cmap='coolwarm', s=20)
+ax.tick_params(axis='both', which='major', labelsize=16)
 cbar = fig.colorbar(sc, ax=ax)
-cbar.set_label('Δθ [degrees]')
-plt.xlabel('PC1')
-plt.ylabel('PC2')
+cbar.set_label('Δθ [degrees]', fontsize=20)
+cbar.ax.tick_params(labelsize=16)
+plt.xlabel('PC1', fontsize=20)
+plt.ylabel('PC2', fontsize=20)
 plt.xlim((left, right))
 plt.ylim((up, down))
 plt.show()
@@ -215,12 +287,13 @@ plt.show()
 with pd.option_context('display.max_rows', 5, 'display.max_columns', 5):
     print(df_trans)
     # Scatter plot to show how similar shapes are grouped together.
-fig, ax = plt.subplots(1,1, figsize=(3,3))
+fig, ax = plt.subplots(1,1, figsize=(8,8))
 for label, df_label in df_trans.groupby('LH_or_RH'):
-    ax.scatter(df_label.PC1, df_label.PC2, label=label, s=1)
-plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1))
-plt.xlabel('PC1')
-plt.ylabel('PC2')
+    ax.scatter(df_label.PC1, df_label.PC2, label=label, s=30)
+ax.tick_params(axis='both', which='major', labelsize=16)
+plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), fontsize=20)
+plt.xlabel('PC1', fontsize=20)
+plt.ylabel('PC2', fontsize=20)
 plt.xlim((left, right))
 plt.ylim((up, down))
 plt.show()
@@ -228,13 +301,15 @@ plt.show()
 #color by species
 colors = ['pink', 'blue', 'orange', 'red', 'purple','grey']
 count = 0
-fig, ax = plt.subplots(1,1, figsize=(3,3))
+fig, ax = plt.subplots(1,1, figsize=(8,8))
 for label, df_label in df_trans.groupby('species'):
-    ax.scatter(df_label.PC1, df_label.PC2, label=label, s=0.5, color = colors[count])
+    ax.scatter(df_label.PC1, df_label.PC2, label=label, s=20, color = colors[count])
     count = count + 1
-plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1))
-plt.xlabel('PC1')
-plt.ylabel('PC2')
+ax.tick_params(axis='both', which='major', labelsize=16)
+italic_font = FontProperties(style='italic')
+plt.legend(['C. cohnii','S. microadriaticum','S. minutum','B. nutricula','S. pilosum','E. ttyrrhenica'],loc='upper left', bbox_to_anchor=(1.05, 1), fontsize=20, prop=italic_font)
+plt.xlabel('PC1', fontsize=20)
+plt.ylabel('PC2', fontsize=20)
 left, right = plt.xlim()
 plt.xlim((left,100)) 
 plt.show()
@@ -242,13 +317,15 @@ plt.show()
 #aspect ratio vs volume
 colors = ['pink', 'blue', 'orange', 'red', 'purple','grey']
 count = 0
-fig, ax = plt.subplots(1,1, figsize=(3,3))
+fig, ax = plt.subplots(1,1, figsize=(8,8))
 for label, df_label in df_trans.groupby('species'):
-    ax.scatter(df_label.volume, df_label.aspect_ratio, label=label, s=0.5, color = colors[count])
+    ax.scatter(df_label.volume, df_label.aspect_ratio, label=label, s=20, color = colors[count])
     count = count + 1
-plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1))
-plt.xlabel('Volume [nm³]')
-plt.ylabel('Aspect ratio')
+ax.tick_params(axis='both', which='major', labelsize=16)
+italic_font = FontProperties(style='italic')
+plt.legend(['C. cohnii','S. microadriaticum','S. minutum','B. nutricula','S. pilosum','E. ttyrrhenica'],loc='upper left', bbox_to_anchor=(1.05, 1), fontsize=20, prop=italic_font)
+plt.xlabel('Volume [nm³]', fontsize=20)
+plt.ylabel('Aspect ratio', fontsize=20)
 plt.xlim((left,1e9)) 
 plt.show()
 
@@ -257,79 +334,128 @@ plt.show()
 
 #get global eigenvector
 pc1_all = pca_all.components_[0]
+pc2_all = pca_all.components_[1]
 
 #microadriaticum
 SHE_microadriaticum = pd.concat([microadriaticum_cell1, microadriaticum_cell2, microadriaticum_cell3], ignore_index=True, sort=False)
 pca_microadriaticum = PCA(n_components=2)
 pca_microadriaticum.fit_transform(SHE_microadriaticum.drop(columns=['is_angle_ext','cell','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
 pc1_microadriaticum = pca_microadriaticum.components_[0]
+pc2_microadriaticum = pca_microadriaticum.components_[1]
 
 #pilosum
 SHE_pilosum = pd.concat([pilosum_cell1, pilosum_cell2, pilosum_cell3], ignore_index=True, sort=False)
 pca_pilosum = PCA(n_components=2)
 pca_pilosum.fit_transform(SHE_pilosum.drop(columns=['is_angle_ext','cell','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
 pc1_pilosum = pca_pilosum.components_[0]
+pc2_pilosum = pca_pilosum.components_[1]
 
 #minutum
 SHE_minutum = pd.concat([minutum_cell1, minutum_cell2, minutum_cell3], ignore_index=True, sort=False)
 pca_minutum = PCA(n_components=2)
 pca_minutum.fit_transform(SHE_minutum.drop(columns=['is_angle_ext','cell','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
 pc1_minutum = pca_minutum.components_[0]
+pc2_minutum = pca_minutum.components_[1]
 
 #cohnii
 SHE_cohnii = pd.concat([cohnii_cell1, cohnii_cell2, cohnii_cell3], ignore_index=True, sort=False)
 pca_cohnii = PCA(n_components=2)
 pca_cohnii.fit_transform(SHE_cohnii.drop(columns=['is_angle_ext','cell','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
 pc1_cohnii = pca_cohnii.components_[0]
+pc2_cohnii = pca_cohnii.components_[1]
 
 #nutricula
 SHE_nutricula = pd.concat([nutricula_cell1, nutricula_cell2, nutricula_cell3], ignore_index=True, sort=False)
 pca_nutricula = PCA(n_components=2)
 pca_nutricula.fit_transform(SHE_nutricula.drop(columns=['is_angle_ext','cell','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
 pc1_nutricula = pca_nutricula.components_[0]
+pc2_nutricula = pca_nutricula.components_[1]
 
 #tyrrhenica
 SHE_tyrrhenica = pd.concat([tyrrhenica_cell1], ignore_index=True, sort=False)
 pca_tyrrhenica = PCA(n_components=2)
 pca_tyrrhenica.fit_transform(SHE_tyrrhenica.drop(columns=['is_angle_ext','cell','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
 pc1_tyrrhenica = pca_tyrrhenica.components_[0]
+pc2_tyrrhenica = pca_tyrrhenica.components_[1]
 
 #compute angle between species-specific and global eigenvectors
+#microadriaticum
 cos_angle = np.dot(pc1_all, pc1_microadriaticum) / (np.linalg.norm(pc1_all) * np.linalg.norm(pc1_microadriaticum))
 angle_deg = np.degrees(np.arccos(np.clip(cos_angle, -1.0, 1.0)))
 if angle_deg > 90:
     angle_deg=180-angle_deg #get the acute angle
 print(f"Angle between PC1 Global and PC1 microadriaticum: {angle_deg:.2f} degrees")
 
+cos_angle = np.dot(pc2_all, pc2_microadriaticum) / (np.linalg.norm(pc2_all) * np.linalg.norm(pc2_microadriaticum))
+angle_deg = np.degrees(np.arccos(np.clip(cos_angle, -1.0, 1.0)))
+if angle_deg > 90:
+    angle_deg=180-angle_deg #get the acute angle
+print(f"Angle between PC2 Global and PC2 microadriaticum: {angle_deg:.2f} degrees")
+
+#pilosum
 cos_angle = np.dot(pc1_all, pc1_pilosum) / (np.linalg.norm(pc1_all) * np.linalg.norm(pc1_pilosum))
 angle_deg = np.degrees(np.arccos(np.clip(cos_angle, -1.0, 1.0)))
 if angle_deg > 90:
     angle_deg=180-angle_deg #get the acute angle
 print(f"Angle between PC1 Global and PC1 pilosum: {angle_deg:.2f} degrees")
 
+cos_angle = np.dot(pc2_all, pc2_pilosum) / (np.linalg.norm(pc2_all) * np.linalg.norm(pc2_pilosum))
+angle_deg = np.degrees(np.arccos(np.clip(cos_angle, -1.0, 1.0)))
+if angle_deg > 90:
+    angle_deg=180-angle_deg #get the acute angle
+print(f"Angle between PC2 Global and PC2 pilosum: {angle_deg:.2f} degrees")
+
+#minutum
 cos_angle = np.dot(pc1_all, pc1_minutum) / (np.linalg.norm(pc1_all) * np.linalg.norm(pc1_minutum))
 angle_deg = np.degrees(np.arccos(np.clip(cos_angle, -1.0, 1.0)))
 if angle_deg > 90:
     angle_deg=180-angle_deg #get the acute angle
 print(f"Angle between PC1 Global and PC1 minutum: {angle_deg:.2f} degrees")
 
+cos_angle = np.dot(pc2_all, pc2_minutum) / (np.linalg.norm(pc2_all) * np.linalg.norm(pc2_minutum))
+angle_deg = np.degrees(np.arccos(np.clip(cos_angle, -1.0, 1.0)))
+if angle_deg > 90:
+    angle_deg=180-angle_deg #get the acute angle
+print(f"Angle between PC2 Global and PC2 minutum: {angle_deg:.2f} degrees")
+
+#cohnii
 cos_angle = np.dot(pc1_all, pc1_cohnii) / (np.linalg.norm(pc1_all) * np.linalg.norm(pc1_cohnii))
 angle_deg = np.degrees(np.arccos(np.clip(cos_angle, -1.0, 1.0)))
 if angle_deg > 90:
     angle_deg=180-angle_deg #get the acute angle
 print(f"Angle between PC1 Global and PC1 cohnii: {angle_deg:.2f} degrees")
 
+cos_angle = np.dot(pc2_all, pc2_cohnii) / (np.linalg.norm(pc2_all) * np.linalg.norm(pc2_cohnii))
+angle_deg = np.degrees(np.arccos(np.clip(cos_angle, -1.0, 1.0)))
+if angle_deg > 90:
+    angle_deg=180-angle_deg #get the acute angle
+print(f"Angle between PC2 Global and PC2 cohnii: {angle_deg:.2f} degrees")
+
+#nutricula
 cos_angle = np.dot(pc1_all, pc1_nutricula) / (np.linalg.norm(pc1_all) * np.linalg.norm(pc1_nutricula))
 angle_deg = np.degrees(np.arccos(np.clip(cos_angle, -1.0, 1.0)))
 if angle_deg > 90:
     angle_deg=180-angle_deg #get the acute angle
 print(f"Angle between PC1 Global and PC1 nutricula: {angle_deg:.2f} degrees")
 
+cos_angle = np.dot(pc2_all, pc2_nutricula) / (np.linalg.norm(pc2_all) * np.linalg.norm(pc2_nutricula))
+angle_deg = np.degrees(np.arccos(np.clip(cos_angle, -1.0, 1.0)))
+if angle_deg > 90:
+    angle_deg=180-angle_deg #get the acute angle
+print(f"Angle between PC2 Global and PC2 nutricula: {angle_deg:.2f} degrees")
+
+#tyrrhenica
 cos_angle = np.dot(pc1_all, pc1_tyrrhenica) / (np.linalg.norm(pc1_all) * np.linalg.norm(pc1_tyrrhenica))
 angle_deg = np.degrees(np.arccos(np.clip(cos_angle, -1.0, 1.0)))
 if angle_deg > 90:
     angle_deg=180-angle_deg #get the acute angle
 print(f"Angle between PC1 Global and PC1 tyrrhenica: {angle_deg:.2f} degrees")
+
+cos_angle = np.dot(pc2_all, pc2_tyrrhenica) / (np.linalg.norm(pc2_all) * np.linalg.norm(pc2_tyrrhenica))
+angle_deg = np.degrees(np.arccos(np.clip(cos_angle, -1.0, 1.0)))
+if angle_deg > 90:
+    angle_deg=180-angle_deg #get the acute angle
+print(f"Angle between PC2 Global and PC2 tyrrhenica: {angle_deg:.2f} degrees")
 
 #inperpolate across PC1 and show 3D shape
 pca_all.components_
@@ -352,8 +478,6 @@ for i in range(num_sample_shapes):
 
 shape_params_along_PC1_reshape=np.zeros((2,lmax,lmax,num_sample_shapes))
 shape_params_along_PC2_reshape=np.zeros((2,lmax,lmax,num_sample_shapes))
-
-#SHE_all.columns
 
 for d in range(num_sample_shapes):
     count = 0
