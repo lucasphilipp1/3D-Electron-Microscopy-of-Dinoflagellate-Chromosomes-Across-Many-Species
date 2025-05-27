@@ -1,9 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
+Created on Fri May 16 12:40:32 2025
+
 @author: lucasphilipp
-code adapted from: https://github.com/AllenCell/aics-shparam
 """
 
-# Import required packages
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -16,24 +18,92 @@ import tifffile
 from skimage import feature
 import matplotlib.colors as mcolors
 from matplotlib.font_manager import FontProperties
-
 import napari
-#viewer = napari.view_image(numpy_data)
-
 from PIL import Image
-import warnings
-
 from matplotlib.colors import ListedColormap, to_rgb
 
+def PCA_coords_to_shape(pca: PCA, PCA_coords: np.ndarray, lmax: int, num_dim_pre_PCA: int, save_directory: str, save_as_tiff: bool = False, save_cross_sections: bool = False):
+    '''
+    PCA_coords (np.ndarray): Shape (N, 2). First column is PC1 coordinate. Second column is PC2 coordinate. Rows are different shapes to be created.
+    '''
+    
+    def normalize_to_uint8(img):
+        img = img.astype(np.float32)
+        img -= img.min()
+        if img.max() != 0:
+            img /= img.max()
+        return (img * 255).astype(np.uint8)
+    
+    #inperpolate across PC1 and show 3D shape
+    num_sample_shapes = PCA_coords.shape[0];
+    
+    shape_params = np.zeros((num_sample_shapes,num_dim_pre_PCA))
+    
+    for i in range(num_sample_shapes):
+        shape_params[i,:] = pca.inverse_transform(tuple(PCA_coords[i]))
+    
+    shape_params_reshape=np.zeros((2,lmax,lmax,num_sample_shapes))
+    
+    for d in range(num_sample_shapes):
+        count = 0
+        for i in range(2):
+            for j in range(lmax):
+                for k in range(lmax):
+                    shape_params_reshape[i,j,k,d] = shape_params[d,count]
+                    #print(i,j,k,d)
+                    count = count + 1
+                
+    for i in range(num_sample_shapes):
+        mesh, _ = shtools.get_reconstruction_from_coeffs(shape_params_reshape[:,:,:,i])
+        coords = vtknp.vtk_to_numpy(mesh.GetPoints().GetData())
+    
+        # Find bounds of the mesh
+        rmin = (coords.min(axis=0) - 0.5).astype(int)
+        rmax = (coords.max(axis=0) + 0.5).astype(int)
+    
+        # Width, height and depth
+        w = int(2 + (rmax[0] - rmin[0]))
+        h = int(2 + (rmax[1] - rmin[1]))
+        d = int(2 + (rmax[2] - rmin[2]))
+    
+        # Create image data
+        imagedata = vtk.vtkImageData()
+        imagedata.SetDimensions([w, h, d])
+        imagedata.SetExtent(0, w - 1, 0, h - 1, 0, d - 1)
+        imagedata.SetOrigin(rmin)
+        imagedata.AllocateScalars(vtk.VTK_UNSIGNED_CHAR, 1)
+    
+        # Set all values to 1
+        imagedata.GetPointData().GetScalars().FillComponent(0, 1)
+        
+        voxelized = shtools.voxelize_mesh(imagedata=imagedata, shape=(d, h, w), mesh=mesh, origin=rmin)
+    
+        voxelized = voxelized.astype('int8')
+        if save_as_tiff == True:
+            tifffile.imsave(save_directory+'shape {}.tiff'.format(i), voxelized, bigtiff=True)
+
+        z, y, x = voxelized.shape
+        xy_section = voxelized[z // 2, :, :]
+        yz_section = voxelized[:, :, x // 2]
+        xz_section = voxelized[:, y // 2, :]
+        
+        xy_section = feature.canny(normalize_to_uint8(xy_section), sigma=1.0)
+        yz_section = feature.canny(normalize_to_uint8(yz_section), sigma=1.0)
+        xz_section = feature.canny(normalize_to_uint8(xz_section), sigma=1.0)
+        
+        xy_img = Image.fromarray(normalize_to_uint8(xy_section))
+        yz_img = Image.fromarray(normalize_to_uint8(yz_section))
+        xz_img = Image.fromarray(normalize_to_uint8(xz_section))
+    
+        if save_cross_sections == True:
+            xy_img.save(save_directory+'/xy/{}.png'.format(i))
+            yz_img.save(save_directory+'/yz/{}.png'.format(i))
+            xz_img.save(save_directory+'/xz/{}.png'.format(i))
+       
+        print(i)
+        
 def values(x):
     return x.str.extract(r'([0-9]+)')
-
-def normalize_to_uint8(img):
-    img = img.astype(np.float32)
-    img -= img.min()
-    if img.max() != 0:
-        img /= img.max()
-    return (img * 255).astype(np.uint8)
 
 def generate_shades(base_color, n_shades):
     """Generate n_shades from light to dark of a base RGB color."""
@@ -203,6 +273,11 @@ df_trans['volume'] = SHE_all.volume
 df_trans['delta_angle'] = SHE_all.delta_angle
 df_trans['LH_or_RH'] = SHE_all.LH_or_RH
 df_trans['aspect_ratio'] = SHE_all.aspect_ratio
+
+#project all data onto PC1 and extract variance
+fig, ax = plt.subplots(1,1, figsize=(3,3))
+ax.hist(trans[:,0])
+plt.show()
 
 #color by is_angle_ext
 with pd.option_context('display.max_rows', 5, 'display.max_columns', 5):
@@ -457,142 +532,28 @@ if angle_deg > 90:
     angle_deg=180-angle_deg #get the acute angle
 print(f"Angle between PC2 Global and PC2 tyrrhenica: {angle_deg:.2f} degrees")
 
-#inperpolate across PC1 and show 3D shape
-pca_all.components_
+#inperpolate across PC1 and save 3D shapes
+coords_sample_along_PC1 = np.column_stack((np.linspace(min(trans[:,0]), max(trans[:,0]), 20), np.zeros(20))) #create 20 shapes
+PCA_coords_to_shape(pca=pca_all, PCA_coords=coords_sample_along_PC1, lmax=lmax, num_dim_pre_PCA=num_dim_pre_PCA, save_directory='/Users/lucasphilipp/Downloads/PC1/', save_as_tiff=True, save_cross_sections=True)
 
-#project all data onto PC1 and extract variance
-fig, ax = plt.subplots(1,1, figsize=(3,3))
-ax.hist(trans[:,0])
-plt.show()
+#inperpolate across PC2 and save 3D shapes
+coords_sample_along_PC2 = np.column_stack((np.zeros(20), np.linspace(min(trans[:,0]), max(trans[:,0]), 20))) #create 20 shapes
+PCA_coords_to_shape(pca=pca_all, PCA_coords=coords_sample_along_PC2, lmax=lmax, num_dim_pre_PCA=num_dim_pre_PCA, save_directory='/Users/lucasphilipp/Downloads/PC2/', save_as_tiff=True, save_cross_sections=True)
 
-num_sample_shapes = 20;
-
-shape_params_along_PC1 = np.zeros((num_sample_shapes,num_dim_pre_PCA))
-shape_params_along_PC2 = np.zeros((num_sample_shapes,num_dim_pre_PCA))
-
-for i in range(num_sample_shapes):
-    PC1_coord = np.linspace(min(trans[:,0]),max(trans[:,0]), num_sample_shapes)
-    PC2_coord = np.linspace(min(trans[:,1]),max(trans[:,1]), num_sample_shapes)
-    shape_params_along_PC1[i,:] = pca_all.inverse_transform((PC1_coord[i],0))
-    shape_params_along_PC2[i,:] = pca_all.inverse_transform((0,PC2_coord[i]))
-
-shape_params_along_PC1_reshape=np.zeros((2,lmax,lmax,num_sample_shapes))
-shape_params_along_PC2_reshape=np.zeros((2,lmax,lmax,num_sample_shapes))
-
-for d in range(num_sample_shapes):
-    count = 0
-    for i in range(2):
-        for j in range(lmax):
-            for k in range(lmax):
-                #CHANGE shape_params_along_PC1[0
-                shape_params_along_PC1_reshape[i,j,k,d] = shape_params_along_PC1[d,count]
-                shape_params_along_PC2_reshape[i,j,k,d] = shape_params_along_PC2[d,count]
-                #print(i,j,k,d)
-                count = count + 1
-            
-for i in range(num_sample_shapes):
-    mesh_PC1, _ = shtools.get_reconstruction_from_coeffs(shape_params_along_PC1_reshape[:,:,:,i])
-    coords = vtknp.vtk_to_numpy(mesh_PC1.GetPoints().GetData())
-
-    # Find bounds of the mesh
-    rmin = (coords.min(axis=0) - 0.5).astype(int)
-    rmax = (coords.max(axis=0) + 0.5).astype(int)
-
-    # Width, height and depth
-    w = int(2 + (rmax[0] - rmin[0]))
-    h = int(2 + (rmax[1] - rmin[1]))
-    d = int(2 + (rmax[2] - rmin[2]))
-
-    # Create image data
-    imagedata = vtk.vtkImageData()
-    imagedata.SetDimensions([w, h, d])
-    imagedata.SetExtent(0, w - 1, 0, h - 1, 0, d - 1)
-    imagedata.SetOrigin(rmin)
-    imagedata.AllocateScalars(vtk.VTK_UNSIGNED_CHAR, 1)
-
-    # Set all values to 1
-    imagedata.GetPointData().GetScalars().FillComponent(0, 1)
-
-    # Create an empty 3D numpy array to sum up
-    # voxelization of all meshes
-    img = np.zeros((d, h, w), dtype=np.uint8)
-    
-    voxelized = shtools.voxelize_mesh(imagedata=imagedata, shape=(d, h, w), mesh=mesh_PC1, origin=rmin)
-
-    voxelized = voxelized.astype('int8')
-    #tifffile.imsave('/Users/lucasphilipp/Downloads/Spherical Harmonics Expansion/all/PC1/PC1 {}.tiff'.format(i), voxelized, bigtiff=True)
-    
-    z, y, x = voxelized.shape
-    xy_section = voxelized[z // 2, :, :]
-    yz_section = voxelized[:, :, x // 2]
-    xz_section = voxelized[:, y // 2, :]
-    
-    xy_section = feature.canny(normalize_to_uint8(xy_section), sigma=1.0)
-    yz_section = feature.canny(normalize_to_uint8(yz_section), sigma=1.0)
-    xz_section = feature.canny(normalize_to_uint8(xz_section), sigma=1.0)
-    
-    xy_img = Image.fromarray(normalize_to_uint8(xy_section))
-    yz_img = Image.fromarray(normalize_to_uint8(yz_section))
-    xz_img = Image.fromarray(normalize_to_uint8(xz_section))
-
-    # Save as PNGs (or change extension to .tiff if preferred)
-    #xy_img.save('/Users/lucasphilipp/Downloads/Spherical Harmonics Expansion/all/PC1/xy/{}.png'.format(i))
-    #yz_img.save('/Users/lucasphilipp/Downloads/Spherical Harmonics Expansion/all/PC1/yz/{}.png'.format(i))
-    #xz_img.save('/Users/lucasphilipp/Downloads/Spherical Harmonics Expansion/all/PC1/xz/{}.png'.format(i))
-
-    mesh_PC2, _ = shtools.get_reconstruction_from_coeffs(shape_params_along_PC2_reshape[:,:,:,i])
-    coords = vtknp.vtk_to_numpy(mesh_PC2.GetPoints().GetData())
-
-    # Find bounds of the mesh
-    rmin = (coords.min(axis=0) - 0.5).astype(int)
-    rmax = (coords.max(axis=0) + 0.5).astype(int)
-
-    # Width, height and depth
-    w = int(2 + (rmax[0] - rmin[0]))
-    h = int(2 + (rmax[1] - rmin[1]))
-    d = int(2 + (rmax[2] - rmin[2]))
-
-    # Create image data
-    imagedata = vtk.vtkImageData()
-    imagedata.SetDimensions([w, h, d])
-    imagedata.SetExtent(0, w - 1, 0, h - 1, 0, d - 1)
-    imagedata.SetOrigin(rmin)
-    imagedata.AllocateScalars(vtk.VTK_UNSIGNED_CHAR, 1)
-
-    # Set all values to 1
-    imagedata.GetPointData().GetScalars().FillComponent(0, 1)
-
-    # Create an empty 3D numpy array to sum up
-    # voxelization of all meshes
-    img = np.zeros((d, h, w), dtype=np.uint8)
-    
-    voxelized = shtools.voxelize_mesh(imagedata=imagedata, shape=(d, h, w), mesh=mesh_PC2, origin=rmin)
-
-    voxelized = voxelized.astype('int8')
-    #tifffile.imsave('/Users/lucasphilipp/Downloads/Spherical Harmonics Expansion/all/PC2/PC2 {}.tiff'.format(i), voxelized, bigtiff=True)
-    
-    z, y, x = voxelized.shape
-    xy_section = voxelized[z // 2, :, :]
-    yz_section = voxelized[:, :, x // 2]
-    xz_section = voxelized[:, y // 2, :]
-    
-    xy_section = feature.canny(normalize_to_uint8(xy_section), sigma=1.0)
-    yz_section = feature.canny(normalize_to_uint8(yz_section), sigma=1.0)
-    xz_section = feature.canny(normalize_to_uint8(xz_section), sigma=1.0)
-    
-    xy_img = Image.fromarray(normalize_to_uint8(xy_section))
-    yz_img = Image.fromarray(normalize_to_uint8(yz_section))
-    xz_img = Image.fromarray(normalize_to_uint8(xz_section))
-
-    # Save as PNGs (or change extension to .tiff if preferred)
-    #xy_img.save('/Users/lucasphilipp/Downloads/Spherical Harmonics Expansion/all/PC2/xy/{}.png'.format(i))
-    #yz_img.save('/Users/lucasphilipp/Downloads/Spherical Harmonics Expansion/all/PC2/yz/{}.png'.format(i))
-    #xz_img.save('/Users/lucasphilipp/Downloads/Spherical Harmonics Expansion/all/PC2/xz/{}.png'.format(i))
-    
-    #print(i)
-    
 #napari.view_image(voxelized)
 
+# Get shapes corresponding to corner points in top left triangle (in PC1/PC2 space)
+corner_points = np.array([
+    [-60,   0],   #bottom left triangle
+    [-60, -15],   #bottom left triangle
+    [  0, -15],   #bottom left triangle
+    [-60,  10],   #top left triangle
+    [-60,  30],   #top left triangle
+    [-20,  30]    #top left triangle
+])
+
+PCA_coords_to_shape(pca=pca_all, PCA_coords=corner_points, lmax=lmax, num_dim_pre_PCA=num_dim_pre_PCA, save_directory='/Users/lucasphilipp/Downloads/corners/', save_as_tiff=True, save_cross_sections=True)
+    
 #check accuracy of spherical harmonics expansion
 # error = []
 # for i in range(1,51):
