@@ -3,8 +3,7 @@ Philipp, L.\*, Ittah, E.\*, Schumann D., de Fourestier J., Reznikov N., Weber S.
 
 bioRxiv link to pre-print: __________
 
-<img width="1791" alt="Screenshot 2025-04-28 at 3 19 13 PM" src="https://github.com/user-attachments/assets/29d5d495-f6f0-4fd5-9321-bbb04a5d17c0" />
-
+<img width="1779" alt="Screenshot 2025-06-03 at 3 35 26 PM" src="https://github.com/user-attachments/assets/5db5a207-3f23-4f1b-ace6-e3443c9b967c" />
 
 # Data Availability:
 
