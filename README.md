@@ -270,10 +270,10 @@ EulerCharacteristic=0 is toroid. EulerCharacteristic=2 is topolically equilvalen
 8. Export as csv.
 
 <img width="1784" alt="distance maps" src="https://github.com/user-attachments/assets/b4b29acd-a39e-4c95-ac22-e8631b34467e" />
-<img width="1783" alt="Toroid Positioning" src="https://github.com/user-attachments/assets/4a56d90f-f7ad-443a-9879-667c5ae6d42b" />
 
 ## 2. Analysis of Chromosome Surface Ridges:
 <img width="1721" height="556" alt="angle analysis" src="https://github.com/user-attachments/assets/03d45e98-ae1d-4e22-bc5c-edb6243efca8" />
+
 ### project_ROI_front_and_save.m
 Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input here is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Front hemi-volume is projected inwards onto the middle plane and saved as an image (see Fig. 3 a).
 
