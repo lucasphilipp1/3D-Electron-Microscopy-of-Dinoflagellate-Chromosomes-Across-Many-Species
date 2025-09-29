@@ -13,7 +13,7 @@ Symbiodinium microadriaticum (3 cells) 4x4x4 nm voxels <br />
 Symbiodinium minutum (3 cells) 4x4x4 nm voxels <br />
 Symbiodinium kawagutii (3 cells) 4x4x4 nm voxels <br />
 Crypthecodinium cohnii (3 cells) 4x4x4 nm voxels <br />
-Raw data will be uploaded to EMPIAR: DO THIS!!! GIVE ACCESSION CODE
+Data has been uploaded to EMPIAR: DO THIS!!! GIVE ACCESSION CODE
 
 ### Image Data From The Literature:
 Brandtodinium nutricula (3 cells) 8x8x8 nm voxels <br />
