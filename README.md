@@ -63,8 +63,11 @@ ROI_COM.setDataDirty()
 <img src="https://github.com/user-attachments/assets/e8c62466-8134-470e-94d2-3348fea41876" width="700"/>
 
 5. Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
-6. Execute the following commands in Dragonfly's python console:
-```
+6. Execute the following commands in Dragonfly's python console:   
+<details>
+  <summary>Click to expand code block</summary>
+
+  ```python
 # Your MultiROI should contain a cloud of single-voxel points (each as their own unique ROI in the MultiROI) to serve as the seeds for Voronoi tessellation
 COM_multiROI = *drag and drop COM_multiROI from drop down menu to set object identifier*
 
@@ -216,6 +219,8 @@ for i in range(0,25):  # Repeat a sufficient number of times to fill the volume
 
 COM_multiROI.setDataDirty()
 ```
+</details> 
+
 <img src="https://github.com/user-attachments/assets/2a4d371a-949f-486c-94cc-13de31539afc" width="700"/>
 
 Voronoi cells should not extend outside nucleus or overlap with nucleolus. <br />
