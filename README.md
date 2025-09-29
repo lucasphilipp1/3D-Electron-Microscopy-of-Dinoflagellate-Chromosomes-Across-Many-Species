@@ -9,51 +9,9 @@ bioRxiv link to pre-print: __________
 
 Raw data is available from EMPIAR: https://www.ebi.ac.uk/bioimage-archive/submit/ 
 
-Datasets are available in an interactive format online at: https://www.petapixelproject.com/
+Datasets are available in an interactive format online at: [https://www.petapixelproject.com/](https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/)
 
 use the K and L keys to scroll through the z stacks
-
-_Symbiodinium microadriaticum_ <br />
-https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cell-1/ROI
-
-https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cell-2/ROI
-
-https://petapixelproject.com/mosaics/biology/dinoflagellates/microadriaticum/cell-3/ROI
-
-_Symbiodinium (Breviolum) minutum_ <br />
-https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-1/ROI
-
-https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-2/ROI
-
-https://petapixelproject.com/mosaics/biology/dinoflagellates/minutum/cell-3/ROI
-
-_Symbiodinium (Fugacium) kawagutii_ <br />
-https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-1/ROI
-
-https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-2/ROI
-
-https://petapixelproject.com/mosaics/biology/dinoflagellates/kawagutii/cell-3/ROI
-
-_Crypthecodinium cohnii_ <br />
-https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-1/ROI
-
-https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-2/ROI/
-
-https://petapixelproject.com/mosaics/biology/dinoflagellates/cohnii/cell-3/ROI
-
-_Symbiodinium pilosum_ <br />
-https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-1/ROI
-
-https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-2/ROI
-
-https://petapixelproject.com/mosaics/biology/dinoflagellates/pilosum/cell-3/ROI
-
-_Brandtodinium nutricula_ <br />
-https://petapixelproject.com/mosaics/biology/dinoflagellates/brandtodinium/cell-1/ROI/
-
-https://petapixelproject.com/mosaics/biology/dinoflagellates/brandtodinium/cell-2/ROI/
-
-https://petapixelproject.com/mosaics/biology/dinoflagellates/brandtodinium/cell-3/ROI/
 
 # Descriptions of code:
 
