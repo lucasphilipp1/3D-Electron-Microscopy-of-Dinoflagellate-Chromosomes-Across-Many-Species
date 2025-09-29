@@ -294,8 +294,12 @@ Description: An adaptation of the pipeline originally developed by Viana et al. 
 Quantitative analysis of dinoflagellate chromosome shape characteristics:
 <img width="1129" height="331" alt="SHE Schematic" src="https://github.com/user-attachments/assets/e0bda272-943d-4802-82e9-e02f58a200df" />
 <br>
+<br>
+<br>
 PCA clustering based on shape similarity:
 <img width="1790" height="499" alt="SHE PCA" src="https://github.com/user-attachments/assets/9fc170e1-f14d-4c5b-bf15-a69c45452af0" />
+<br>
+<br>
 <br>
 Comparison of chromosome shape variation across species:
 <img width="700" height="339" alt="SHE species comparison" src="https://github.com/user-attachments/assets/9d7340ea-97bc-409b-b4dd-f931bb63d7da" />
