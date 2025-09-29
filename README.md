@@ -6,7 +6,7 @@ bioRxiv link to pre-print: __________
 <img width="1779" alt="Screenshot 2025-06-03 at 3 35 26 PM" src="https://github.com/user-attachments/assets/5db5a207-3f23-4f1b-ace6-e3443c9b967c" />
 
 # Data Availability:
-In this study we used a roughly 50:50 mix of original FIB-SEM image stacks, and image data available from the literature. <br />
+In this study we used a roughly 50:50 mix of original FIB-SEM image data, and image data available from the literature. <br />
 
 ### Original FIB-SEM Image Data:
 Symbiodinium microadriaticum (3 cells) 4x4x4 nm voxels <br />
