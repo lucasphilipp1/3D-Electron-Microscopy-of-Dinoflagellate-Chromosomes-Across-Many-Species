@@ -33,6 +33,8 @@ For all data raw images were processed and chromosomes, nucleus, nucleolus, DNA 
 Datasets are available in an interactive format online at: https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/ <br />
 Use the K and L keys to scroll through the z stacks.
 
+<img width="1792" height="1120" alt="BBV screenshot" src="https://github.com/user-attachments/assets/26b8ea76-92f7-403c-86cd-70cd78aa6f8b" />
+
 # Descriptions of code:
 Scripts are organized into separate folders according to their functionality.
 
