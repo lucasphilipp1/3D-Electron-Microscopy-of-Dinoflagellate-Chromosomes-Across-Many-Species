@@ -16,13 +16,10 @@ use the K and L keys to scroll through the z stacks
 Scripts are organized into separate folders according to their functionality.
 
 ## 1. Dragonfly Workflows:
-Dragonfly 2024.1 See documentation: https://dev.theobjects.com/dragonfly_2024_1_release/contents.html
-
 <img width="1790" height="737" alt="Dragonfly Workflow" src="https://github.com/user-attachments/assets/38f4d324-1184-4d5f-8711-ae89edd2b50b" />
 
 ### CropAndRotateAndExportChromosomes.py
-
-Description: A custom menu option to re-orient each ROI (chromosome) in a multi-ROI so the chromosome long axis corresponds to the z-axis. Saves everychromosome as binary 3D .tiff files in a folder.
+Description: A custom menu option to re-orient each ROI (chromosome) in a multi-ROI so the chromosome long axis corresponds to the z-axis. Saves everychromosome as binary 3D .tiff files in a folder. There are two version of this script depending on which Dragonfly version you are using (2022.2 or 2024.1).
 
 To load the menu option: Close Dragonfly. Navigate to either of:
 
@@ -267,19 +264,15 @@ export as csv
 
 ## 2. Analysis of Chromosome Surface Ridges:
 ### project_ROI_front_and_save.m
-
 Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input here is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Front hemi-volume is projected inwards onto the middle plane and saved as an image (see Fig. 3 a).
 
 ### project_ROI_back_and_save.m
-
 Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Back hemi-volume is projected inwards onto the middle plane and saved as an image (see Fig. 3 a).
 
 ### save_clock_images.m
-
 Description: Used to corroborate manually extracted surface ridge angles. Superimposes surface ridge angles onto projection images.
 
 ### make_clock_pdf.m
-
 Description: Synthesizes output from save_clock_images.m into a single .pdf document (one .pdf per cell).
 
 <img width="1769" height="838" alt="angle verification" src="https://github.com/user-attachments/assets/c12db561-cc1e-4bfc-b05b-e9485ee22b55" />
