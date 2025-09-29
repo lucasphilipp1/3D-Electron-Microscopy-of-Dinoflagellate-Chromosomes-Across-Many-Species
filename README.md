@@ -256,7 +256,7 @@ for i in range(len(ROI_list)):
 <img width="800" alt="writing_segmentation_into_image" src="https://github.com/user-attachments/assets/825b3bd0-ea48-4792-951e-b6d1d374b500" />
 ### Protocol for measuring distance of DNA toroids/rods or chromosomes to nuclear membrane/nucleolus/nearest distance to both:
 <img width="1778" height="223" alt="DNA rods:toroids:crescents" src="https://github.com/user-attachments/assets/506ed31b-b9a3-45ad-8904-0c1f790c1007" />
-You can identify toroids in multiROIs by computing the Euler characteristic for all objects (provided segmentation is correct): <br /> https://dev.theobjects.com/dragonfly_2024_1_release/ORSModel/sphinxIndexORSModelClasses/sphinxIndexORSModelMesh.html#ORSModel.ors.Mesh.getEulerCharacteristicNumber getEulerCharacteristicNumber(self, iTIndex: int) → int. \ <br /> 
+You can identify toroids in multiROIs by computing the Euler characteristic for all objects (provided segmentation is correct): <br /> https://dev.theobjects.com/dragonfly_2024_1_release/ORSModel/sphinxIndexORSModelClasses/sphinxIndexORSModelMesh.html#ORSModel.ors.Mesh.getEulerCharacteristicNumber getEulerCharacteristicNumber(self, iTIndex: int) → int.
 EulerCharacteristic=0 is toroid. EulerCharacteristic=2 is topolically equilvalent to a sphere.
 1. Segment nucleus.
 2. Create contour mesh of nucleus.
@@ -282,10 +282,8 @@ Description: Used to corroborate manually extracted surface ridge angles. Superi
 
 ### make_clock_pdf.m
 Description: Synthesizes output from save_clock_images.m into a single .pdf document (one .pdf per cell).
-
 <img width="1769" height="838" alt="angle verification" src="https://github.com/user-attachments/assets/c12db561-cc1e-4bfc-b05b-e9485ee22b55" />
 <img width="1721" height="556" alt="angle analysis" src="https://github.com/user-attachments/assets/03d45e98-ae1d-4e22-bc5c-edb6243efca8" />
-<img width="1461" height="1101" alt="tilted discs diagram" src="https://github.com/user-attachments/assets/0b28c932-0695-4a09-809f-ad93342dc0c1" />
 
 ## 3. Spherical Harmonics Expansion:
 
