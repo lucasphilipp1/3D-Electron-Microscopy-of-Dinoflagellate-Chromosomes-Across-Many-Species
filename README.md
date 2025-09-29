@@ -257,8 +257,9 @@ for i in range(len(ROI_list)):
 
 ### Protocol for measuring distance of DNA toroids/rods or chromosomes to nuclear membrane/nucleolus/nearest distance to both:
 <img width="1778" height="223" alt="DNA rods:toroids:crescents" src="https://github.com/user-attachments/assets/506ed31b-b9a3-45ad-8904-0c1f790c1007" />
-You can identify toroids in multiROIs by computing the Euler characteristic for all objects (provided segmentation is correct): https://dev.theobjects.com/dragonfly_2024_1_release/ORSModel/sphinxIndexORSModelClasses/sphinxIndexORSModelMesh.html#ORSModel.ors.Mesh.getEulerCharacteristicNumber getEulerCharacteristicNumber(self, iTIndex: int) → int.
+You can identify toroids in multiROIs by computing the Euler characteristic for all objects (provided segmentation is correct): https://dev.theobjects.com/dragonfly_2024_1_release/ORSModel/sphinxIndexORSModelClasses/sphinxIndexORSModelMesh.html#ORSModel.ors.Mesh.getEulerCharacteristicNumber getEulerCharacteristicNumber(self, iTIndex: int) → int. <br />
 EulerCharacteristic=0 is toroid. EulerCharacteristic=2 is topolically equilvalent to a sphere.
+
 1. Segment nucleus.
 2. Create contour mesh of nucleus.
 3. Create ROI from contour mesh (boundary).
