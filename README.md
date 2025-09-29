@@ -233,8 +233,9 @@ Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spa
 ### Write coloured segmentation into image stack:
 1. Make 3 copies of the image stacks, name them R, G, B respectively.
 2. Export all ROIs from multiROI.
-3. Select all ROIs from drop down menu, drag and drop into Dragonfly's python console and initialize as ROI_list.
-4. Execute the following commands in python console:
+3. Export all ROIs from multiROI.
+4. Select all ROIs from drop down menu, drag and drop into Dragonfly's python console and initialize as ROI_list.
+5. Execute the following commands in python console:
 ```python
 ROI_list = *drag and drop ROIs from drop down menu*
 R = #drag image copy 1 here from object list (top right of screen)
@@ -250,7 +251,7 @@ for i in range(len(ROI_list)):
 	B.overwriteValueWithROI(ROI,round(color.getBlue()*255))
 	B.setDataDirty()
 ```
-5. Select R,G,B images in dropdown. Right click. Export->as RGB->.png
+6. Select R,G,B images in dropdown. Right click. Export->as RGB->.png
 <img width="1792" alt="RGB" src="https://github.com/user-attachments/assets/1820a837-e22a-439e-b5bb-b9a921aa8b98" />
 <img width="1055" alt="writing_segmentation_into_image" src="https://github.com/user-attachments/assets/825b3bd0-ea48-4792-951e-b6d1d374b500" />
 ### Protocol for measuring distance of DNA toroids/rods or chromosomes to nuclear membrane/nucleolus/nearest distance to both:
@@ -259,12 +260,12 @@ You can identify toroids in multiROIs by computing the Euler characteristic for 
 EulerCharacteristic=0 is toroid. EulerCharacteristic=2 is topolically equilvalent to a sphere. <br />
 1. Segment nucleus.
 2. Create contour mesh of nucleus.
-4. Create ROI from contour mesh (boundary).
-5. Create empty ROI.
-6. Export contour mesh to empty ROI.
-7. Create distance map of boundary ROI (make sure geometry of ROI is of the tight crop around the nucleus, or the same as the geometry of the chromosome multi-ROI and DNA rods and toroids multi-ROI)
-8. On multi-ROI: compute measurements, basic measurements with dataset, min-intensity values, select distance map of nuclear membrane.
-9. Export as csv.
+3. Create ROI from contour mesh (boundary).
+4. Create empty ROI.
+5. Export contour mesh to empty ROI.
+6. Create distance map of boundary ROI (make sure geometry of ROI is of the tight crop around the nucleus, or the same as the geometry of the chromosome multi-ROI and DNA rods and toroids multi-ROI)
+7. On multi-ROI: compute measurements, basic measurements with dataset, min-intensity values, select distance map of nuclear membrane.
+8. Export as csv.
 
 <img width="1784" alt="distance maps" src="https://github.com/user-attachments/assets/b4b29acd-a39e-4c95-ac22-e8631b34467e" />
 <img width="1783" alt="Toroid Positioning" src="https://github.com/user-attachments/assets/4a56d90f-f7ad-443a-9879-667c5ae6d42b" />
