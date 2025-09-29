@@ -289,7 +289,7 @@ Description: Synthesizes output from save_clock_images.m into a single .pdf docu
 ## 3. Spherical Harmonics Expansion:
 
 ### spherical_harmonics_expansion.py
-Description: An adaptation of the pipeline originally developed by Viana et al. Paper:  https://doi.org/10.1038/s41586-022-05563-7 \& Github: https://github.com/AllenCell/aics-shparam. <br>
+Description: An adaptation of the pipeline originally developed by Viana et al. Paper:  https://doi.org/10.1038/s41586-022-05563-7. Github: https://github.com/AllenCell/aics-shparam. <br>
 <br>
 Quantitative analysis of dinoflagellate chromosome shape characteristics:
 <img width="1129" height="331" alt="SHE Schematic" src="https://github.com/user-attachments/assets/e0bda272-943d-4802-82e9-e02f58a200df" />
