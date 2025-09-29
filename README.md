@@ -293,6 +293,9 @@ Description: Quantitative analysis of dinoflagellate chromosome shape characteri
 
 <img width="1207" height="647" alt="Spherical harmonics expansion" src="https://github.com/user-attachments/assets/8bbc81ae-962e-437a-9e51-9c4333fff30a" />
 
+![PC2_cross_section](https://github.com/user-attachments/assets/738cfdef-5a85-49d4-9f3e-467094be817f)
+![PC1_cross_section](https://github.com/user-attachments/assets/b2b271be-c362-439d-8402-0ed5299510aa)
+
 
 ## 4. Analysis of Chromosome Cross-sections:
 
