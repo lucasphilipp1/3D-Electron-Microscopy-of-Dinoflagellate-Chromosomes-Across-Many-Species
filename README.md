@@ -60,10 +60,9 @@ for i in range(len(ROI_list)):
 	ROI_COM.paintSubset(voxel_coords[0],voxel_coords[1],voxel_coords[2],voxel_coords[0],voxel_coords[1],voxel_coords[2],1,0)
 ROI_COM.setDataDirty()
 ```
+<img src="https://github.com/user-attachments/assets/e8c62466-8134-470e-94d2-3348fea41876" width="400"/>
+
 5. Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
-
-![seed points](https://github.com/user-attachments/assets/e8c62466-8134-470e-94d2-3348fea41876)
-
 6. Execute the following commands in Dragonfly's python console:
 ```
 # Your MultiROI should contain a cloud of single-voxel points (each as their own unique ROI in the MultiROI) to serve as the seeds for Voronoi tessellation
