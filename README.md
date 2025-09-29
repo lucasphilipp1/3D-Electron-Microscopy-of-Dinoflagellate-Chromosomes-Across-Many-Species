@@ -29,6 +29,7 @@ Kareniaceae sp. (2 cells) 8x8x8 nm voxels <br />
 raw data: https://doi.org/10.1016/j.cub.2025.03.076, EMPIAR-12627.
 
 For all data raw images were processed and chromosomes, nucleus, nucleolus, DNA rods, DNA crescents, DNA toroids were segmented using Dragonfly. <br />
+
 Datasets are available in an interactive format online at: https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/ <br />
 Use the K and L keys to scroll through the z stacks.
 
