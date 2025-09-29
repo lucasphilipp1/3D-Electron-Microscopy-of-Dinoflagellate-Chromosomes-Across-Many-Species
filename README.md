@@ -295,10 +295,8 @@ Quantitative analysis of dinoflagellate chromosome shape characteristics:
 <img width="1129" height="331" alt="SHE Schematic" src="https://github.com/user-attachments/assets/e0bda272-943d-4802-82e9-e02f58a200df" />
 <br>
 <br>
-<br>
 PCA clustering based on shape similarity:
 <img width="1790" height="499" alt="SHE PCA" src="https://github.com/user-attachments/assets/9fc170e1-f14d-4c5b-bf15-a69c45452af0" />
-<br>
 <br>
 <br>
 Comparison of chromosome shape variation across species:
@@ -309,7 +307,7 @@ Comparison of chromosome shape variation across species:
 Description: Take 3D binary .tiff dinoflagellate chromosome segmentations and view their cross-sectional profiles.
 <img width="1636" height="823" alt="chromosome cross sections" src="https://github.com/user-attachments/assets/e3b3052b-f0f5-40e9-b0e7-5a294061bf4d" />
 ### make_gif_from_cross_sections.py
-Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produce a gif showing how its cross-sections vary with principal component coordinate. <br>
+Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produce a gif showing how its XY, XZ, YZ cross-sections vary with principal component coordinate. <br>
 <img src="https://github.com/user-attachments/assets/633b1d78-0294-47bc-bfaf-19b4616bbe49" width="352"/> <img src="https://github.com/user-attachments/assets/6e06aa8c-be6d-4283-b046-b46f27a2d696" width="600"/>
 
 # Questions:
