@@ -222,12 +222,12 @@ COM_multiROI.setDataDirty()
 
 <img src="https://github.com/user-attachments/assets/2a4d371a-949f-486c-94cc-13de31539afc" width="700"/>
 
-Voronoi cells should not extend outside nucleus or overlap with nucleolus. <br />
-8. A-B of COM_multiROI (A) - Nucleus ROI (downsampled) (B) -> outside_nucleus (save to new). <br />
-9. A-B of COM_multiROI (A) - outside_nucleus (B) = COM_multiROI (overwrite). <br /> 
-10. A-B of COM_multiROI (A) - Nucleolus ROI (downsampled) (B) = COM_multiROI (overwrite). <br /> 
-<img src="https://github.com/user-attachments/assets/1a3fb76d-593f-46e7-94ce-f31c537e4dca" width="700"/> <br /> 
-11. Compute volume of voronoi cells. <br /> 
+Voronoi cells should not extend outside nucleus or overlap with nucleolus.
+8. A-B of COM_multiROI (A) - Nucleus ROI (downsampled) (B) -> outside_nucleus (save to new).
+9. A-B of COM_multiROI (A) - outside_nucleus (B) = COM_multiROI (overwrite).
+10. A-B of COM_multiROI (A) - Nucleolus ROI (downsampled) (B) = COM_multiROI (overwrite).
+<img src="https://github.com/user-attachments/assets/1a3fb76d-593f-46e7-94ce-f31c537e4dca" width="700"/>
+11. Compute volume of voronoi cells.
 Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad -> chromosomes are clustered.
 
 ### Write coloured segmentation into image stack:
@@ -257,14 +257,14 @@ for i in range(len(ROI_list)):
 <img width="1778" height="223" alt="DNA rods:toroids:crescents" src="https://github.com/user-attachments/assets/506ed31b-b9a3-45ad-8904-0c1f790c1007" />
 You can identify toroids in multiROIs by computing the Euler characteristic for all objects (provided segmentation is correct): <br /> https://dev.theobjects.com/dragonfly_2024_1_release/ORSModel/sphinxIndexORSModelClasses/sphinxIndexORSModelMesh.html#ORSModel.ors.Mesh.getEulerCharacteristicNumber getEulerCharacteristicNumber(self, iTIndex: int) → int. \ <br /> 
 EulerCharacteristic=0 is toroid. EulerCharacteristic=2 is topolically equilvalent to a sphere. <br />
-1. Segment nucleus. <br />
-2. Create contour mesh of nucleus. <br />
-3. Create ROI from contour mesh (boundary).
-4. Create empty ROI.
-5. Export contour mesh to empty ROI. <br />
-6. Create distance map of boundary ROI (make sure geometry of ROI is of the tight crop around the nucleus, or the same as the geometry of the chromosome multi-ROI and DNA rods and toroids multi-ROI) <br />
-7. On multi-ROI: compute measurements, basic measurements with dataset, min-intensity values, select distance map of nuclear membrane. <br />
-8. Export as csv.
+1. Segment nucleus.
+2. Create contour mesh of nucleus.
+4. Create ROI from contour mesh (boundary).
+5. Create empty ROI.
+6. Export contour mesh to empty ROI.
+7. Create distance map of boundary ROI (make sure geometry of ROI is of the tight crop around the nucleus, or the same as the geometry of the chromosome multi-ROI and DNA rods and toroids multi-ROI)
+8. On multi-ROI: compute measurements, basic measurements with dataset, min-intensity values, select distance map of nuclear membrane.
+9. Export as csv.
 
 <img width="1784" alt="distance maps" src="https://github.com/user-attachments/assets/b4b29acd-a39e-4c95-ac22-e8631b34467e" />
 <img width="1783" alt="Toroid Positioning" src="https://github.com/user-attachments/assets/4a56d90f-f7ad-443a-9879-667c5ae6d42b" />
