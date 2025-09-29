@@ -10,24 +10,15 @@ bioRxiv link to pre-print: __________
 Raw data is available from EMPIAR: https://www.ebi.ac.uk/bioimage-archive/submit/ 
 
 Datasets are available in an interactive format online at: https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/
-
 use the K and L keys to scroll through the z stacks
 
 # Descriptions of code:
 Scripts are organized into separate folders according to their functionality.
 
-## 1. Analysis of Chromosome Surface Ridges:
-<img width="1461" height="1101" alt="tilted discs diagram" src="https://github.com/user-attachments/assets/0b28c932-0695-4a09-809f-ad93342dc0c1" />
-<img width="1769" height="838" alt="angle verification" src="https://github.com/user-attachments/assets/c12db561-cc1e-4bfc-b05b-e9485ee22b55" />
-<img width="1721" height="556" alt="angle analysis" src="https://github.com/user-attachments/assets/03d45e98-ae1d-4e22-bc5c-edb6243efca8" />
+## 1. Dragonfly Workflows:
+Dragonfly 2024.1 See documentation: https://dev.theobjects.com/dragonfly_2024_1_release/contents.html
 
-## 2. Spherical Harmonics Expansion:
-
-### ADD SPHERICAL HARMONICS CODE
-https://github.com/AllenCell/aics-shparam
-<img width="1207" height="647" alt="Spherical harmonics expansion" src="https://github.com/user-attachments/assets/8bbc81ae-962e-437a-9e51-9c4333fff30a" />
-
-## 3. Dragonfly Workflows:
+<img width="1790" height="737" alt="Dragonfly Workflow" src="https://github.com/user-attachments/assets/38f4d324-1184-4d5f-8711-ae89edd2b50b" />
 
 ### CropAndRotateAndExportChromosomes.py
 
@@ -45,27 +36,6 @@ To help locate the folder, in Dragonfly try: Utilities -> Open All Users Folder 
 
 Place CropAndRotateAndExportChromosomes.py in this folder. Start Dragonfly. The menu option should be accessible after right-clicking on a multi-ROI.
 
-### helix.m
-
-Description: Create 3D binary images of left- and right- handed helices. Used as a positive control to ensure CropAndRotateAndExportChromosomes.py does not alter the helical handedness of processed ROIs.
-
-### project_ROI_front_and_save.m
-
-Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input here is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Front hemi-volume is projected inwards onto the middle plane and saved as an image (see Fig. 3 a).
-
-### project_ROI_back_and_save.m
-
-Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Back hemi-volume is projected inwards onto the middle plane and saved as an image (see Fig. 3 a).
-
-### save_clock_images.m
-
-Description: Used to corroborate manually extracted surface ridge angles. Superimposes surface ridge angles onto projection images.
-
-### make_clock_pdf.m
-
-Description: Synthesizes output from save_clock_images.m into a single .pdf document (one .pdf per cell).
-
-Dragonfly 2024.1 See documentation: https://dev.theobjects.com/dragonfly_2024_1_release/contents.html
 ### 3D mask to extract raw EM intensities within volume:
 Input the following commands in Dragonfly's python console:
 
@@ -255,8 +225,6 @@ COM_multiROI.setDataDirty()
 Voronoi cells should not extend outside nucleus or overlap with nucleolus. <br /> 1. A-B of COM_multiROI (A) - Nucleus ROI (downsampled) (B) -> outside_nucleus (save to new). <br /> 2. A-B of COM_multiROI (A) - outside_nucleus (B) = COM_multiROI (overwrite). <br /> 3. A-B of COM_multiROI (A) - Nucleolus ROI (downsampled) (B) = COM_multiROI (overwrite). <br /> 4. Compute volume of voronoi cells. <br /> Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad -> chromosomes are clustered.
 
 ![nucleus crop](https://github.com/user-attachments/assets/74c102f9-c997-45ce-a69a-054084d4836f)
-![nucleolus crop](https://github.com/user-attachments/assets/9ccc8bca-d45f-4127-b25c-54853478fa99)
-![nucleolus crop with chromosomes](https://github.com/user-attachments/assets/51ef2dff-9e5c-44c7-89a8-dcee6a788b0f)
 ![nucleolus crop with chromosomes and nucleolus](https://github.com/user-attachments/assets/4505bd72-b6a3-4106-924d-5bbcf75de952)
 ![2D view](https://github.com/user-attachments/assets/1a3fb76d-593f-46e7-94ce-f31c537e4dca)
 
@@ -294,6 +262,40 @@ export as csv
 
 <img width="1784" alt="distance maps" src="https://github.com/user-attachments/assets/b4b29acd-a39e-4c95-ac22-e8631b34467e" />
 <img width="1783" alt="Toroid Positioning" src="https://github.com/user-attachments/assets/4a56d90f-f7ad-443a-9879-667c5ae6d42b" />
+
+
+## 2. Analysis of Chromosome Surface Ridges:
+### project_ROI_front_and_save.m
+
+Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input here is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Front hemi-volume is projected inwards onto the middle plane and saved as an image (see Fig. 3 a).
+
+### project_ROI_back_and_save.m
+
+Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Back hemi-volume is projected inwards onto the middle plane and saved as an image (see Fig. 3 a).
+
+### save_clock_images.m
+
+Description: Used to corroborate manually extracted surface ridge angles. Superimposes surface ridge angles onto projection images.
+
+### make_clock_pdf.m
+
+Description: Synthesizes output from save_clock_images.m into a single .pdf document (one .pdf per cell).
+
+<img width="1769" height="838" alt="angle verification" src="https://github.com/user-attachments/assets/c12db561-cc1e-4bfc-b05b-e9485ee22b55" />
+<img width="1721" height="556" alt="angle analysis" src="https://github.com/user-attachments/assets/03d45e98-ae1d-4e22-bc5c-edb6243efca8" />
+<img width="1461" height="1101" alt="tilted discs diagram" src="https://github.com/user-attachments/assets/0b28c932-0695-4a09-809f-ad93342dc0c1" />
+
+## 3. Spherical Harmonics Expansion:
+
+### spherical_harmonics_expansion.py
+An adaptation of the pipeline originally developed by Viana et al. Paper:  https://doi.org/10.1038/s41586-022-05563-7 \& Github: https://github.com/AllenCell/aics-shparam. 
+Description: Quantitative analysis of dinoflagellate chromosome shape characteristics. PCA clustering based on shape similarity. Comparison of chromosome shape variation across species.
+
+<img width="1207" height="647" alt="Spherical harmonics expansion" src="https://github.com/user-attachments/assets/8bbc81ae-962e-437a-9e51-9c4333fff30a" />
+
+
+## 4. Analysis of Chromosome Cross-sections:
+
 
 # Questions:
 If you have questions about this repository please contact Lucas Philipp (lucas.philipp@mail.mcgill.ca).
