@@ -9,23 +9,23 @@ bioRxiv link to pre-print: __________
 In this study we used a roughly 50:50 mix of original image data, and image data available from the literature. <br />
 
 ### Original Image Data:
-Symbiodinium microadriaticum (3 cells) 4x4x4 nm voxels <br />
-Symbiodinium minutum (3 cells) 4x4x4 nm voxels <br />
-Symbiodinium kawagutii (3 cells) 4x4x4 nm voxels <br />
-Crypthecodinium cohnii (3 cells) 4x4x4 nm voxels <br />
+*Symbiodinium microadriaticum* (3 cells) 4x4x4 nm voxels <br />
+*Symbiodinium minutum* (3 cells) 4x4x4 nm voxels <br />
+*Symbiodinium kawagutii* (3 cells) 4x4x4 nm voxels <br />
+*Crypthecodinium cohnii* (3 cells) 4x4x4 nm voxels <br />
 Data has been uploaded to EMPIAR: DO THIS!!! GIVE ACCESSION CODE
 
 ### Image Data From The Literature:
-Brandtodinium nutricula (3 cells) 8x8x8 nm voxels <br />
+*Brandtodinium nutricula* (3 cells) 8x8x8 nm voxels <br />
 raw data: https://doi.org/10.1111/1462-2920.15766, EMPIAR-47483651
 
-Symbiodinium pilosum (3 cells) 8x8x8 nm voxels <br />
+*Symbiodinium pilosum* (3 cells) 8x8x8 nm voxels <br />
 raw data: https://doi.org/10.1038/s41467-021-21314-0, https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BSST575
 
-Ensiculifera tyrrhenica (1 cell) 8x8x8 nm voxels <br />
+*Ensiculifera tyrrhenica* (1 cell) 8x8x8 nm voxels <br />
 raw data: https://doi.org/10.1242/jcs.261355, EMPIAR-11399
 
-Kareniaceae sp. (2 cells) 8x8x8 nm voxels <br />
+*Kareniaceae sp.* (2 cells) 8x8x8 nm voxels <br />
 raw data: https://doi.org/10.1016/j.cub.2025.03.076, EMPIAR-12627.
 
 For all data raw images were processed and chromosomes, nucleus, nucleolus, DNA rods, DNA crescents, DNA toroids were segmented using Dragonfly. <br />
