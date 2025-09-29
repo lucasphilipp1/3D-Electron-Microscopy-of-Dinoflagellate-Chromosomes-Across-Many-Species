@@ -6,27 +6,30 @@ bioRxiv link to pre-print: __________
 <img width="1779" alt="Screenshot 2025-06-03 at 3 35 26 PM" src="https://github.com/user-attachments/assets/5db5a207-3f23-4f1b-ace6-e3443c9b967c" />
 
 # Data Availability:
+In this study we used a roughly 50:50 mix of original FIB-SEM image stacks, and image data available from the literature. <br />
 
-Raw data is available from EMPIAR: https://www.ebi.ac.uk/bioimage-archive/submit/ 
+### Original FIB-SEM Image Data:
+Symbiodinium microadriaticum (3 cells) 4x4x4 nm voxels <br />
+Symbiodinium minutum (3 cells) 4x4x4 nm voxels <br />
+Symbiodinium kawagutii (3 cells) 4x4x4 nm voxels <br />
+Crypthecodinium cohnii (3 cells) 4x4x4 nm voxels <br />
+Raw data will be uploaded to EMPIAR: DO THIS!!! GIVE ACCESSION CODE
+
+### Raw Image Data From The Literature:
+Brandtodinium nutricula (3 cells) 8x8x8 nm voxels <br />
+raw data: https://doi.org/10.1111/1462-2920.15766, EMPIAR-47483651
+
+Symbiodinium pilosum (3 cells) 8x8x8 nm voxels <br />
+raw data: https://doi.org/10.1038/s41467-021-21314-0, https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BSST575
+
+Ensiculifera tyrrhenica (1 cell) 8x8x8 nm voxels <br />
+raw data: https://doi.org/10.1242/jcs.261355, EMPIAR-11399
+
+Kareniaceae sp. (2 cells) 8x8x8 nm voxels <br />
+raw data: https://doi.org/10.1016/j.cub.2025.03.076, EMPIAR-12627.
 
 Datasets are available in an interactive format online at: https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/ <br />
 Use the K and L keys to scroll through the z stacks.
-
-We imaged:
-Symbiodinium microadriaticum (3 cells) 4x4x4 nm voxels 
-Symbiodinium minutum (3 cells) 4x4x4 nm voxels
-Symbiodinium kawagutii (3 cells) 4x4x4 nm voxels
-Crypthecodinium cohnii (3 cells) 4x4x4 nm voxels 
-
-Raw images taken from the literature:
-Brandtodinium nutricula (3 cells) 8x8x8 nm voxels 
-raw data: https://doi.org/10.1111/1462-2920.15766 
-Symbiodinium pilosum (3 cells) 8x8x8 nm voxels
-raw data: https://doi.org/10.1038/s41467-021-21314-0
-Ensiculifera tyrrhenica (1 cell) 8x8x8 nm voxels
-raw data: https://doi.org/10.1242/jcs.261355 
-Kareniaceae sp. (2 cells) 8x8x8 nm voxels 
-raw data: https://doi.org/10.1016/j.cub.2025.03.076 
 
 # Descriptions of code:
 Scripts are organized into separate folders according to their functionality.
