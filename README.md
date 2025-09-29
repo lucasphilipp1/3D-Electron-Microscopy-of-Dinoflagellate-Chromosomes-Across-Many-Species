@@ -329,7 +329,7 @@ Description: An adaptation of the pipeline originally developed by Viana et al. 
 
 ## 4. Analysis of Chromosome Cross-sections:
 ### cross_section.py
-Description: Take 3D binary .tiff dinoflagellate chromosome segmentations and view their cross-sectional profiles.
+Description: Take 3D binary .tiff of segmented dinoflagellate chromosome and view their cross-sectional profiles.
 <img width="1636" height="823" alt="chromosome cross sections" src="https://github.com/user-attachments/assets/e3b3052b-f0f5-40e9-b0e7-5a294061bf4d" />
 ### make_gif_from_cross_sections.py
 Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produce a gif showing how its XY, XZ, YZ cross-sections vary with principal component coordinate. <br>
