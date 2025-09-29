@@ -31,8 +31,8 @@ raw data: https://doi.org/10.1016/j.cub.2025.03.076, EMPIAR-12627.
 For all data raw images were processed and chromosomes, nucleus, nucleolus, DNA rods, DNA crescents, DNA toroids were segmented using Dragonfly. <br />
 
 # ATLAS Browser Based Viewer - Fibics Inc.:
-Datasets are available in an interactive format online at: https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/. No download or installation required. <br />
-Use the K and L keys to scroll through the z stacks.
+Datasets are available in an interactive format online at: https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/. <br /> 
+No download or installation required. Use the K and L keys to scroll through the z stacks.
 
 <img width="1792" height="1120" alt="BBV screenshot" src="https://github.com/user-attachments/assets/26b8ea76-92f7-403c-86cd-70cd78aa6f8b" />
 
