@@ -60,7 +60,7 @@ for i in range(len(ROI_list)):
 	ROI_COM.paintSubset(voxel_coords[0],voxel_coords[1],voxel_coords[2],voxel_coords[0],voxel_coords[1],voxel_coords[2],1,0)
 ROI_COM.setDataDirty()
 ```
-<img src="https://github.com/user-attachments/assets/e8c62466-8134-470e-94d2-3348fea41876" width="400"/>
+<img src="https://github.com/user-attachments/assets/e8c62466-8134-470e-94d2-3348fea41876" width="700"/>
 
 5. Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
 6. Execute the following commands in Dragonfly's python console:
@@ -216,14 +216,14 @@ for i in range(0,25):  # Repeat a sufficient number of times to fill the volume
 
 COM_multiROI.setDataDirty()
 ```
-![cube](https://github.com/user-attachments/assets/2a4d371a-949f-486c-94cc-13de31539afc)
+<img src="https://github.com/user-attachments/assets/2a4d371a-949f-486c-94cc-13de31539afc" width="700"/>
 
 Voronoi cells should not extend outside nucleus or overlap with nucleolus. <br />
 8. A-B of COM_multiROI (A) - Nucleus ROI (downsampled) (B) -> outside_nucleus (save to new). <br />
 9. A-B of COM_multiROI (A) - outside_nucleus (B) = COM_multiROI (overwrite). <br /> 
 10. A-B of COM_multiROI (A) - Nucleolus ROI (downsampled) (B) = COM_multiROI (overwrite). <br /> 
-![nucleus crop](https://github.com/user-attachments/assets/74c102f9-c997-45ce-a69a-054084d4836f)
-![2D view](https://github.com/user-attachments/assets/1a3fb76d-593f-46e7-94ce-f31c537e4dca)
+<img src="https://github.com/user-attachments/assets/74c102f9-c997-45ce-a69a-054084d4836f" width="700"/>
+<img src="https://github.com/user-attachments/assets/1a3fb76d-593f-46e7-94ce-f31c537e4dca" width="700"/>
 11. Compute volume of voronoi cells. <br /> 
 Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad -> chromosomes are clustered.
 
