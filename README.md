@@ -19,7 +19,7 @@ Scripts are organized into separate folders according to their functionality.
 ## 1. Analysis of Chromosome Surface Ridges:
 <img width="1461" height="1101" alt="tilted discs diagram" src="https://github.com/user-attachments/assets/0b28c932-0695-4a09-809f-ad93342dc0c1" />
 <img width="1769" height="838" alt="angle verification" src="https://github.com/user-attachments/assets/c12db561-cc1e-4bfc-b05b-e9485ee22b55" />
-<img width="1721" height="556" alt="angle analysis" src="https://github.com/user-attachments/assets/286f6ff1-b88c-40d5-96d0-939c8c57bf8a" />
+<img width="1721" height="556" alt="angle analysis" src="https://github.com/user-attachments/assets/03d45e98-ae1d-4e22-bc5c-edb6243efca8" />
 
 ## 2. Spherical Harmonics Expansion:
 
