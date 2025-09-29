@@ -223,10 +223,12 @@ COM_multiROI.setDataDirty()
 <img src="https://github.com/user-attachments/assets/2a4d371a-949f-486c-94cc-13de31539afc" width="700"/>
 
 Voronoi cells should not extend outside nucleus or overlap with nucleolus.
+
 8. A-B of COM_multiROI (A) - Nucleus ROI (downsampled) (B) -> outside_nucleus (save to new).
 9. A-B of COM_multiROI (A) - outside_nucleus (B) = COM_multiROI (overwrite).
 10. A-B of COM_multiROI (A) - Nucleolus ROI (downsampled) (B) = COM_multiROI (overwrite).
 <img src="https://github.com/user-attachments/assets/1a3fb76d-593f-46e7-94ce-f31c537e4dca" width="700"/>
+
 11. Compute volume of voronoi cells.
 Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad -> chromosomes are clustered.
 
