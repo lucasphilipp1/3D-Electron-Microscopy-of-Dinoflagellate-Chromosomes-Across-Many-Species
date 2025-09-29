@@ -288,7 +288,7 @@ Description: Synthesizes output from save_clock_images.m into a single .pdf docu
 ## 3. Spherical Harmonics Expansion:
 
 ### spherical_harmonics_expansion.py
-Description: An adaptation of the pipeline originally developed by Viana et al. Paper:  https://doi.org/10.1038/s41586-022-05563-7 \& Github: https://github.com/AllenCell/aics-shparam.\
+Description: An adaptation of the pipeline originally developed by Viana et al. Paper:  https://doi.org/10.1038/s41586-022-05563-7 \& Github: https://github.com/AllenCell/aics-shparam. <br>
 Quantitative analysis of dinoflagellate chromosome shape characteristics. PCA clustering based on shape similarity. Comparison of chromosome shape variation across species.
 
 <img width="1207" height="647" alt="SHE Schematic" src="https://github.com/user-attachments/assets/e727b33f-3e09-4d1b-a7ae-1bb0be5a4846" />
@@ -307,7 +307,7 @@ Quantitative analysis of dinoflagellate chromosome shape characteristics. PCA cl
 Description: Take 3D binary .tiff dinoflagellate chromosome segmentations and view their cross-sectional profiles.
 <img width="1636" height="823" alt="chromosome cross sections" src="https://github.com/user-attachments/assets/e3b3052b-f0f5-40e9-b0e7-5a294061bf4d" />
 ### make_gif_from_cross_sections.py
-Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produce a gif showing how its cross-sections vary with principal component coordinate.\
+Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produce a gif showing how its cross-sections vary with principal component coordinate. <br>
 <img src="https://github.com/user-attachments/assets/b2b271be-c362-439d-8402-0ed5299510aa" width="400"/> <img src="https://github.com/user-attachments/assets/738cfdef-5a85-49d4-9f3e-467094be817f" width="600"/>
 
 ADD XY/YZ/XZ LABELS
