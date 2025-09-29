@@ -14,9 +14,20 @@ Datasets are available in an interactive format online at: https://petapixelproj
 use the K and L keys to scroll through the z stacks
 
 # Descriptions of code:
+Scripts are organized into separate folders according to their functionality.
+
+## 1. Analysis of Chromosome Surface Ridges:
+<img width="1461" height="1101" alt="tilted discs diagram" src="https://github.com/user-attachments/assets/0b28c932-0695-4a09-809f-ad93342dc0c1" />
+<img width="1769" height="838" alt="angle verification" src="https://github.com/user-attachments/assets/c12db561-cc1e-4bfc-b05b-e9485ee22b55" />
+<img width="1721" height="556" alt="angle analysis" src="https://github.com/user-attachments/assets/286f6ff1-b88c-40d5-96d0-939c8c57bf8a" />
+
+## 2. Spherical Harmonics Expansion:
 
 ### ADD SPHERICAL HARMONICS CODE
 https://github.com/AllenCell/aics-shparam
+<img width="1207" height="647" alt="Spherical harmonics expansion" src="https://github.com/user-attachments/assets/8bbc81ae-962e-437a-9e51-9c4333fff30a" />
+
+## 3. Dragonfly Workflows:
 
 ### CropAndRotateAndExportChromosomes.py
 
@@ -33,8 +44,6 @@ C:\Users\Username\AppData\Local/ORS/Dragonfly(version)/python/OrsPythonPlugins/O
 To help locate the folder, in Dragonfly try: Utilities -> Open All Users Folder in File Browser.
 
 Place CropAndRotateAndExportChromosomes.py in this folder. Start Dragonfly. The menu option should be accessible after right-clicking on a multi-ROI.
-
-NEED TO UPDATE CropAndRotateAndExportChromosomes.py, PyQt5 -> PyQt6 import issue 
 
 ### helix.m
 
