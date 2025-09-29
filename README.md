@@ -64,7 +64,7 @@ ROI_COM.setDataDirty()
 5. Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
 6. Execute the following commands in Dragonfly's python console:   
 <details>
-  <summary>**Click to expand code block**</summary>
+  <summary><strong>Click to expand code block</strong></summary>
 
   ```python
 # Your MultiROI should contain a cloud of single-voxel points (each as their own unique ROI in the MultiROI) to serve as the seeds for Voronoi tessellation
