@@ -47,9 +47,10 @@ ADD FIGURE COMPARING TOROID AND ROD EM INTENSITIES TO CHROMOSOME INTENSITIES AND
 ### Voronoi simulation using Dragonfly's python console:
 Are chromosomes spatially clustered or homogenous? <br />
 CITE Dr. Deering's Paper!!!  <br />
-Downsample Nucleus ROI, Nucleolus ROI, chromosome multiROI to 40nmx40nmx40nm (from 4nmx4nmx4nm).
-Initialize an empty ROI, call it ROI_COM (center of mass) with the geometry of Nucleus ROI (downsampled). The voronoi simulation will continue until all voxels in this geometry are painted so check that the extent of this ROI is a tight box crop around the nucleus and not the whole cell or a larger volume. Extract ROIs from chromosome multiROI (downsampled).
-Input the following commands in Dragonfly's python console:
+1. Downsample Nucleus ROI, Nucleolus ROI, chromosome multiROI to 40nmx40nmx40nm (from 4nmx4nmx4nm).
+2. Initialize an empty ROI, call it ROI_COM (center of mass) with the geometry of Nucleus ROI (downsampled). The voronoi simulation will continue until all voxels in this geometry are painted so check that the extent of this ROI is a tight box crop around the nucleus and not the whole cell or a larger volume.
+3. Extract ROIs from chromosome multiROI (downsampled).
+4. Input the following commands in Dragonfly's python console:
 ```
 ROI_list = *drag and drop chromosome ROIs from drop down menu (top right of screen)*
 ROI_COM = *drag and drop empty ROI from drop down menu (top right of screen)*
@@ -60,10 +61,11 @@ for i in range(len(ROI_list)):
 	ROI_COM.paintSubset(voxel_coords[0],voxel_coords[1],voxel_coords[2],voxel_coords[0],voxel_coords[1],voxel_coords[2],1,0)
 ROI_COM.setDataDirty()
 ```
-Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
+5. Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
 
 ![seed points](https://github.com/user-attachments/assets/e8c62466-8134-470e-94d2-3348fea41876)
 
+6. Execute the following commands in Dragonfly's python console:
 ```
 # Your MultiROI should contain a cloud of single-voxel points (each as their own unique ROI in the MultiROI) to serve as the seeds for Voronoi tessellation
 COM_multiROI = *drag and drop COM_multiROI from drop down menu to set object identifier*
@@ -218,16 +220,20 @@ COM_multiROI.setDataDirty()
 ```
 ![cube](https://github.com/user-attachments/assets/2a4d371a-949f-486c-94cc-13de31539afc)
 
-Voronoi cells should not extend outside nucleus or overlap with nucleolus. <br /> 1. A-B of COM_multiROI (A) - Nucleus ROI (downsampled) (B) -> outside_nucleus (save to new). <br /> 2. A-B of COM_multiROI (A) - outside_nucleus (B) = COM_multiROI (overwrite). <br /> 3. A-B of COM_multiROI (A) - Nucleolus ROI (downsampled) (B) = COM_multiROI (overwrite). <br /> 4. Compute volume of voronoi cells. <br /> Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad -> chromosomes are clustered.
-
+Voronoi cells should not extend outside nucleus or overlap with nucleolus. <br />
+8. A-B of COM_multiROI (A) - Nucleus ROI (downsampled) (B) -> outside_nucleus (save to new). <br />
+9. A-B of COM_multiROI (A) - outside_nucleus (B) = COM_multiROI (overwrite). <br /> 
+10. A-B of COM_multiROI (A) - Nucleolus ROI (downsampled) (B) = COM_multiROI (overwrite). <br /> 
 ![nucleus crop](https://github.com/user-attachments/assets/74c102f9-c997-45ce-a69a-054084d4836f)
 ![2D view](https://github.com/user-attachments/assets/1a3fb76d-593f-46e7-94ce-f31c537e4dca)
+11. Compute volume of voronoi cells. <br /> 
+Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad -> chromosomes are clustered.
 
 ### Write coloured segmentation into image stack:
-Make 3 copies of the image stacks, name them R, G, B respectively
-Export all ROIs from multiROI
-Select all ROIs from drop down menu
-In dragonfly python console
+1. Make 3 copies of the image stacks, name them R, G, B respectively.
+2. Export all ROIs from multiROI.
+3. Select all ROIs from drop down menu, drag and drop into Dragonfly's python console and initialize as ROI_list.
+4. Execute the following commands in python console:
 ```
 ROI_list = *drag and drop ROIs from drop down menu*
 R = *drag image copy 1*
@@ -248,17 +254,19 @@ Select R,G,B images in dropdown. Export->as RGB->.png
 <img width="1055" alt="writing_segmentation_into_image" src="https://github.com/user-attachments/assets/825b3bd0-ea48-4792-951e-b6d1d374b500" />
 ### Protocol for measuring distance of DNA toroids/rods or chromosomes to nuclear membrane/nucleolus/nearest distance to both:
 <img width="1778" height="223" alt="DNA rods:toroids:crescents" src="https://github.com/user-attachments/assets/506ed31b-b9a3-45ad-8904-0c1f790c1007" />
-You can identify toroids in multiROIs by computing the Euler characteristic for all objects: https://dev.theobjects.com/dragonfly_2024_1_release/ORSModel/sphinxIndexORSModelClasses/sphinxIndexORSModelMesh.html#ORSModel.ors.Mesh.getEulerCharacteristicNumber getEulerCharacteristicNumber(self, iTIndex: int) → int. 0 is toroid. 2 is topolically equilvalent to a sphere. <br />
-segment nucleus <br />
-create contour mesh <br />
-create ROI from contour mesh (boundary). 1. create empty ROI 2. export mesh to empty ROI <br />
-create distance map of boundary ROI (make sure geometry of ROI is of the tight crop around the nucleus, or the same as the geometry of the chromosome multi-ROI and DNA rods and toroids multi-ROI) <br />
-on multi-ROI: compute measurements, basic measurements with dataset, min-intensity values, select distance map of nuclear membrane <br />
-export as csv
+You can identify toroids in multiROIs by computing the Euler characteristic for all objects: <br /> https://dev.theobjects.com/dragonfly_2024_1_release/ORSModel/sphinxIndexORSModelClasses/sphinxIndexORSModelMesh.html#ORSModel.ors.Mesh.getEulerCharacteristicNumber getEulerCharacteristicNumber(self, iTIndex: int) → int. \ <br /> 
+0 is toroid. 2 is topolically equilvalent to a sphere. <br />
+1. Segment nucleus. <br />
+2. Create contour mesh of nucleus. <br />
+3. Create ROI from contour mesh (boundary).
+4. Create empty ROI.
+5. Export contour mesh to empty ROI. <br />
+6. Create distance map of boundary ROI (make sure geometry of ROI is of the tight crop around the nucleus, or the same as the geometry of the chromosome multi-ROI and DNA rods and toroids multi-ROI) <br />
+7. On multi-ROI: compute measurements, basic measurements with dataset, min-intensity values, select distance map of nuclear membrane. <br />
+8. Export as csv.
 
 <img width="1784" alt="distance maps" src="https://github.com/user-attachments/assets/b4b29acd-a39e-4c95-ac22-e8631b34467e" />
 <img width="1783" alt="Toroid Positioning" src="https://github.com/user-attachments/assets/4a56d90f-f7ad-443a-9879-667c5ae6d42b" />
-
 
 ## 2. Analysis of Chromosome Surface Ridges:
 ### project_ROI_front_and_save.m
