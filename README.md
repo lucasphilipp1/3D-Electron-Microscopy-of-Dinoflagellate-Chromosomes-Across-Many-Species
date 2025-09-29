@@ -319,7 +319,7 @@ Description: An adaptation of the pipeline originally developed by Viana et al. 
 <br>
 
 1. PCA clustering based on shape similarity.
-2. 2. Quantitative analysis of dinoflagellate chromosome shape characteristics.
+2. Quantitative analysis of dinoflagellate chromosome shape characteristics.
 <img width="1790" height="499" alt="SHE PCA" src="https://github.com/user-attachments/assets/9fc170e1-f14d-4c5b-bf15-a69c45452af0" />
 <br>
 <br>
