@@ -253,8 +253,8 @@ Select R,G,B images in dropdown. Export->as RGB->.png
 <img width="1055" alt="writing_segmentation_into_image" src="https://github.com/user-attachments/assets/825b3bd0-ea48-4792-951e-b6d1d374b500" />
 ### Protocol for measuring distance of DNA toroids/rods or chromosomes to nuclear membrane/nucleolus/nearest distance to both:
 <img width="1778" height="223" alt="DNA rods:toroids:crescents" src="https://github.com/user-attachments/assets/506ed31b-b9a3-45ad-8904-0c1f790c1007" />
-You can identify toroids in multiROIs by computing the Euler characteristic for all objects: <br /> https://dev.theobjects.com/dragonfly_2024_1_release/ORSModel/sphinxIndexORSModelClasses/sphinxIndexORSModelMesh.html#ORSModel.ors.Mesh.getEulerCharacteristicNumber getEulerCharacteristicNumber(self, iTIndex: int) → int. \ <br /> 
-0 is toroid. 2 is topolically equilvalent to a sphere. <br />
+You can identify toroids in multiROIs by computing the Euler characteristic for all objects (provided segmentation is correct): <br /> https://dev.theobjects.com/dragonfly_2024_1_release/ORSModel/sphinxIndexORSModelClasses/sphinxIndexORSModelMesh.html#ORSModel.ors.Mesh.getEulerCharacteristicNumber getEulerCharacteristicNumber(self, iTIndex: int) → int. \ <br /> 
+EulerCharacteristic=0 is toroid. EulerCharacteristic=2 is topolically equilvalent to a sphere. <br />
 1. Segment nucleus. <br />
 2. Create contour mesh of nucleus. <br />
 3. Create ROI from contour mesh (boundary).
@@ -296,7 +296,7 @@ Quantitative analysis of dinoflagellate chromosome shape characteristics. PCA cl
 <img width="1790" height="499" alt="SHE PCA" src="https://github.com/user-attachments/assets/9fc170e1-f14d-4c5b-bf15-a69c45452af0" />
 
 
-<img width="1776" height="849" alt="SHE species comparison" src="https://github.com/user-attachments/assets/9d7340ea-97bc-409b-b4dd-f931bb63d7da" />
+<img width="700" height="239" alt="SHE species comparison" src="https://github.com/user-attachments/assets/9d7340ea-97bc-409b-b4dd-f931bb63d7da" />
 
 ## 4. Analysis of Chromosome Cross-sections:
 ### cross_section_um.py
