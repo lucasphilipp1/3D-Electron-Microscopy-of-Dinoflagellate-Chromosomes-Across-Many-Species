@@ -35,9 +35,9 @@ To help locate the folder, in Dragonfly try: Utilities -> Open All Users Folder 
 ### 3D mask to extract raw EM intensities within volume:
 Input the following commands in Dragonfly's python console:
 
-```
-Image = *drag and drop image object from object list (top right of screen)*
-inverted_ROI = *drag and drop inverted ROI from object list (top right of screen)*   
+```python
+Image = #drag and drop image object here from object list (top right of screen)
+inverted_ROI = #drag and drop inverted ROI here from object list (top right of screen)   
 Image.overwriteValueWithROI(inverted_ROI,0)
 Image.setDataDirty()
 ```
@@ -51,8 +51,8 @@ CITE Dr. Deering's Paper!!!  <br />
 3. Extract ROIs from chromosome multiROI (downsampled).
 4. Input the following commands in Dragonfly's python console:
 ```
-ROI_list = *drag and drop chromosome ROIs from drop down menu (top right of screen)*
-ROI_COM = *drag and drop empty ROI from drop down menu (top right of screen)*
+ROI_list = #drag and drop chromosome ROIs here from drop down menu (top right of screen)
+ROI_COM = #drag and drop empty ROI here from drop down menu (top right of screen)
 for i in range(len(ROI_list)):
         ROI = ROI_list[i]
 	center_of_mass = ROI.getCenterOfMass(0)
@@ -65,19 +65,19 @@ ROI_COM.setDataDirty()
 5. Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
 6. Execute the following commands in Dragonfly's python console:   
 <details>
-  <summary>Click to expand code block</summary>
+  <summary>**Click to expand code block**</summary>
 
   ```python
 # Your MultiROI should contain a cloud of single-voxel points (each as their own unique ROI in the MultiROI) to serve as the seeds for Voronoi tessellation
-COM_multiROI = *drag and drop COM_multiROI from drop down menu to set object identifier*
+COM_multiROI = #drag and drop COM_multiROI here from drop down menu
 
-from ORSModel import ConvolutionKernel #I don't think this import statement is necessary, Dragonfly's python console seems to have everything already imported
+from ORSModel import ConvolutionKernel
 
 # Initialize the kernel for normal isotropic Voronoi tessellation
 uniConvolutionKernel = ConvolutionKernel()
 uniConvolutionKernel.initializeAs3DKernel(5,5,5)  # Uniform dilation 5x5x5 kernel
 
-# Initialize kernel values to form a 5x5x5 spherical kernel for dilation/erosion
+# Initialize kernel values to form a 5x5x5 spherical kernel for dilation
 uniConvolutionKernel.setValueAt(0,0,0,0)
 uniConvolutionKernel.setValueAt(1,0,0,0)
 uniConvolutionKernel.setValueAt(2,0,0,0)
@@ -209,9 +209,9 @@ uniConvolutionKernel.setValueAt(3,4,4,0)
 uniConvolutionKernel.setValueAt(4,4,4,0)
 
 aProgress = None  # No progress bar
-theOutputChannel = None  # My script overwrites the existing MultiROI, no need to create a new one but it is required as an argument for the method
+theOutputChannel = None  #overwrites the existing MultiROI
 labelRange = range(1,COM_multiROI.getLabelCount()) 
-aSetOfLabels = None  # Initialize the label names within the MultiROI
+aSetOfLabels = None
 aSetOfLabels = COM_multiROI.getNonEmptyLabels(aSetOfLabels)  # Get the label names that Dragonfly uses for each ROI in the MultiROI
 
 for i in range(0,25):  # Repeat a sufficient number of times to fill the volume
@@ -237,11 +237,11 @@ Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spa
 2. Export all ROIs from multiROI.
 3. Select all ROIs from drop down menu, drag and drop into Dragonfly's python console and initialize as ROI_list.
 4. Execute the following commands in python console:
-```
+```python
 ROI_list = *drag and drop ROIs from drop down menu*
-R = *drag image copy 1*
-B = *drag image copy 2*
-G = *drag image copy 3*
+R = #drag image copy 1 here from object list (top right of screen)
+B = #drag image copy 2 here from object list (top right of screen)
+G = #drag image copy 3 here from object list (top right of screen)
 for i in range(len(ROI_list)):
         ROI = ROI_list[i]
 	color = ROI.getInitialColor()
@@ -252,7 +252,7 @@ for i in range(len(ROI_list)):
 	B.overwriteValueWithROI(ROI,round(color.getBlue()*255))
 	B.setDataDirty()
 ```
-Select R,G,B images in dropdown. Export->as RGB->.png
+5. Select R,G,B images in dropdown. Right click. Export->as RGB->.png
 <img width="1792" alt="RGB" src="https://github.com/user-attachments/assets/1820a837-e22a-439e-b5bb-b9a921aa8b98" />
 <img width="1055" alt="writing_segmentation_into_image" src="https://github.com/user-attachments/assets/825b3bd0-ea48-4792-951e-b6d1d374b500" />
 ### Protocol for measuring distance of DNA toroids/rods or chromosomes to nuclear membrane/nucleolus/nearest distance to both:
