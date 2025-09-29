@@ -21,17 +21,16 @@ Scripts are organized into separate folders according to their functionality.
 ### CropAndRotateAndExportChromosomes.py
 Description: A custom menu option to re-orient each ROI (chromosome) in a multi-ROI so the chromosome long axis corresponds to the z-axis. Saves everychromosome as binary 3D .tiff files in a folder. There are two version of this script depending on which Dragonfly version you are using (2022.2 or 2024.1).
 
-To load the menu option: Close Dragonfly. Navigate to either of:
-
+1. To load the menu option: Close Dragonfly. Navigate to either of:
 C:\Users\Username\AppData\Local/ORS/Dragonfly(version)/pythonUserExtensions/GenericMenuItems
 C:\Users\Username\AppData\Local/ORS/Dragonfly(version)/pythonAllUsersExtensions/GenericMenuItems
 C:\Users\Username\AppData\Local/ORS/Dragonfly(version)/python/OrsPythonPlugins/OrsGenericMenuItems/menuItems
-
 (it varies from system to system)
 
 To help locate the folder, in Dragonfly try: Utilities -> Open All Users Folder in File Browser.
 
-Place CropAndRotateAndExportChromosomes.py in this folder. Start Dragonfly. The menu option should be accessible after right-clicking on a multi-ROI.
+2. Place CropAndRotateAndExportChromosomes.py in this folder.
+3. Start Dragonfly. The menu option should be accessible after right-clicking on a multi-ROI.
 
 ### 3D mask to extract raw EM intensities within volume:
 Input the following commands in Dragonfly's python console:
