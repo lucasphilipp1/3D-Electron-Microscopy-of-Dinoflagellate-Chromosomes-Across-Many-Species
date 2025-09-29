@@ -221,7 +221,6 @@ COM_multiROI.setDataDirty()
 Voronoi cells should not extend outside nucleus or overlap with nucleolus. <br /> 1. A-B of COM_multiROI (A) - Nucleus ROI (downsampled) (B) -> outside_nucleus (save to new). <br /> 2. A-B of COM_multiROI (A) - outside_nucleus (B) = COM_multiROI (overwrite). <br /> 3. A-B of COM_multiROI (A) - Nucleolus ROI (downsampled) (B) = COM_multiROI (overwrite). <br /> 4. Compute volume of voronoi cells. <br /> Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spaced. Voronoi cell volume distribution is flat/broad -> chromosomes are clustered.
 
 ![nucleus crop](https://github.com/user-attachments/assets/74c102f9-c997-45ce-a69a-054084d4836f)
-![nucleolus crop with chromosomes and nucleolus](https://github.com/user-attachments/assets/4505bd72-b6a3-4106-924d-5bbcf75de952)
 ![2D view](https://github.com/user-attachments/assets/1a3fb76d-593f-46e7-94ce-f31c537e4dca)
 
 ### Write coloured segmentation into image stack:
