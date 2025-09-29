@@ -288,14 +288,20 @@ Description: Synthesizes output from save_clock_images.m into a single .pdf docu
 ## 3. Spherical Harmonics Expansion:
 
 ### spherical_harmonics_expansion.py
-An adaptation of the pipeline originally developed by Viana et al. Paper:  https://doi.org/10.1038/s41586-022-05563-7 \& Github: https://github.com/AllenCell/aics-shparam. 
-Description: Quantitative analysis of dinoflagellate chromosome shape characteristics. PCA clustering based on shape similarity. Comparison of chromosome shape variation across species.
+Description: An adaptation of the pipeline originally developed by Viana et al. Paper:  https://doi.org/10.1038/s41586-022-05563-7 \& Github: https://github.com/AllenCell/aics-shparam.\\
+Quantitative analysis of dinoflagellate chromosome shape characteristics. PCA clustering based on shape similarity. Comparison of chromosome shape variation across species.
 
-<img width="1207" height="647" alt="Spherical harmonics expansion" src="https://github.com/user-attachments/assets/8bbc81ae-962e-437a-9e51-9c4333fff30a" />
+<img width="1207" height="647" alt="SHE Schematic" src="https://github.com/user-attachments/assets/e727b33f-3e09-4d1b-a7ae-1bb0be5a4846" />
 
-![PC2_cross_section](https://github.com/user-attachments/assets/738cfdef-5a85-49d4-9f3e-467094be817f)
+
+<img width="1790" height="499" alt="SHE PCA" src="https://github.com/user-attachments/assets/9fc170e1-f14d-4c5b-bf15-a69c45452af0" />
+
 ![PC1_cross_section](https://github.com/user-attachments/assets/b2b271be-c362-439d-8402-0ed5299510aa)
+![PC2_cross_section](https://github.com/user-attachments/assets/738cfdef-5a85-49d4-9f3e-467094be817f)
 
+<img width="1776" height="849" alt="SHE species comparison" src="https://github.com/user-attachments/assets/7ec8b4da-ce85-4429-869d-df7797df0fb1" />
+
+<img width="1776" height="849" alt="SHE species comparison" src="https://github.com/user-attachments/assets/9d7340ea-97bc-409b-b4dd-f931bb63d7da" />
 
 ## 4. Analysis of Chromosome Cross-sections:
 
