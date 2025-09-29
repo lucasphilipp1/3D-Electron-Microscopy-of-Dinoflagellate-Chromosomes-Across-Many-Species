@@ -9,8 +9,8 @@ bioRxiv link to pre-print: __________
 
 Raw data is available from EMPIAR: https://www.ebi.ac.uk/bioimage-archive/submit/ 
 
-Datasets are available in an interactive format online at: https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/
-use the K and L keys to scroll through the z stacks
+Datasets are available in an interactive format online at: https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/ <br />
+Use the K and L keys to scroll through the z stacks.
 
 # Descriptions of code:
 Scripts are organized into separate folders according to their functionality.
