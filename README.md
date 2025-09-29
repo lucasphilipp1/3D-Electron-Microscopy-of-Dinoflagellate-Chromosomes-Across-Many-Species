@@ -6,16 +6,16 @@ bioRxiv link to pre-print: __________
 <img width="1779" alt="Screenshot 2025-06-03 at 3 35 26 PM" src="https://github.com/user-attachments/assets/5db5a207-3f23-4f1b-ace6-e3443c9b967c" />
 
 # Data Availability:
-In this study we used a roughly 50:50 mix of original FIB-SEM image data, and image data available from the literature. <br />
+In this study we used a roughly 50:50 mix of original image data, and image data available from the literature. <br />
 
-### Original FIB-SEM Image Data:
+### Original Image Data:
 Symbiodinium microadriaticum (3 cells) 4x4x4 nm voxels <br />
 Symbiodinium minutum (3 cells) 4x4x4 nm voxels <br />
 Symbiodinium kawagutii (3 cells) 4x4x4 nm voxels <br />
 Crypthecodinium cohnii (3 cells) 4x4x4 nm voxels <br />
 Raw data will be uploaded to EMPIAR: DO THIS!!! GIVE ACCESSION CODE
 
-### Raw Image Data From The Literature:
+### Image Data From The Literature:
 Brandtodinium nutricula (3 cells) 8x8x8 nm voxels <br />
 raw data: https://doi.org/10.1111/1462-2920.15766, EMPIAR-47483651
 
@@ -28,6 +28,7 @@ raw data: https://doi.org/10.1242/jcs.261355, EMPIAR-11399
 Kareniaceae sp. (2 cells) 8x8x8 nm voxels <br />
 raw data: https://doi.org/10.1016/j.cub.2025.03.076, EMPIAR-12627.
 
+For all data raw images were processed and chromosomes, nucleus, nucleolus, DNA rods, DNA crescents, DNA toroids were segmented using Dragonfly. <br />
 Datasets are available in an interactive format online at: https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/ <br />
 Use the K and L keys to scroll through the z stacks.
 
