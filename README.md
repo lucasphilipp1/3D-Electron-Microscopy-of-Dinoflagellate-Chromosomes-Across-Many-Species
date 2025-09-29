@@ -305,7 +305,7 @@ Comparison of chromosome shape variation across species:
 <img width="700" height="339" alt="SHE species comparison" src="https://github.com/user-attachments/assets/9d7340ea-97bc-409b-b4dd-f931bb63d7da" />
 
 ## 4. Analysis of Chromosome Cross-sections:
-### cross_section_um.py
+### cross_section.py
 Description: Take 3D binary .tiff dinoflagellate chromosome segmentations and view their cross-sectional profiles.
 <img width="1636" height="823" alt="chromosome cross sections" src="https://github.com/user-attachments/assets/e3b3052b-f0f5-40e9-b0e7-5a294061bf4d" />
 ### make_gif_from_cross_sections.py
