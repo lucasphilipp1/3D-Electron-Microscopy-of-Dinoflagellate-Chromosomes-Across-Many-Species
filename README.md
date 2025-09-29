@@ -34,7 +34,6 @@ To help locate the folder, in Dragonfly try: Utilities -> Open All Users Folder 
 
 ### 3D mask to extract raw EM intensities within volume:
 Input the following commands in Dragonfly's python console:
-
 ```python
 Image = #drag and drop image object here from object list (top right of screen)
 inverted_ROI = #drag and drop inverted ROI here from object list (top right of screen)   
