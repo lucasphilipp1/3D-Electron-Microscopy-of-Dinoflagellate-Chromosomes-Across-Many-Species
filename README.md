@@ -296,8 +296,7 @@ Quantitative analysis of dinoflagellate chromosome shape characteristics. PCA cl
 
 <img width="1790" height="499" alt="SHE PCA" src="https://github.com/user-attachments/assets/9fc170e1-f14d-4c5b-bf15-a69c45452af0" />
 
-![PC1_cross_section](https://github.com/user-attachments/assets/b2b271be-c362-439d-8402-0ed5299510aa)
-![PC2_cross_section](https://github.com/user-attachments/assets/738cfdef-5a85-49d4-9f3e-467094be817f)
+
 
 <img width="1776" height="849" alt="SHE species comparison" src="https://github.com/user-attachments/assets/7ec8b4da-ce85-4429-869d-df7797df0fb1" />
 
@@ -305,6 +304,11 @@ Quantitative analysis of dinoflagellate chromosome shape characteristics. PCA cl
 
 ## 4. Analysis of Chromosome Cross-sections:
 
+<img width="1636" height="823" alt="chromosome cross sections" src="https://github.com/user-attachments/assets/e3b3052b-f0f5-40e9-b0e7-5a294061bf4d" />
+
+<img src="https://github.com/user-attachments/assets/b2b271be-c362-439d-8402-0ed5299510aa" width="400"/>
+
+![PC2_cross_section](https://github.com/user-attachments/assets/738cfdef-5a85-49d4-9f3e-467094be817f)
 
 # Questions:
 If you have questions about this repository please contact Lucas Philipp (lucas.philipp@mail.mcgill.ca).
