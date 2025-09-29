@@ -265,7 +265,6 @@ export as csv
 
 
 ## 2. Analysis of Chromosome Surface Ridges:
-
 ### project_ROI_front_and_save.m
 
 Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input here is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Front hemi-volume is projected inwards onto the middle plane and saved as an image (see Fig. 3 a).
@@ -282,14 +281,16 @@ Description: Used to corroborate manually extracted surface ridge angles. Superi
 
 Description: Synthesizes output from save_clock_images.m into a single .pdf document (one .pdf per cell).
 
-<img width="1461" height="1101" alt="tilted discs diagram" src="https://github.com/user-attachments/assets/0b28c932-0695-4a09-809f-ad93342dc0c1" />
 <img width="1769" height="838" alt="angle verification" src="https://github.com/user-attachments/assets/c12db561-cc1e-4bfc-b05b-e9485ee22b55" />
 <img width="1721" height="556" alt="angle analysis" src="https://github.com/user-attachments/assets/03d45e98-ae1d-4e22-bc5c-edb6243efca8" />
+<img width="1461" height="1101" alt="tilted discs diagram" src="https://github.com/user-attachments/assets/0b28c932-0695-4a09-809f-ad93342dc0c1" />
 
 ## 3. Spherical Harmonics Expansion:
 
-### ADD SPHERICAL HARMONICS CODE
-https://github.com/AllenCell/aics-shparam
+### spherical_harmonics_expansion.py
+An adaptation of the pipeline originally developed by Viana et al. Paper:  https://doi.org/10.1038/s41586-022-05563-7 \& Github: https://github.com/AllenCell/aics-shparam. 
+Description: Quantitative analysis of dinoflagellate chromosome shape characteristics. PCA clustering based on shape similarity. Comparison of chromosome shape variation across species.
+
 <img width="1207" height="647" alt="Spherical harmonics expansion" src="https://github.com/user-attachments/assets/8bbc81ae-962e-437a-9e51-9c4333fff30a" />
 
 
