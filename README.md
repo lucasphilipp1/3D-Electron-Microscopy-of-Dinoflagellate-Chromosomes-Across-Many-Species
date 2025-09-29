@@ -303,12 +303,12 @@ Quantitative analysis of dinoflagellate chromosome shape characteristics. PCA cl
 <img width="1776" height="849" alt="SHE species comparison" src="https://github.com/user-attachments/assets/9d7340ea-97bc-409b-b4dd-f931bb63d7da" />
 
 ## 4. Analysis of Chromosome Cross-sections:
-
+### cross_section_um.py
+Description: Take 3D binary .tiff dinoflagellate chromosome segmentations and view their cross-sectional profiles.
 <img width="1636" height="823" alt="chromosome cross sections" src="https://github.com/user-attachments/assets/e3b3052b-f0f5-40e9-b0e7-5a294061bf4d" />
-
-<img src="https://github.com/user-attachments/assets/b2b271be-c362-439d-8402-0ed5299510aa" width="400"/>
-
-![PC2_cross_section](https://github.com/user-attachments/assets/738cfdef-5a85-49d4-9f3e-467094be817f)
+### make_gif_from_cross_sections.py
+Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produce a gif showing how its cross-sections vary with principal component coordinate.
+<img src="https://github.com/user-attachments/assets/b2b271be-c362-439d-8402-0ed5299510aa" width="400"/> <img src="https://github.com/user-attachments/assets/738cfdef-5a85-49d4-9f3e-467094be817f" width="400"/>
 
 # Questions:
 If you have questions about this repository please contact Lucas Philipp (lucas.philipp@mail.mcgill.ca).
