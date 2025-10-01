@@ -71,7 +71,7 @@ Image.setDataDirty()
 
 ### Voronoi simulation using Dragonfly's python console:
 Quantifies whether chromosomes are spatially clustered or located homogenously throughout the nucleus. <br />
-CITE Dr. Deering's Paper!!!  <br />
+
 1. Downsample Nucleus ROI, Nucleolus ROI, chromosome multiROI to 40nmx40nmx40nm (from 4nmx4nmx4nm).
 2. Initialize an empty ROI, call it ROI_COM (center of mass) with the geometry of Nucleus ROI (downsampled). The voronoi simulation will continue until all voxels in this geometry are painted so check that the extent of this ROI is a tight box crop around the nucleus and not the whole cell or a larger volume.
 3. Extract ROIs from chromosome multiROI (downsampled).
@@ -89,7 +89,7 @@ ROI_COM.setDataDirty()
 <img src="https://github.com/user-attachments/assets/e8c62466-8134-470e-94d2-3348fea41876" width="700"/>
 
 5. Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
-6. Execute the following commands in Dragonfly's python console:   
+6. Execute the following commands (credit: Dr. Joseph Deering) in Dragonfly's python console:   
 <details>
   <summary><strong>Click to expand code block</strong></summary>
 
