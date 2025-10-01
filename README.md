@@ -17,16 +17,16 @@ Data has been uploaded to EMPIAR: __________ (coming soon)
 
 ### Image Data From The Literature:
 *Brandtodinium nutricula* (3 cells) 8x8x8 nm voxels <br />
-raw data: https://doi.org/10.1111/1462-2920.15766, EMPIAR-47483651.
+raw data: https://doi.org/10.1111/1462-2920.15766, EMPIAR-47483651
 
 *Symbiodinium pilosum* (3 cells) 8x8x8 nm voxels <br />
-raw data: https://doi.org/10.1038/s41467-021-21314-0, https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BSST575.
+raw data: https://doi.org/10.1038/s41467-021-21314-0, https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BSST575
 
 *Ensiculifera tyrrhenica* (1 cell) 8x8x8 nm voxels <br />
-raw data: https://doi.org/10.1242/jcs.261355, EMPIAR-11399.
+raw data: https://doi.org/10.1242/jcs.261355, EMPIAR-11399
 
 *Kareniaceae sp.* (2 cells) 8x8x8 nm voxels <br />
-raw data: https://doi.org/10.1016/j.cub.2025.03.076, EMPIAR-12627.
+raw data: https://doi.org/10.1016/j.cub.2025.03.076, EMPIAR-12627
 
 # ATLAS Browser Based Viewer:
 This online infrastructure is developed and maintained by Fibics Incorporated. For more information visit: https://www.petapixelproject.com/about.html <br />
