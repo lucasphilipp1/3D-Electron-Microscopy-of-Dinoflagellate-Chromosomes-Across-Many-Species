@@ -50,7 +50,7 @@ Description: A custom menu option to re-orient each ROI (chromosome) in a multi-
 1. To load the menu option: Close Dragonfly. Navigate to either of:
 C:\Users\Username\AppData\Local/ORS/Dragonfly(version)/pythonUserExtensions/GenericMenuItems
 C:\Users\Username\AppData\Local/ORS/Dragonfly(version)/pythonAllUsersExtensions/GenericMenuItems
-C:\Users\Username\AppData\Local/ORS/Dragonfly(version)/python/OrsPythonPlugins/OrsGenericMenuItems/menuItems
+C:\Users\Username\AppData\Local/ORS/Dragonfly(version)/python/OrsPythonPlugins/OrsGenericMenuItems/menuItems <br />
 (it varies from system to system)
 
 To help locate the folder, in Dragonfly try: Utilities -> Open All Users Folder in File Browser.
