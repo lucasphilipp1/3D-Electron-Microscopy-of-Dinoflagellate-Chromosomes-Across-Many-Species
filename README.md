@@ -1,7 +1,7 @@
 # This GitHub repository contains content related to:
 <img width="1792" height="1005" alt="Title Page" src="https://github.com/user-attachments/assets/c271f475-1a78-4c24-8690-013589a63f57" />
 
-bioRxiv link to pre-print: __________
+bioRxiv link to pre-print: __________ (coming soon)
 
 <img width="1779" alt="Screenshot 2025-06-03 at 3 35 26 PM" src="https://github.com/user-attachments/assets/5db5a207-3f23-4f1b-ace6-e3443c9b967c" />
 
@@ -13,7 +13,7 @@ In this study we used a roughly 50:50 mix of original image data, and image data
 *Symbiodinium minutum* (3 cells) 4x4x4 nm voxels <br />
 *Symbiodinium kawagutii* (3 cells) 4x4x4 nm voxels <br />
 *Crypthecodinium cohnii* (3 cells) 4x4x4 nm voxels <br />
-Data has been uploaded to EMPIAR: DO THIS!!! GIVE ACCESSION CODE
+Data has been uploaded to EMPIAR: __________ (coming soon)
 
 ### Image Data From The Literature:
 *Brandtodinium nutricula* (3 cells) 8x8x8 nm voxels <br />
