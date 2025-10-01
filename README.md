@@ -251,9 +251,9 @@ COM_multiROI.setDataDirty()
 
 Voronoi cells should not extend outside nucleus or overlap with nucleolus.
 
-8. A-B of COM_multiROI (A) - Nucleus ROI (downsampled) (B) -> outside_nucleus (save to new).
-9. A-B of COM_multiROI (A) - outside_nucleus (B) = COM_multiROI (overwrite).
-10. A-B of COM_multiROI (A) - Nucleolus ROI (downsampled) (B) = COM_multiROI (overwrite).
+8. A-B of COM_multiROI (A) = Nucleus ROI (downsampled) (B) = outside_nucleus -> (save to new).
+9. A-B of COM_multiROI (A) = outside_nucleus (B) = COM_multiROI ->(overwrite).
+10. A-B of COM_multiROI (A) = Nucleolus ROI (downsampled) (B) = COM_multiROI -> (overwrite).
 <img src="https://github.com/user-attachments/assets/1a3fb76d-593f-46e7-94ce-f31c537e4dca" width="700"/>
 
 11. Compute volume of voronoi cells.
@@ -304,10 +304,10 @@ EulerCharacteristic=0 is toroid. EulerCharacteristic=2 is topolically equilvalen
 <img width="1721" height="556" alt="angle analysis" src="https://github.com/user-attachments/assets/03d45e98-ae1d-4e22-bc5c-edb6243efca8" />
 
 ### project_ROI_front_and_save.m
-Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input here is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Front hemi-volume is projected inwards onto the middle plane and saved as an image (see Fig. 3 a).
+Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input here is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Front hemi-volume is projected inwards onto the middle plane and saved as an image.
 
 ### project_ROI_back_and_save.m
-Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Back hemi-volume is projected inwards onto the middle plane and saved as an image (see Fig. 3 a).
+Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Back hemi-volume is projected inwards onto the middle plane and saved as an image.
 
 ### save_clock_images.m
 Description: Used to corroborate manually extracted surface ridge angles. Superimposes surface ridge angles onto projection images.
