@@ -28,8 +28,6 @@ raw data: https://doi.org/10.1242/jcs.261355, EMPIAR-11399
 *Kareniaceae sp.* (2 cells) 8x8x8 nm voxels <br />
 raw data: https://doi.org/10.1016/j.cub.2025.03.076, EMPIAR-12627.
 
-For all data raw images were processed and chromosomes, nucleus, nucleolus, DNA rods, DNA crescents, DNA toroids were segmented using Dragonfly. <br />
-
 # ATLAS Browser Based Viewer:
 This online infrastructure is developed and maintained by Fibics Incorporated. For more information visit: https://www.petapixelproject.com/about.html <br />
 
@@ -43,6 +41,7 @@ No download or installation required. Use the K and L keys to scroll through the
 Scripts are organized into separate folders according to their functionality.
 
 ## 1. Dragonfly Workflows:
+Dragonfly is a free software for academics: https://dragonfly.comet.tech/
 <img width="1790" height="737" alt="Dragonfly Workflow" src="https://github.com/user-attachments/assets/38f4d324-1184-4d5f-8711-ae89edd2b50b" />
 
 ### CropAndRotateAndExportChromosomes.py
