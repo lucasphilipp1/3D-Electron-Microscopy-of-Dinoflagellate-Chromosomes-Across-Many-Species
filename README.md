@@ -66,7 +66,7 @@ inverted_ROI = #drag and drop inverted ROI here from object list (top right of s
 Image.overwriteValueWithROI(inverted_ROI,0)
 Image.setDataDirty()
 ```
-ADD FIGURE COMPARING TOROID AND ROD EM INTENSITIES TO CHROMOSOME INTENSITIES AND TO NUCLEOLUS INTENSITIES
+<!-- ADD FIGURE COMPARING TOROID AND ROD EM INTENSITIES TO CHROMOSOME INTENSITIES AND TO NUCLEOLUS INTENSITIES -->
 
 ### Voronoi simulation using Dragonfly's python console:
 Quantifies whether chromosomes are spatially clustered or located homogenously throughout the nucleus. <br />
