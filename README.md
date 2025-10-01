@@ -262,9 +262,8 @@ Voronoi cell volume distribution is sharply peaked -> chromosomes are evenly spa
 ### Write coloured segmentation into image stack:
 1. Make 3 copies of the image stacks, name them R, G, B respectively.
 2. Export all ROIs from multiROI.
-3. Export all ROIs from multiROI.
-4. Select all ROIs from drop down menu, drag and drop into Dragonfly's python console and initialize as ROI_list.
-5. Execute the following commands in python console:
+3. Select all ROIs from drop down menu, drag and drop into Dragonfly's python console and initialize as ROI_list.
+4. Execute the following commands in python console:
 ```python
 ROI_list = *drag and drop ROIs from drop down menu*
 R = #drag image copy 1 here from object list (top right of screen)
