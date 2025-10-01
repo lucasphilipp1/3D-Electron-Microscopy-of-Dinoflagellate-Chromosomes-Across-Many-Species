@@ -33,7 +33,8 @@ For all data raw images were processed and chromosomes, nucleus, nucleolus, DNA 
 # ATLAS Browser Based Viewer:
 This online infrastructure is developed and maintained by Fibics Incorporated. For more information visit: https://www.petapixelproject.com/about.html <br />
 
-Segmented images and 3D reconstructions of dinoflagellate nuclei are available in interactive format online at: 👉👉👉 https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/ 👈👈👈
+Segmented images and 3D reconstructions of dinoflagellate nuclei are available in interactive format online at: <br /> 
+👉👉👉 https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/ 👈👈👈 <br />
 No download or installation required. Use the K and L keys to scroll through the z stacks.
 
 <img width="1792" height="1120" alt="BBV screenshot" src="https://github.com/user-attachments/assets/26b8ea76-92f7-403c-86cd-70cd78aa6f8b" />
