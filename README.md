@@ -10,7 +10,6 @@ In this study we used a roughly 50:50 mix of original image data, and image data
 
 ### Original Image Data:
 *Symbiodinium microadriaticum* (3 cells) 4x4x4 nm voxels <br />
-
 *Breviolum minutum* (3 cells) 4x4x4 nm voxels <br />
 *Fugacium kawagutii* (3 cells) 4x4x4 nm voxels <br />
 *Crypthecodinium cohnii* (3 cells) 4x4x4 nm voxels <br />
@@ -19,7 +18,6 @@ Data has been uploaded to EMPIAR: __________ (coming soon)
 ### Image Data From The Literature:
 *Brandtodinium nutricula* (3 cells) 8x8x8 nm voxels <br />
 raw data: https://doi.org/10.1111/1462-2920.15766, EMPIAR-47483651
-https://petapixelproject.com/mosaics/biology/dinoflagellates/3d_movies/Brandtodinium_Cell_1_Clip_Sweep_And_Spin_1.mp4 
 
 *Symbiodinium pilosum* (3 cells) 8x8x8 nm voxels <br />
 raw data: https://doi.org/10.1038/s41467-021-21314-0, https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BSST575
