@@ -300,7 +300,7 @@ EulerCharacteristic=0 is toroid. EulerCharacteristic=2 is topolically equilvalen
 <img width="1784" alt="distance maps" src="https://github.com/user-attachments/assets/b4b29acd-a39e-4c95-ac22-e8631b34467e" />
 
 ## 2. Analysis of Chromosome Surface Ridges:
-<img width="1721" height="556" alt="angle analysis" src="https://github.com/user-attachments/assets/03d45e98-ae1d-4e22-bc5c-edb6243efca8" />
+<img width="1721" height="556" alt="Screenshot 2025-10-15 at 2 42 21 PM" src="https://github.com/user-attachments/assets/b519d57d-7a43-47b9-b707-0aa5fd5c8da1" />
 
 ### project_ROI_front_and_save.m
 Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input here is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Front hemi-volume is projected inwards onto the middle plane and saved as an image.
@@ -313,7 +313,8 @@ Description: Used to corroborate manually extracted surface ridge angles. Superi
 
 ### make_clock_pdf.m
 Description: Synthesizes output from save_clock_images.m into a single .pdf document (one .pdf per cell).
-<img width="1769" height="838" alt="angle verification" src="https://github.com/user-attachments/assets/c12db561-cc1e-4bfc-b05b-e9485ee22b55" />
+<img width="1769" height="838" alt="Screenshot 2025-10-15 at 2 38 16 PM" src="https://github.com/user-attachments/assets/bbcf7c41-b76f-465d-9ec6-31220bb65640" />
+
 ## 3. Spherical Harmonics Expansion:
 
 ### spherical_harmonics_expansion.py
@@ -330,12 +331,13 @@ Description: An adaptation of the pipeline originally developed by Viana et al. 
 <br>
 
 3. Comparison of chromosome shape variation across species.
-<img width="700" height="339" alt="SHE species comparison" src="https://github.com/user-attachments/assets/9d7340ea-97bc-409b-b4dd-f931bb63d7da" />
+<img width="700" height="339" alt="Screenshot 2025-10-15 at 2 37 33 PM" src="https://github.com/user-attachments/assets/dd993adc-b510-4dcd-817d-1ee1b4ae8918" />
 
 ## 4. Analysis of Chromosome Cross-sections:
 ### cross_section.py
 Description: Take 3D binary .tiff of segmented dinoflagellate chromosome and view their cross-sectional profiles.
-<img width="1636" height="823" alt="chromosome cross sections" src="https://github.com/user-attachments/assets/e3b3052b-f0f5-40e9-b0e7-5a294061bf4d" />
+<img width="1636" height="823" alt="Screenshot 2025-10-15 at 2 35 28 PM" src="https://github.com/user-attachments/assets/5079a463-1cf7-42f7-bab2-a78dd0919976" />
+
 ### make_gif_from_cross_sections.py
 Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produce a gif showing how its XY, XZ, YZ cross-sections vary with principal component coordinate. <br>
 <img src="https://github.com/user-attachments/assets/633b1d78-0294-47bc-bfaf-19b4616bbe49" width="279"/> <img src="https://github.com/user-attachments/assets/6e06aa8c-be6d-4283-b046-b46f27a2d696" width="472"/>
