@@ -89,7 +89,7 @@ ROI_COM.setDataDirty()
 <img src="https://github.com/user-attachments/assets/e8c62466-8134-470e-94d2-3348fea41876" width="700"/>
 
 5. Use connected components -> new multiROI 6-connected on ROI_COM to make a multiROI. Name it COM_multiROI.
-6. Execute the following commands (credit: Dr. Joseph Deering) in Dragonfly's python console:   
+6. Execute the following commands (credit: Dr. Joseph Deering. See https://pubs.acs.org/doi/10.1021/acsnano.5c11922) in Dragonfly's python console:   
 <details>
   <summary><strong>Click to expand code block</strong></summary>
 
