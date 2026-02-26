@@ -1,5 +1,5 @@
 # This GitHub repository contains content related to:
-<img width="1789" height="1002" alt="upload to github!" src="https://github.com/user-attachments/assets/b32da4a5-9313-473d-b433-9acc7271c2a0" />
+<img width="1792" height="1006" alt="Screenshot 2026-02-26 at 1 18 15 PM" src="https://github.com/user-attachments/assets/1f78d268-63a3-4d3c-9e4c-33ab8ed80cda" />
 
 bioRxiv link to pre-print: __________ (coming soon)
 
@@ -282,22 +282,6 @@ for i in range(len(ROI_list)):
 6. Select R,G,B images in dropdown. Right click. Export->as RGB->.png
 <img width="1792" alt="RGB" src="https://github.com/user-attachments/assets/1820a837-e22a-439e-b5bb-b9a921aa8b98" />
 <img width="800" alt="writing_segmentation_into_image" src="https://github.com/user-attachments/assets/825b3bd0-ea48-4792-951e-b6d1d374b500" />
-
-### Protocol for measuring distance of DNA toroids/rods or chromosomes to nuclear membrane/nucleolus/nearest distance to both:
-<img width="1778" height="223" alt="DNA rods:toroids:crescents" src="https://github.com/user-attachments/assets/506ed31b-b9a3-45ad-8904-0c1f790c1007" />
-You can identify toroids in multiROIs by computing the Euler characteristic for all objects (provided segmentation is correct): https://dev.theobjects.com/dragonfly_2024_1_release/ORSModel/sphinxIndexORSModelClasses/sphinxIndexORSModelMesh.html#ORSModel.ors.Mesh.getEulerCharacteristicNumber getEulerCharacteristicNumber(self, iTIndex: int) → int. <br />
-EulerCharacteristic=0 is toroid. EulerCharacteristic=2 is topolically equilvalent to a sphere.
-
-1. Segment nucleus.
-2. Create contour mesh of nucleus.
-3. Create ROI from contour mesh (boundary).
-4. Create empty ROI.
-5. Export contour mesh to empty ROI.
-6. Create distance map of boundary ROI (make sure geometry of ROI is of the tight crop around the nucleus, or the same as the geometry of the chromosome multi-ROI and DNA rods and toroids multi-ROI)
-7. On multi-ROI: compute measurements, basic measurements with dataset, min-intensity values, select distance map of nuclear membrane.
-8. Export as csv.
-
-<img width="1784" alt="distance maps" src="https://github.com/user-attachments/assets/b4b29acd-a39e-4c95-ac22-e8631b34467e" />
 
 ## 2. Analysis of Chromosome Surface Ridges:
 <img width="1721" height="556" alt="Screenshot 2025-10-15 at 2 42 21 PM" src="https://github.com/user-attachments/assets/b519d57d-7a43-47b9-b707-0aa5fd5c8da1" />
