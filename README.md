@@ -3,7 +3,7 @@
 
 bioRxiv link to pre-print: __________ (coming soon)
 
-<img width="1792" height="643" alt="all cells" src="https://github.com/user-attachments/assets/421d75c9-e79e-42a9-86bd-598776b019c7" />
+[EM_fig_S3.bmp](https://github.com/user-attachments/files/26190178/EM_fig_S3.bmp)
 
 # Data Availability:
 In this study we used a roughly 50:50 mix of original image data, and image data available from the literature. <br />
