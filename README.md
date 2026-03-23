@@ -324,7 +324,7 @@ Description: Take 3D binary .tiff of segmented dinoflagellate chromosome and vie
 
 ### make_gif_from_cross_sections.py
 Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produce a gif showing how its XY, XZ, YZ cross-sections vary with principal component coordinate. <br>
-<img src="[https://github.com/user-attachments/assets/633b1d78-0294-47bc-bfaf-19b4616bbe49](https://github.com/user-attachments/assets/3993e9a9-4337-4814-8ea1-878bf939f63e)" width="279"/> <img src="[https://github.com/user-attachments/assets/6e06aa8c-be6d-4283-b046-b46f27a2d696](https://github.com/user-attachments/assets/b3e633bd-10cc-408c-897f-32d892b572ad)" width="472"/>
+<img src="[https://github.com/user-attachments/assets/633b1d78-0294-47bc-bfaf-19b4616bbe49]" width="279"/> <img src="[https://github.com/user-attachments/assets/6e06aa8c-be6d-4283-b046-b46f27a2d696]" width="472"/>
 
 # Questions:
 If you have questions about this repository please contact Lucas Philipp (lucas.philipp@mail.mcgill.ca).
