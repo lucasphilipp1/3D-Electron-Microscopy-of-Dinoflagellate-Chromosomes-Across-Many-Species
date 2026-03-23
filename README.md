@@ -3,8 +3,6 @@
 
 bioRxiv link to pre-print: __________ (coming soon)
 
-<img width="2500" height="3906" alt="EM_fig_S3" src="https://github.com/user-attachments/assets/b2e8f4dd-b811-4f4f-988b-e0a9439e45bd" />
-
 # Data Availability:
 In this study we used a roughly 50:50 mix of original image data, and image data available from the literature. <br />
 
@@ -27,6 +25,8 @@ raw data: https://doi.org/10.1242/jcs.261355, EMPIAR-11399
 
 *Kareniaceae sp.* (2 cells) 8x8x8 nm voxels <br />
 raw data: https://doi.org/10.1016/j.cub.2025.03.076, EMPIAR-12627
+
+<img width="2500" height="3906" alt="EM_fig_S3" src="https://github.com/user-attachments/assets/b2e8f4dd-b811-4f4f-988b-e0a9439e45bd" />
 
 # ATLAS Browser Based Viewer:
 This online infrastructure is developed and maintained by Fibics Incorporated. For more information visit: https://www.petapixelproject.com/about.html <br />
