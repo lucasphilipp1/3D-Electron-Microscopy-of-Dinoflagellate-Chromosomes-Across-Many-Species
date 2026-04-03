@@ -26,7 +26,7 @@ raw data: https://doi.org/10.1242/jcs.261355, EMPIAR-11399
 *Kareniaceae sp.* (2 cells) 8x8x8 nm voxels <br />
 raw data: https://doi.org/10.1016/j.cub.2025.03.076, EMPIAR-12627
 
-<img width="2500" height="3906" alt="EM_fig_S3" src="https://github.com/user-attachments/assets/81e4309a-e135-4b7e-9092-9dac1da03f60" />
+<img width="2500" height="3906" alt="figure_S3" src="https://github.com/user-attachments/assets/88651cf7-f825-441d-a5f7-1675b63b35b2" />
 
 # ATLAS Browser Based Viewer:
 This online infrastructure is developed and maintained by Fibics Incorporated. For more information visit: https://www.petapixelproject.com/about.html <br />
