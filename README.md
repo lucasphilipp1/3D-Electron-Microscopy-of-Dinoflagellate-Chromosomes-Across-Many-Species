@@ -315,7 +315,7 @@ Description: An adaptation of the pipeline originally developed by Viana et al. 
 <br>
 
 3. Comparison of chromosome shape variation across species.
-<img width="1097" height="305" alt="figure_3 copy" src="https://github.com/user-attachments/assets/ef2955ff-3608-4c43-ae3b-43d2dfcb02f5" />
+<img width="1111" height="310" alt="figure_3 copy" src="https://github.com/user-attachments/assets/d0b73827-a7ac-4bff-b195-51baddea5117" />
 
 ## 4. Analysis of Chromosome Cross-sections:
 ### cross_section.py
