@@ -33,6 +33,7 @@ This online infrastructure is developed and maintained by Fibics Incorporated. F
 
 Segmented images and 3D reconstructions of dinoflagellate nuclei are available in interactive format online at: <br /> 
 👉👉👉 https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/ 👈👈👈 <br />
+
 No download or installation required. Use the K and L keys to scroll through the z stacks. <br />
 Click the play button to view a slide-show highlighting interesting features in the data.
 
