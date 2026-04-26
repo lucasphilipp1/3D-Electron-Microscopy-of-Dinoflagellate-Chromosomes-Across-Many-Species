@@ -44,6 +44,7 @@ Scripts are organized into separate folders according to their functionality.
 
 ## 1. Dragonfly Workflows:
 Dragonfly is a free software for academics: https://dragonfly.comet.tech/
+
 <img width="1790" height="737" alt="Dragonfly Workflow" src="https://github.com/user-attachments/assets/38f4d324-1184-4d5f-8711-ae89edd2b50b" />
 
 ### CropAndRotateAndExportChromosomes.py
