@@ -299,7 +299,8 @@ Description: Used to corroborate manually extracted surface ridge angles. Superi
 
 ### make_clock_pdf.m
 Description: Synthesizes output from save_clock_images.m into a single .pdf document (one .pdf per cell).
-<img width="1769" height="838" alt="Screenshot 2025-10-15 at 2 38 16 PM" src="https://github.com/user-attachments/assets/bbcf7c41-b76f-465d-9ec6-31220bb65640" />
+
+<img width="1737" height="626" alt="Screenshot 2026-04-13 at 3 16 53 PM" src="https://github.com/user-attachments/assets/1c612a78-d9aa-44fc-ac04-7971cef73093" />
 
 ## 3. Spherical Harmonics Expansion:
 
