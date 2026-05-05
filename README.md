@@ -327,14 +327,14 @@ Description: Take 3D binary .tiff of segmented dinoflagellate chromosome and vie
 
 ### make_gif_from_cross_sections.py
 Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produce a gif showing how its XY, XZ, YZ cross-sections vary with principal component coordinate. <br>
-<img src="https://github.com/user-attachments/assets/099b7f07-7e86-42c6-a08b-7fedd0cc2157" width="375"/> <img src="https://github.com/user-attachments/assets/555a01f3-9053-48d9-9b38-f88ec9914007" width="622"/>
+<img src="https://github.com/user-attachments/assets/099b7f07-7e86-42c6-a08b-7fedd0cc2157" width="338"/> <img src="https://github.com/user-attachments/assets/555a01f3-9053-48d9-9b38-f88ec9914007" width="560"/>
 
 ## 5. Skeletonization Post-Processing:
 
 ### plot_skeleton.py
 Description: Plot output skeleton from Voxel Cores and Erosion Thickness (See Methods in Paper). Color skeleton according to maximally inscribed ball radii.
 
-<table>
+<table border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td><img width="448" height="280" alt="Screenshot 2026-05-05 at 2 53 01 PM" src="https://github.com/user-attachments/assets/8ab812bb-4d1c-49ba-b7d6-512182561dd5" /></td>
     <td><img width="448" height="280" alt="Screenshot 2026-05-05 at 2 52 51 PM" src="https://github.com/user-attachments/assets/bcdd20a6-0efd-4972-9f15-452e1da61881" /></td>
@@ -342,9 +342,9 @@ Description: Plot output skeleton from Voxel Cores and Erosion Thickness (See Me
 </table>
 
 ### plot_skeleton_connected_components.py
-Description: Run after plot_skeleton.py. Subdivide skeleton into parts by thresholding max inscribed ball radii. Uses connected components to further subdivide skeleton at junction nodes with connectivity degree >= 3.
+Description: Run after plot_skeleton.py. Subdivide skeleton into thick tubes and thin bridges by thresholding the max inscribed ball radii. Uses connected components to further subdivide skeleton at junction nodes with connectivity degree >= 3.
 
-<table>
+<table border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td><img width="448" height="280" alt="kawagutii_run2_se2_top_right_cell_low_branches" src="https://github.com/user-attachments/assets/9b80a185-3fb1-4a9c-b38f-2e55ae7c58b5" /></td>
     <td><img width="448" height="280" alt="kawagutii_run2_se2_top_right_cell_high_branches" src="https://github.com/user-attachments/assets/6b0513f4-8d6d-4c76-afb2-467749acf654" /></td>
