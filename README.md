@@ -333,15 +333,15 @@ Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produc
 ### plot_skeleton.py
 Description: Plot output skeleton from Voxel Cores and Erosion Thickness (See Methods in Paper). Color skeleton according to maximally inscribed ball radii.
 
-<img width="896" height="560" alt="Screenshot 2026-05-05 at 2 53 01 PM" src="https://github.com/user-attachments/assets/8ab812bb-4d1c-49ba-b7d6-512182561dd5" />
-<img width="896" height="560" alt="Screenshot 2026-05-05 at 2 52 51 PM" src="https://github.com/user-attachments/assets/bcdd20a6-0efd-4972-9f15-452e1da61881" />
+<img width="448" height="280" alt="Screenshot 2026-05-05 at 2 53 01 PM" src="https://github.com/user-attachments/assets/8ab812bb-4d1c-49ba-b7d6-512182561dd5" />
+<img width="448" height="280" alt="Screenshot 2026-05-05 at 2 52 51 PM" src="https://github.com/user-attachments/assets/bcdd20a6-0efd-4972-9f15-452e1da61881" />
 
 
 ### plot_skeleton_connected_components.py
 Description: Run after plot_skeleton.py. Subdivide skeleton into parts by thresholding max inscribed ball radii. Uses connected components to further subdivide skeleton at junction nodes with connectivity degree >= 3.
 
-<img width="896" height="560" alt="kawagutii_run2_se2_top_right_cell_low_branches" src="https://github.com/user-attachments/assets/9b80a185-3fb1-4a9c-b38f-2e55ae7c58b5" />
-<img width="896" height="560" alt="kawagutii_run2_se2_top_right_cell_high_branches" src="https://github.com/user-attachments/assets/6b0513f4-8d6d-4c76-afb2-467749acf654" />
+<img width="448" height="280" alt="kawagutii_run2_se2_top_right_cell_low_branches" src="https://github.com/user-attachments/assets/9b80a185-3fb1-4a9c-b38f-2e55ae7c58b5" />
+<img width="448" height="280" alt="kawagutii_run2_se2_top_right_cell_high_branches" src="https://github.com/user-attachments/assets/6b0513f4-8d6d-4c76-afb2-467749acf654" />
 
 # Questions:
 If you have questions about this repository please contact Lucas Philipp (lucas.philipp@mail.mcgill.ca).
