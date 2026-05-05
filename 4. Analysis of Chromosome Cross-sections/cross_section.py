@@ -99,7 +99,8 @@ plt.ylabel('Perpendicular axis [um]')
 plt.ylim((0,.6))
 plt.xlim((-1.5,1.5)) 
 plt.gca().set_aspect('equal', adjustable='box')
-plt.yticks([0, .200, .400, .600])  # Only show these y-ticks
+plt.yticks([0, .200, .400, .600])
+plt.grid(False)
 plt.show()
 
 all_fit_params.append([220,200,1.8,'S. microadriaticum'])
@@ -121,7 +122,8 @@ plt.ylabel('Perpendicular axis [um]')
 plt.ylim((0,.6))
 plt.xlim((-1.5,1.5)) 
 plt.gca().set_aspect('equal', adjustable='box')
-plt.yticks([0, .200, .400, .600])  # Only show these y-ticks
+plt.yticks([0, .200, .400, .600])
+plt.grid(False)
 plt.show()
 
 all_fit_params.append([240,180,2,'S. pilosum'])
@@ -143,7 +145,8 @@ plt.ylabel('Perpendicular axis [um]')
 plt.ylim((0,.6))
 plt.xlim((-1.5,1.5)) 
 plt.gca().set_aspect('equal', adjustable='box')
-plt.yticks([0, .200, .400, .600])  # Only show these y-ticks
+plt.yticks([0, .200, .400, .600])
+plt.grid(False)
 plt.show()
 
 all_fit_params.append([320,230,2.2,'S. minutum'])
@@ -157,7 +160,7 @@ for i, pair in enumerate(cohnii):
     z = z-np.mean(z)
     z_all.extend(z * 4)
     x_all.extend(x * 4)
-    plt.plot(z*4/1000, x*4/1000, 'pink', alpha=0.2)
+    plt.plot(z*4/1000, x*4/1000, 'magenta', alpha=0.1)
 rectellipse=plot_rectellipse(z_all,x_all,-1000,1000,600,450,290,2.1)
 plt.plot(rectellipse[:, 0]/1000, rectellipse[:, 1]/1000, 'k--', linewidth=2)
 plt.xlabel('Long axis [um]')
@@ -165,7 +168,8 @@ plt.ylabel('Perpendicular axis [um]')
 plt.ylim((0,.6))
 plt.xlim((-1.5,1.5)) 
 plt.gca().set_aspect('equal', adjustable='box')
-plt.yticks([0, .200, .400, .600])  # Only show these y-ticks
+plt.yticks([0, .200, .400, .600])
+plt.grid(False)
 plt.show()
 all_fit_params.append([450,290,2.1,'C. cohnii'])
 
@@ -186,7 +190,7 @@ for i, pair in enumerate(nutricula):
         x_all_tall.extend(x * 4)
     plt.plot(z*4/1000, x*4/1000, 'red', alpha=0.075)
 rectellipse=plot_rectellipse(z_all_short,x_all_short,-1000,1000,600,155,100,1.7)
-plt.plot(rectellipse[:, 0]/1000, rectellipse[:, 1]/1000, 'k--', linewidth=2)
+plt.plot(rectellipse[:, 0]/1000, rectellipse[:, 1]/1000, 'k-', linewidth=2)
 rectellipse=plot_rectellipse(z_all_tall,x_all_tall,-1000,1000,600,440,290,2.2)
 plt.plot(rectellipse[:, 0]/1000, rectellipse[:, 1]/1000, 'k--', linewidth=2)
 plt.xlabel('Long axis [um]')
@@ -194,7 +198,8 @@ plt.ylabel('Perpendicular axis [um]')
 plt.ylim((0,.6))
 plt.xlim((-1.5,1.5)) 
 plt.gca().set_aspect('equal', adjustable='box')
-plt.yticks([0, .200, .400, .600])  # Only show these y-ticks
+plt.yticks([0, .200, .400, .600])
+plt.grid(False)
 plt.show()
 
 all_fit_params.append([155,100,1.7,'B. nutricula inner ring'])
@@ -217,7 +222,8 @@ plt.ylabel('Perpendicular axis [um]')
 plt.ylim((0,.6))
 plt.xlim((-1.5,1.5)) 
 plt.gca().set_aspect('equal', adjustable='box')
-plt.yticks([0, .200, .400, .600])  # Only show these y-ticks
+plt.yticks([0, .200, .400, .600])
+plt.grid(False)
 plt.show()
 
 all_fit_params.append([720,410,2.7,'E. tyrrhenica'])
@@ -239,7 +245,8 @@ plt.ylabel('Perpendicular axis [um]')
 plt.ylim((0,.6))
 plt.xlim((-1.5,1.5)) 
 plt.gca().set_aspect('equal', adjustable='box')
-plt.yticks([0, .200, .400, .600])  # Only show these y-ticks
+plt.yticks([0, .200, .400, .600])
+plt.grid(False)
 plt.show()
 
 all_fit_params.append([865,285,2.3,'K. sp.'])
@@ -275,7 +282,7 @@ sm = plt.cm.ScalarMappable(cmap="rainbow", norm=plt.Normalize(vmin=np.min(p_swee
 sm.set_array([])
 cbar = fig.colorbar(sm, ax=ax, label='Curvature p', shrink=0.8, ticks=[1,2,3,4,5,6,7,8,9,10])
 plt.rcParams.update({'font.size': 14})
-
+plt.grid(False)
 plt.show()
 
 #relate curvature and aspect ratio
@@ -283,23 +290,49 @@ a = [row[0] for row in all_fit_params]
 b = [row[1] for row in all_fit_params]
 p = [row[2] for row in all_fit_params]
 labels = [row[3] for row in all_fit_params]
-colors = ['blue', 'purple', 'orange', 'pink', 'red', 'red', 'grey', 'black']
+colors = ['blue', 'purple', 'orange', 'magenta', 'red', 'red', 'grey', 'black']
 
 aspect_ratio = np.array(a) / np.array(b)
 
-plt.rcParams.update({'font.size': 20})
-plt.figure(figsize=(8,6))
-plt.figure(figsize=(8,6))
-for i in range(len(aspect_ratio)):
-    plt.scatter(aspect_ratio[i], p[i], color=colors[i], s=100)
-    #plt.text(aspect_ratio[i], p[i], labels[i], fontsize=12, ha='left', va='bottom')
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import numpy as np
 
-plt.xlabel('Aspect ratio a/b')
-plt.ylabel('Curvature p')
-plt.ylim((1,10))
-plt.xlim((1,3.25))
-plt.yticks([1, 2, 3, 5, 10])  # Only show these y-ticks
-plt.xticks([1, 1.5, 2, 2.5, 3])  # Only show these y-ticks
+plt.rcParams.update({'font.size': 20})
+fig, ax = plt.subplots(figsize=(8, 6))
+
+red_indices = [i for i, c in enumerate(colors) if c == 'red']
+
+for i in range(len(aspect_ratio)):
+    if i == red_indices[0]:
+        # First red: solid black outline
+        ax.scatter(aspect_ratio[i], p[i], color='red', s=100,
+                   edgecolors='black', linewidths=1.5)
+    elif i == red_indices[1]:
+        # Second red: draw point then overlay dashed circle patch
+        ax.scatter(aspect_ratio[i], p[i], color='red', s=100, zorder=3)
+        r_pt = np.sqrt(100 / np.pi)
+        circle = mpatches.Circle(
+            (aspect_ratio[i], p[i]), 1,
+            fill=False, edgecolor='black', linewidth=1.5,
+            linestyle='dashed', zorder=4,
+            transform=ax.transData
+        )
+        ax.scatter(aspect_ratio[i], p[i], s=100, facecolors='none',
+                   edgecolors='black', linewidths=1.5,
+                   linestyle=(0, (4, 4)), zorder=4)  # dashed pattern
+    else:
+        ax.scatter(aspect_ratio[i], p[i], color=colors[i], s=100)
+
+ax.set_xlabel('Aspect ratio a/b', fontsize=32)
+ax.set_ylabel('Curvature p', fontsize=32)
+ax.set_ylim((1, 10))
+ax.set_xlim((1, 3.25))
+ax.set_yticks([1, 2, 3, 5, 10])
+ax.tick_params(labelsize=18)
+ax.set_xticks([1, 1.5, 2, 2.5, 3])
+ax.grid(False)
+plt.tight_layout()
 plt.show()
 
 

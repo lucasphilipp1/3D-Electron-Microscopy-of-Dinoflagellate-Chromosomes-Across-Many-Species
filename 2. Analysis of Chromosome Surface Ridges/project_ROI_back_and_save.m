@@ -3,12 +3,12 @@
 
 % Iterate through folder
 ROI_start = 1;
-ROI_end = 130;
+ROI_end = 100;
 
 for i = ROI_start:1:ROI_end
-    I = tiffreadVolume(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ross Sea Dinoflagellate/Ross Sea Dinoflagellate Cell 3 Chromosomes 4nm voxels/ROI %i.tiff",i));
+    I = tiffreadVolume(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Crypthecodinium cohnii/Cell 3/ROI %i.tiff",i));
     %Permute and project volume
-    imwrite(project_back(I),sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ross Sea Dinoflagellate/Ross Sea Dinoflagellate Cell 3 Chromosomes 4nm voxels/back/projected_ROI_back%i.png",i));
+    imwrite(project_back(I),sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Crypthecodinium cohnii/Cell 3/back/projected_ROI_back%i.png",i));
 end
 
 % I = tiffreadVolume('/Users/lucasphilipp/Downloads/run3 se2 right cell edited/cylinder1/ROI 1.tiff');

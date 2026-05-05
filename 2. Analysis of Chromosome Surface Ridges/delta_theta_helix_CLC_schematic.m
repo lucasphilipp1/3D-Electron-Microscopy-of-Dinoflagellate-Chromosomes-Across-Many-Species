@@ -68,13 +68,16 @@ front_back_half_colormap = [];
 for i = 1:1:size(xyz_coordinates(1:1:end,2))
     temp=xyz_coordinates(1:1:end,2);
     if temp(i)>0
-        front_back_half_colormap = [front_back_half_colormap; [0.3293, 0.1227, 0.3707]];	%light purple
+        %front_back_half_colormap = [front_back_half_colormap; [0.3293, 0.1227, 0.3707]];	%light purple
+        front_back_half_colormap = [front_back_half_colormap; [0.3, 0.3, 0.3]];
     else
-        front_back_half_colormap = [front_back_half_colormap; [0.8884, 0.3309, 1.0000]]; %dark purple
+        %front_back_half_colormap = [front_back_half_colormap; [0.8884, 0.3309, 1.0000]]; %dark purple
+        front_back_half_colormap = [front_back_half_colormap; [0.8, 0.8, 0.8]]; %dark purple
     end
 end
 
 figure
+axis off
 screen = get(0, 'Screensize');
 screen(3)=screen(3)/1.75;
 set(gcf, 'Position', screen);
@@ -84,12 +87,14 @@ for i = 1:total_points-1
 end
 scatter3(xyz_coordinates(1:1:end,1),xyz_coordinates(1:1:end,2),xyz_coordinates(1:1:end,3),2000,front_back_half_colormap,'filled')
 h1 = plot3(nan, nan, nan, 'o', 'MarkerSize', 14, ...
-    'MarkerFaceColor', [0.8884, 0.3309, 1.0000], 'MarkerEdgeColor', 'none');
+        'MarkerFaceColor', [.8, .8, .8], 'MarkerEdgeColor', 'none');
+    %'MarkerFaceColor', [0.8884, 0.3309, 1.0000], 'MarkerEdgeColor', 'none');
 h2 = plot3(nan, nan, nan, 'o', 'MarkerSize', 14, ...
-    'MarkerFaceColor', [0.3293, 0.1227, 0.3707], 'MarkerEdgeColor', 'none');
-lgd=legend([h1, h2], {'Front Half', 'Back Half'}, 'Location', 'northeastoutside');
-lgd.FontSize = 32;
-lgd.Box = 'off';
+        'MarkerFaceColor', [.3, .3, .3], 'MarkerEdgeColor', 'none');
+    %'MarkerFaceColor', [0.3293, 0.1227, 0.3707], 'MarkerEdgeColor', 'none');
+%lgd=legend([h1, h2], {'Front Half', 'Back Half'}, 'Location', 'northeastoutside');
+%lgd.FontSize = 32;
+%lgd.Box = 'off';
 set(gca,'Xticklabel',[])
 set(gca,'Yticklabel',[])
 set(gca,'Zticklabel',[])
@@ -128,6 +133,7 @@ for i = 1:1:size(xyz_coordinates(1:1:end,2))
 end
 
 figure
+axis off
 screen = get(0, 'Screensize');
 screen(3)=screen(3)/1.75;
 set(gcf, 'Position', screen);
@@ -170,6 +176,7 @@ for i = 1:1:size(xyz_coordinates(1:1:end,2))
 end
 
 figure
+axis off
 screen = get(0, 'Screensize');
 screen(3)=screen(3)/1.75;
 set(gcf, 'Position', screen);

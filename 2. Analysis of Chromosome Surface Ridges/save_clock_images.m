@@ -1,8 +1,8 @@
 clc
 clear
 
-ROI_start = 1;
-ROI_end = 130;
+ROI_start = 2;
+ROI_end = 187;
 
 % %colours
 % 'Symbiodinium microadriaticum'
@@ -14,15 +14,21 @@ ROI_end = 130;
 % 'Brandtodinium nutricula'
 % [0.6350 0.0780 0.1840]
 % 'Ensiculifera tyrrhenica'
-% [0.6419 0.3218 0.4157]
+% [0.7 0.7 0.7]
+% 'Ross Sea Dinoflagellate'
+% [0 0 0]
+% Symbiodinium kawagutii
+% [0.4660 0.6740 0.1880]
+% Crypthecodinium cohnii
+% [1 0 1]
 
-ImageJ_angles = readtable("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ross Sea Dinoflagellate/Ross Sea Dinoflagellate Cell 3 Chromosomes 4nm Voxels/RSD Cell 3.csv");
+ImageJ_angles = readtable("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Crypthecodinium Cohnii/CC cell 2.csv");
 clock_info = [str2double(extract(ImageJ_angles.Label, digitsPattern)) ImageJ_angles.Angle]; %back first, front second
 
 for i = ROI_start:1:ROI_end
     if size(find(clock_info(:,1)==i),1)>0 %angle extracted
         angles = clock_info(find(clock_info(:,1)==i),2);
-        I_front = imread(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ross Sea Dinoflagellate/Ross Sea Dinoflagellate Cell 3 Chromosomes 4nm Voxels/front/projected_ROI_front%i.png",i));
+        I_front = imread(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Crypthecodinium cohnii/Cell 2/front/projected_ROI_front%i.png",i));
         figure
         imshow(I_front,[])
         hold
@@ -45,12 +51,14 @@ for i = ROI_start:1:ROI_end
             % plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [0.4940 0.1840 0.5560],'LineWidth',2)
             % 'Symbiodinium minutum'
             % plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [0.9290 0.6940 0.1250],'LineWidth',2)
+            % 'Crypthecodinium cohnii'
+            plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [1 0 1],'LineWidth',2)
             % % 'Brandtodinium nutricula'
             % plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [0.6350 0.0780 0.1840],'LineWidth',2)
             % 'Ensiculifera tyrrhenica'
             % plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [0.7 0.7 0.7],'LineWidth',2)
             % % 'Ross Sea Dinoflagellate'
-            plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [0.4 0.4 0.4],'LineWidth',2)
+            %plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [0.4 0.4 0.4],'LineWidth',2)
         else
             % %colours
             % % 'Symbiodinium microadriaticum'
@@ -59,18 +67,20 @@ for i = ROI_start:1:ROI_end
             % plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color', [0.4940 0.1840 0.5560],'LineWidth',2)
             % 'Symbiodinium minutum'
             % plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color',[0.9290 0.6940 0.1250],'LineWidth',2)
+            % 'Crypthecodinium cohnii'
+            plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color', [1 0 1],'LineWidth',2)
             % % 'Brandtodinium nutricula'
             % plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color', [0.6350 0.0780 0.1840],'LineWidth',2)
             % 'Ensiculifera tyrrhenica'
             % plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color', [0.7 0.7 0.7],'LineWidth',2)
             % % 'Ross Sea Dinoflagellate'
-            plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color', [0.4 0.4 0.4],'LineWidth',2)
+            % plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color', [0.4 0.4 0.4],'LineWidth',2)
         end
         ax = gca;
-        exportgraphics(ax,"/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ross Sea Dinoflagellate/Ross Sea Dinoflagellate Cell 3 Chromosomes 4nm Voxels/check/"+sprintf('angle_check_front_ROI_%i.jpg',i),"Resolution",1000)
+        exportgraphics(ax,"/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Crypthecodinium cohnii/Cell 2/check/"+sprintf('angle_check_front_ROI_%i.jpg',i),"Resolution",1000)
         close
 
-        I_back = imread(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ross Sea Dinoflagellate/Ross Sea Dinoflagellate Cell 3 Chromosomes 4nm Voxels/back/projected_ROI_back%i.png",i));
+        I_back = imread(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Crypthecodinium cohnii/Cell 2/back/projected_ROI_back%i.png",i));
         figure
         imshow(I_back,[])
         hold
@@ -93,12 +103,14 @@ for i = ROI_start:1:ROI_end
             % plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [0.4940 0.1840 0.5560],'LineWidth',2)
             % 'Symbiodinium minutum'
             % plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [0.9290 0.6940 0.1250],'LineWidth',2)
+            % 'Crypthecodinium cohnii'
+            plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [1 0 1],'LineWidth',2)
             % % 'Brandtodinium nutricula'
             % plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [0.6350 0.0780 0.1840],'LineWidth',2)
             % % 'Ensiculifera tyrrhenica'
             % plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [0.7 0.7 0.7],'LineWidth',2)
             % % 'Ross Sea Dinoflagellate'
-            plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [0.4 0.4 0.4],'LineWidth',2)
+            % plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [0.4 0.4 0.4],'LineWidth',2)
         else
             % % 'Symbiodinium microadriaticum'
             % plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color', [0 0.4470 0.7410],'LineWidth',2)
@@ -106,15 +118,17 @@ for i = ROI_start:1:ROI_end
             % plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color', [0.4940 0.1840 0.5560],'LineWidth',2)
             % 'Symbiodinium minutum'
             % plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color',[0.9290 0.6940 0.1250],'LineWidth',2)
+            % 'Crypthecodinium cohnii'
+            plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color',[1 0 1],'LineWidth',2)
             % % 'Brandtodinium nutricula'
             % plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color', [0.6350 0.0780 0.1840],'LineWidth',2)
             % % 'Ensiculifera tyrrhenica'
             % plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color', [0.7 0.7 0.7],'LineWidth',2)
-             % % 'Ross Sea Dinoflagellate'
-            plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color', [0.4 0.4 0.4],'LineWidth',2)
+            % % 'Ross Sea Dinoflagellate'
+            % plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color', [0.4 0.4 0.4],'LineWidth',2)
         end
         ax = gca;
-        exportgraphics(ax,"/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ross Sea Dinoflagellate/Ross Sea Dinoflagellate Cell 3 Chromosomes 4nm Voxels/check/"+sprintf('angle_check_back_ROI_%i.jpg',i),"Resolution",1000)
+        exportgraphics(ax,"/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Crypthecodinium cohnii/Cell 2/check/"+sprintf('angle_check_back_ROI_%i.jpg',i),"Resolution",1000)
         close
     end
 end

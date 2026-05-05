@@ -2,10 +2,10 @@ from PIL import Image, ImageOps, ImageDraw, ImageFont
 import os
 import numpy as np
 
-xy_folder = '/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Spherical Harmonics Expansion/all/PC1/xy'
-yz_folder = '/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Spherical Harmonics Expansion/all/PC1/yz/'
-xz_folder = '/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Spherical Harmonics Expansion/all/PC1/xz/'
-output_gif = 'PC1_cross_section.gif'
+xy_folder = '/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Spherical Harmonics Expansion/all/PC2/xy/'
+yz_folder = '/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Spherical Harmonics Expansion/all/PC2/yz/'
+xz_folder = '/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Spherical Harmonics Expansion/all/PC2/xz/'
+output_gif = '/Users/lucasphilipp/Downloads/PC2_cross_section.gif'
 frame_duration = 100  # ms per frame
 
 def load_grayscale_images(folder):
@@ -59,7 +59,7 @@ frame_height = aligned_height + label_height
 frame_width = xy_max[0] + xz_max[0] + yz_max[0]
 
 try:
-    font = ImageFont.truetype("Arial.ttf", size=30)
+    font = ImageFont.truetype("Arial.ttf", size=45)
 except:
     font = ImageFont.load_default()
 
@@ -81,13 +81,13 @@ for i in range(num_frames):
     draw = ImageDraw.Draw(frame)
 
     # Draw PC1 label at top-left
-    label = f"PC1: {pc1_values[i]:.1f}"
-    #label = f"PC2: {pc2_values[i]:.1f}"
+    #label = f"PC1: {pc1_values[i]:.1f}"
+    label = f"PC2: {pc2_values[i]:.1f}"
 
     draw.text((10, 10), label, fill=255, font=font)
     
     # Draw XY, XZ, YZ labels at bottom
-    y_text_pos = frame_height - label_height + 5
+    y_text_pos = frame_height - label_height - 10
 
     # Get centers of each section
     xy_center = xy_max[0] // 2

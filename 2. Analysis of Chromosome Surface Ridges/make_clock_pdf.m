@@ -1,8 +1,8 @@
 clc
 clear
 
-ROI_start = 1;
-ROI_end = 165;
+ROI_start = 2;
+ROI_end = 187;
 
 Images_front = {ROI_end,1};
 Images_back = {ROI_end,1};
@@ -10,18 +10,18 @@ Images_back = {ROI_end,1};
 Images_front_clock = {ROI_end,1};
 Images_back_clock = {ROI_end,1};
 
-ImageJ_angles = readtable("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ross Sea Dinoflagellate/Ross Sea Dinoflagellate Cell 2 Chromosomes 4nm Voxels/RSD Cell 2.csv");
+ImageJ_angles = readtable("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Crypthecodinium cohnii/CC cell 2.csv");
 clock_info = [str2double(extract(ImageJ_angles.Label, digitsPattern)) ImageJ_angles.Angle]; %back first, front second
 
 for i = ROI_start:1:ROI_end
-    Images_front{i} = imread(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ross Sea Dinoflagellate/Ross Sea Dinoflagellate Cell 2 Chromosomes 4nm Voxels/front/projected_ROI_front%i.png",i));
-    Images_back{i} = imread(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ross Sea Dinoflagellate/Ross Sea Dinoflagellate Cell 2 Chromosomes 4nm Voxels/back/projected_ROI_back%i.png",i));
+    Images_front{i} = imread(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Crypthecodinium cohnii/Cell 2/front/projected_ROI_front%i.png",i));
+    Images_back{i} = imread(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Crypthecodinium cohnii/Cell 2/back/projected_ROI_back%i.png",i));
 end
 
 for j = 1:1:size(clock_info,1)
     i=clock_info(j,1);
-    Images_front_clock{i} = imread(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ross Sea Dinoflagellate/Ross Sea Dinoflagellate Cell 2 Chromosomes 4nm Voxels/check/angle_check_front_ROI_%i.jpg",i));
-    Images_back_clock{i} = imread(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Ross Sea Dinoflagellate/Ross Sea Dinoflagellate Cell 2 Chromosomes 4nm Voxels/check/angle_check_back_ROI_%i.jpg",i));
+    Images_front_clock{i} = imread(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Crypthecodinium cohnii/Cell 2/check/angle_check_front_ROI_%i.jpg",i));
+    Images_back_clock{i} = imread(sprintf("/Users/lucasphilipp/Desktop/Research/Weber/Dinoflagellate FIB-SEM Data/Slice & View/Crypthecodinium cohnii/Cell 2/check/angle_check_back_ROI_%i.jpg",i));
 end
 
 for i = ROI_start:1:ROI_end
@@ -61,9 +61,23 @@ for i = ROI_start:1:ROI_end
     i
 end
 
+
+% for i = ROI_start:1:ROI_end
+%     figure;
+%     tiledlayout(1,2)
+%     nexttile
+%     imshow(Images_front{i});
+%     title('Front Half');
+%     nexttile
+%     imshow(Images_back{i});
+%     title('Back Half');
+%     sgtitle(sprintf('ROI %i',i));
+%     i
+% end
+
 % append each of the figures to output.pdf
 for i=1:ROI_end-ROI_start+1
-    exportgraphics(figure(i), 'Ross Sea Dinoflagellate Cell 2 chromosome angles.pdf', 'Append', true);
+    exportgraphics(figure(i), 'Crypthecodinium cohnii Cell 2 chromosome angles.pdf', 'Append', true);
 end
 
 % close all
