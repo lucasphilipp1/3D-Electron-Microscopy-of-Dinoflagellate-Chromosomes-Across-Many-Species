@@ -342,7 +342,7 @@ Description: Plot output skeleton from Voxel Cores and Erosion Thickness (See Me
 </table>
 
 ### plot_skeleton_connected_components.py
-Description: Run after plot_skeleton.py. Subdivide skeleton into thick tubes and thin bridges by thresholding the max inscribed ball radii. Uses connected components to further subdivide skeleton at junction nodes with connectivity degree >= 3.
+Description: Subdivide skeleton into thick tubes and thin bridges by thresholding the max inscribed ball radii. Uses connected components to further subdivide skeleton at junction nodes with connectivity degree >= 3.
 
 <table style="border-collapse: collapse; border: none;">
   <tr>
