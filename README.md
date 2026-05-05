@@ -330,7 +330,6 @@ Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produc
 <img src="https://github.com/user-attachments/assets/099b7f07-7e86-42c6-a08b-7fedd0cc2157" width="338"/> <img src="https://github.com/user-attachments/assets/555a01f3-9053-48d9-9b38-f88ec9914007" width="560"/>
 
 ## 5. Skeletonization Post-Processing:
-
 ### plot_skeleton.py
 Description: Plot output skeleton from Voxel Cores (https://github.com/danielyan86129/voxel_ma) and Erosion Thickness (https://github.com/danielyan86129/ET). Colors skeleton according to maximally inscribed ball radii. See Methods section in paper for more details.
 
