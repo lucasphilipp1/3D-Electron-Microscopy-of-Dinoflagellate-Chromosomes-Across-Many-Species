@@ -841,115 +841,115 @@ pc2_all = pca_all.components_[1]
 #microadriaticum
 SHE_microadriaticum_cell1 = pd.concat([microadriaticum_cell1], ignore_index=True, sort=False)
 pca_microadriaticum_cell1 = PCA(n_components=2)
-pca_microadriaticum_cell1.fit_transform(SHE_microadriaticum_cell1.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_microadriaticum_cell1.fit_transform(SHE_microadriaticum_cell1.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_microadriaticum_cell1 = pca_microadriaticum_cell1.components_[0]
 pc2_microadriaticum_cell1 = pca_microadriaticum_cell1.components_[1]
 
 SHE_microadriaticum_cell2 = pd.concat([microadriaticum_cell2], ignore_index=True, sort=False)
 pca_microadriaticum_cell2 = PCA(n_components=2)
-pca_microadriaticum_cell2.fit_transform(SHE_microadriaticum_cell2.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_microadriaticum_cell2.fit_transform(SHE_microadriaticum_cell2.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_microadriaticum_cell2 = pca_microadriaticum_cell2.components_[0]
 pc2_microadriaticum_cell2 = pca_microadriaticum_cell2.components_[1]
 
 SHE_microadriaticum_cell3 = pd.concat([microadriaticum_cell3], ignore_index=True, sort=False)
 pca_microadriaticum_cell3 = PCA(n_components=2)
-pca_microadriaticum_cell3.fit_transform(SHE_microadriaticum_cell3.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_microadriaticum_cell3.fit_transform(SHE_microadriaticum_cell3.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_microadriaticum_cell3 = pca_microadriaticum_cell3.components_[0]
 pc2_microadriaticum_cell3 = pca_microadriaticum_cell3.components_[1]
 
 #pilosum
 SHE_pilosum_cell1 = pd.concat([pilosum_cell1], ignore_index=True, sort=False)
 pca_pilosum_cell1 = PCA(n_components=2)
-pca_pilosum_cell1.fit_transform(SHE_pilosum_cell1.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_pilosum_cell1.fit_transform(SHE_pilosum_cell1.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_pilosum_cell1 = pca_pilosum_cell1.components_[0]
 pc2_pilosum_cell1 = pca_pilosum_cell1.components_[1]
 
 SHE_pilosum_cell2 = pd.concat([pilosum_cell2], ignore_index=True, sort=False)
 pca_pilosum_cell2 = PCA(n_components=2)
-pca_pilosum_cell2.fit_transform(SHE_pilosum_cell2.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_pilosum_cell2.fit_transform(SHE_pilosum_cell2.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_pilosum_cell2 = pca_pilosum_cell2.components_[0]
 pc2_pilosum_cell2 = pca_pilosum_cell2.components_[1]
 
 SHE_pilosum_cell3 = pd.concat([pilosum_cell3], ignore_index=True, sort=False)
 pca_pilosum_cell3 = PCA(n_components=2)
-pca_pilosum_cell3.fit_transform(SHE_pilosum_cell3.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_pilosum_cell3.fit_transform(SHE_pilosum_cell3.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_pilosum_cell3 = pca_pilosum_cell3.components_[0]
 pc2_pilosum_cell3 = pca_pilosum_cell3.components_[1]
 
 #minutum
 SHE_minutum_cell1 = pd.concat([minutum_cell1], ignore_index=True, sort=False)
 pca_minutum_cell1 = PCA(n_components=2)
-pca_minutum_cell1.fit_transform(SHE_minutum_cell1.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_minutum_cell1.fit_transform(SHE_minutum_cell1.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_minutum_cell1 = pca_minutum_cell1.components_[0]
 pc2_minutum_cell1 = pca_minutum_cell1.components_[1]
 
 SHE_minutum_cell2 = pd.concat([minutum_cell2], ignore_index=True, sort=False)
 pca_minutum_cell2 = PCA(n_components=2)
-pca_minutum_cell2.fit_transform(SHE_minutum_cell2.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_minutum_cell2.fit_transform(SHE_minutum_cell2.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_minutum_cell2 = pca_minutum_cell2.components_[0]
 pc2_minutum_cell2 = pca_minutum_cell2.components_[1]
 
 SHE_minutum_cell3 = pd.concat([minutum_cell3], ignore_index=True, sort=False)
 pca_minutum_cell3 = PCA(n_components=2)
-pca_minutum_cell3.fit_transform(SHE_minutum_cell3.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_minutum_cell3.fit_transform(SHE_minutum_cell3.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_minutum_cell3 = pca_minutum_cell3.components_[0]
 pc2_minutum_cell3 = pca_minutum_cell3.components_[1]
 
 #cohnii
 SHE_cohnii_cell1 = pd.concat([cohnii_cell1], ignore_index=True, sort=False)
 pca_cohnii_cell1 = PCA(n_components=2)
-pca_cohnii_cell1.fit_transform(SHE_cohnii_cell1.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_cohnii_cell1.fit_transform(SHE_cohnii_cell1.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_cohnii_cell1 = pca_cohnii_cell1.components_[0]
 pc2_cohnii_cell1 = pca_cohnii_cell1.components_[1]
 
 SHE_cohnii_cell2 = pd.concat([cohnii_cell2], ignore_index=True, sort=False)
 pca_cohnii_cell2 = PCA(n_components=2)
-pca_cohnii_cell2.fit_transform(SHE_cohnii_cell2.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_cohnii_cell2.fit_transform(SHE_cohnii_cell2.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_cohnii_cell2 = pca_cohnii_cell2.components_[0]
 pc2_cohnii_cell2 = pca_cohnii_cell2.components_[1]
 
 SHE_cohnii_cell3 = pd.concat([cohnii_cell3], ignore_index=True, sort=False)
 pca_cohnii_cell3 = PCA(n_components=2)
-pca_cohnii_cell3.fit_transform(SHE_cohnii_cell3.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_cohnii_cell3.fit_transform(SHE_cohnii_cell3.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_cohnii_cell3 = pca_cohnii_cell3.components_[0]
 pc2_cohnii_cell3 = pca_cohnii_cell3.components_[1]
 
 #nutricula
 SHE_nutricula_cell1 = pd.concat([nutricula_cell1], ignore_index=True, sort=False)
 pca_nutricula_cell1 = PCA(n_components=2)
-pca_nutricula_cell1.fit_transform(SHE_nutricula_cell1.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_nutricula_cell1.fit_transform(SHE_nutricula_cell1.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_nutricula_cell1 = pca_nutricula_cell1.components_[0]
 pc2_nutricula_cell1 = pca_nutricula_cell1.components_[1]
 
 SHE_nutricula_cell2 = pd.concat([nutricula_cell2], ignore_index=True, sort=False)
 pca_nutricula_cell2 = PCA(n_components=2)
-pca_nutricula_cell2.fit_transform(SHE_nutricula_cell2.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_nutricula_cell2.fit_transform(SHE_nutricula_cell2.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_nutricula_cell2 = pca_nutricula_cell2.components_[0]
 pc2_nutricula_cell2 = pca_nutricula_cell2.components_[1]
 
 SHE_nutricula_cell3 = pd.concat([nutricula_cell3], ignore_index=True, sort=False)
 pca_nutricula_cell3 = PCA(n_components=2)
-pca_nutricula_cell3.fit_transform(SHE_nutricula_cell3.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_nutricula_cell3.fit_transform(SHE_nutricula_cell3.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_nutricula_cell3 = pca_nutricula_cell3.components_[0]
 pc2_nutricula_cell3 = pca_nutricula_cell3.components_[1]
 
 #tyrrhenica
 SHE_tyrrhenica_cell1 = pd.concat([tyrrhenica_cell1], ignore_index=True, sort=False)
 pca_tyrrhenica_cell1 = PCA(n_components=2)
-pca_tyrrhenica_cell1.fit_transform(SHE_tyrrhenica_cell1.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_tyrrhenica_cell1.fit_transform(SHE_tyrrhenica_cell1.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_tyrrhenica_cell1 = pca_tyrrhenica_cell1.components_[0]
 pc2_tyrrhenica_cell1 = pca_tyrrhenica_cell1.components_[1]
 
 #ross sea dinoflagellate
 SHE_ross_sea_dinoflagellate_cell2 = pd.concat([ross_sea_dinoflagellate_cell2], ignore_index=True, sort=False)
 pca_ross_sea_dinoflagellate_cell2 = PCA(n_components=2)
-pca_ross_sea_dinoflagellate_cell2.fit_transform(SHE_ross_sea_dinoflagellate_cell2.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_ross_sea_dinoflagellate_cell2.fit_transform(SHE_ross_sea_dinoflagellate_cell2.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_ross_sea_dinoflagellate_cell2 = pca_ross_sea_dinoflagellate_cell2.components_[0]
 pc2_ross_sea_dinoflagellate_cell2 = pca_ross_sea_dinoflagellate_cell2.components_[1]
 
 SHE_ross_sea_dinoflagellate_cell3 = pd.concat([ross_sea_dinoflagellate_cell3], ignore_index=True, sort=False)
 pca_ross_sea_dinoflagellate_cell3 = PCA(n_components=2)
-pca_ross_sea_dinoflagellate_cell3.fit_transform(SHE_ross_sea_dinoflagellate_cell3.drop(columns=['is_angle_ext','cell','length','width','surface_area','species','ROI','volume','delta_angle','LH_or_RH','aspect_ratio']))
+pca_ross_sea_dinoflagellate_cell3.fit_transform(SHE_ross_sea_dinoflagellate_cell3.drop(columns=['surface_ridges','cell','length','width','surface_area','species','ROI','volume','delta_theta','LH_or_RH','aspect_ratio']))
 pc1_ross_sea_dinoflagellate_cell3 = pca_ross_sea_dinoflagellate_cell3.components_[0]
 pc2_ross_sea_dinoflagellate_cell3 = pca_ross_sea_dinoflagellate_cell3.components_[1]
 
