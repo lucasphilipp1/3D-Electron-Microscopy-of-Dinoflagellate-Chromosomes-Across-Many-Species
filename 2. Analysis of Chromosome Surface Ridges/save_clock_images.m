@@ -112,6 +112,7 @@ for i = ROI_start:1:ROI_end
             % % 'Ross Sea Dinoflagellate'
             % plot([stox(1) stox(2500)],[stoy(1) stoy(2500)],'Color', [0.4 0.4 0.4],'LineWidth',2)
         else
+            % %colours
             % % 'Symbiodinium microadriaticum'
             % plot([stox(2500) stox(5000)],[stoy(2500) stoy(5000)],'Color', [0 0.4470 0.7410],'LineWidth',2)
             % % 'Symbiodinium pilosum'

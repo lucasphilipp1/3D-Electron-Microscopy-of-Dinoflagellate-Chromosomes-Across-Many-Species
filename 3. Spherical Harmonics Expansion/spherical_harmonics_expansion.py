@@ -1175,7 +1175,7 @@ PCA_coords_to_shape(pca=pca_all, PCA_coords=coords_sample_along_PC2, lmax=lmax, 
 random.seed(42)  # Set seed for reproducibility.
 #compute reconstruction error for 50 random chromosomes across all datasets
 i=0
-num_chroms = 50
+num_chroms = 3
 max_lmax = 40
 error = np.zeros((num_chroms, max_lmax))
 colors = [None] * num_chroms
@@ -1299,7 +1299,7 @@ while i < num_chroms:
     i = i+1
 
 for i in range(num_chroms):
-    plt.plot(np.linspace(1,50), error[i,:], color=colors[i])
+    plt.plot(np.linspace(1,max_lmax, max_lmax), error[i,:], color=colors[i])
 plt.xlabel('lmax', fontsize=16)
 plt.ylabel('Reconstruction Error', fontsize=16)
 plt.yscale('log')
