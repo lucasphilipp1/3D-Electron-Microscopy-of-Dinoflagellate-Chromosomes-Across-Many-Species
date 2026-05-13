@@ -228,7 +228,7 @@ def spherical_harmonic_expansion(ROI_start,ROI_end,image_path,angle_csv_path,cel
         if flag == True:
             violation.append(i)
         error = shtools.get_reconstruction_error(grid_rec,grid_input)
-        if error > 10:
+        if error > 25:
             violation.append(i)
         volume.append((4**3)*np.sum(images[i]/np.max(images[i]))) #[nm^3] assuming 4nmx4nm4xnm voxels 
         surface_area.append(estimate_surface_area_from_binary(images[i]/np.max(images[i]), 4)) #[nm^2] assuming 4nmx4nm4xnm voxels
@@ -828,8 +828,6 @@ plt.title('Angle between species-specific PC1 and global PC1', fontsize=14)
 plt.ylabel('Orthogonal shape variation', fontsize=16)
 plt.xlabel('Identical shape variation', fontsize=16)
 plt.show()
-
-fig, ax = plt.subplots(figsize=(6, 6))
 
 ######################################################################################
 #repeat PCA but only using data from a single cells. compare cell specific PC1 to global PC1
