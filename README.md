@@ -304,6 +304,23 @@ Description: Synthesizes output from save_clock_images.m into a single .pdf docu
 
 ## 3. Spherical Harmonics Expansion:
 
+After installing the aicsshparam python package. A small modification was made to shparam.py located at /opt/anaconda3/lib/python3.13/site-packages/aicsshparam/. <br>
+A flag is now returned when spherical harmonics reconstruction fails.
+
+Replace the "if statement" after line 132 in shparam.py with:
+```
+flag = False
+   if not image_[tuple([int(u) for u in centroid[::-1]])]:
+       warnings.warn(
+           "Mesh centroid seems to fall outside the object. This indicates\
+       the mesh may not be a manifold suitable for spherical harmonics\
+       parameterization."
+       )
+       flag = True
+
+   return (coeffs_dict, grid_rec), (image_, mesh, grid_down, transform), flag
+```
+
 ### spherical_harmonics_expansion.py
 Description: An adaptation of the pipeline originally developed by Viana et al. Paper:  https://doi.org/10.1038/s41586-022-05563-7. Github: https://github.com/AllenCell/aics-shparam. <br>
 <br>
