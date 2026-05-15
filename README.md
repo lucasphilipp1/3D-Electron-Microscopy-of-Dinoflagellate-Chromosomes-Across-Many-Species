@@ -305,7 +305,7 @@ Description: Synthesizes output from save_clock_images.m into a single .pdf docu
 ## 3. Spherical Harmonics Expansion:
 
 After installing the aicsshparam python package. A small modification was made to shparam.py located at /opt/anaconda3/lib/python3.13/site-packages/aicsshparam/. <br>
-A flag is now returned when spherical harmonics reconstruction fails.
+A flag is now returned when the spherical harmonics reconstruction fails.
 
 Replace the "if statement" after line 132 in shparam.py with:
 ```
