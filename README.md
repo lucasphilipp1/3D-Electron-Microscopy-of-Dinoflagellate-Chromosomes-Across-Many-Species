@@ -350,22 +350,12 @@ Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produc
 ### plot_skeleton.py
 Description: Plot output skeleton from Voxel Cores (https://github.com/danielyan86129/voxel_ma) and Erosion Thickness (https://github.com/danielyan86129/ET). Colors skeleton according to maximally inscribed ball radii. See Methods section in paper for more details.
 
-<table style="border-collapse: collapse; border: none;">
-  <tr>
-    <td><img width="448" height="280" alt="Screenshot 2026-05-05 at 2 53 01 PM" src="https://github.com/user-attachments/assets/8ab812bb-4d1c-49ba-b7d6-512182561dd5" /></td>
-    <td><img width="448" height="280" alt="Screenshot 2026-05-05 at 2 52 51 PM" src="https://github.com/user-attachments/assets/bcdd20a6-0efd-4972-9f15-452e1da61881" /></td>
-  </tr>
-</table>
+<img width="1768" height="739" alt="Screenshot 2026-05-17 at 1 24 28 PM" src="https://github.com/user-attachments/assets/aa69e184-0e63-44ac-ae0e-7f6cc5d42e6e" />
+<img width="1769" height="739" alt="Screenshot 2026-05-17 at 1 24 05 PM" src="https://github.com/user-attachments/assets/40cce40b-8383-4d23-b4c7-fa8803115b3f" />
 
 ### plot_skeleton_connected_components.py
 Description: Subdivide skeleton into thick tubes and thin bridges by thresholding the max inscribed ball radii. Uses connected components to further subdivide skeleton at junction nodes with connectivity degree >= 3.
-
-<table style="border-collapse: collapse; border: none;">
-  <tr>
-    <td><img width="448" height="280" alt="kawagutii_run2_se2_top_right_cell_low_branches" src="https://github.com/user-attachments/assets/9b80a185-3fb1-4a9c-b38f-2e55ae7c58b5" /></td>
-    <td><img width="448" height="280" alt="kawagutii_run2_se2_top_right_cell_high_branches" src="https://github.com/user-attachments/assets/6b0513f4-8d6d-4c76-afb2-467749acf654" /></td>
-  </tr>
-</table>
+<img width="1774" height="566" alt="Screenshot 2026-05-17 at 1 25 12 PM" src="https://github.com/user-attachments/assets/1250f1a2-61f0-4fa6-b395-f0570acc2649" />
 
 # Questions:
 If you have questions about this repository please contact Lucas Philipp (lucas.philipp@mail.mcgill.ca).
