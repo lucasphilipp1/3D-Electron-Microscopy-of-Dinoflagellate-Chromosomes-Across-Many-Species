@@ -286,7 +286,7 @@ for i in range(len(ROI_list)):
 <img width="800" alt="writing_segmentation_into_image" src="https://github.com/user-attachments/assets/825b3bd0-ea48-4792-951e-b6d1d374b500" />
 
 ## 2. Analysis of Chromosome Surface Ridges:
-<img width="1721" height="556" alt="Screenshot 2025-10-15 at 2 42 21 PM" src="https://github.com/user-attachments/assets/b519d57d-7a43-47b9-b707-0aa5fd5c8da1" />
+<img width="1769" height="582" alt="Screenshot 2026-05-17 at 1 09 06 PM" src="https://github.com/user-attachments/assets/aa98072c-06bf-4be3-8ed5-b0566cb62b81" />
 
 ### project_ROI_front_and_save.m
 Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input here is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Front hemi-volume is projected inwards onto the middle plane and saved as an image.
