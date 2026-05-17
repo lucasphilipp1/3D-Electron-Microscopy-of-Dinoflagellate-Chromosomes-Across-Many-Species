@@ -350,7 +350,7 @@ Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produc
 ### plot_skeleton.py
 Description: Plot output skeleton from Voxel Cores (https://github.com/danielyan86129/voxel_ma) and Erosion Thickness (https://github.com/danielyan86129/ET). Colors skeleton according to maximally inscribed ball radii, r, centred at points along the skeleton. See Methods section in paper for more details.
 
-Schematic (left) modified with permission from: Tagliasacchi, A., et al. (2016, May). 3D Skeletons: A State‐of‐the‐Art Report. In Computer Graphics Forum (Vol. 35, No. 2, pp. 573-597).
+Schematic (left) modified with permission from: Tagliasacchi, A., et al. (2016). 3D Skeletons: A State‐of‐the‐Art Report. In Computer Graphics Forum (Vol. 35, No. 2, pp. 573-597).
 <img width="1769" height="739" alt="Screenshot 2026-05-17 at 1 24 05 PM" src="https://github.com/user-attachments/assets/40cce40b-8383-4d23-b4c7-fa8803115b3f" />
 <img width="1768" height="739" alt="Screenshot 2026-05-17 at 1 24 28 PM" src="https://github.com/user-attachments/assets/aa69e184-0e63-44ac-ae0e-7f6cc5d42e6e" />
 
