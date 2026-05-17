@@ -1,3 +1,4 @@
+<img width="1765" height="496" alt="Screenshot 2026-05-17 at 1 11 25 PM" src="https://github.com/user-attachments/assets/369ca600-254a-4480-bbaa-a6c404a90e7c" />
 # This GitHub repository contains content related to:
 <img width="1792" height="1006" alt="Screenshot 2026-02-26 at 1 18 15 PM" src="https://github.com/user-attachments/assets/1f78d268-63a3-4d3c-9e4c-33ab8ed80cda" />
 
@@ -335,7 +336,7 @@ Description: An adaptation of the pipeline originally developed by Viana et al. 
 <br>
 
 3. Comparison of chromosome shape variation across species.
-<img width="1111" height="310" alt="figure_3 copy" src="https://github.com/user-attachments/assets/d0b73827-a7ac-4bff-b195-51baddea5117" />
+<img width="1765" height="496" alt="Screenshot 2026-05-17 at 1 11 25 PM" src="https://github.com/user-attachments/assets/13a7594c-11fd-41eb-a542-4e06275c593e" />
 
 ## 4. Analysis of Chromosome Cross-sections:
 ### cross_section.py
