@@ -324,7 +324,7 @@ flag = False
 ### spherical_harmonics_expansion.py
 Description: An adaptation of the pipeline originally developed by Viana et al. Paper:  https://doi.org/10.1038/s41586-022-05563-7. Github: https://github.com/AllenCell/aics-shparam. <br>
 <br>
-<img width="1129" height="331" alt="SHE Schematic" src="https://github.com/user-attachments/assets/e0bda272-943d-4802-82e9-e02f58a200df" />
+<img width="1612" height="382" alt="Screenshot 2026-07-08 at 5 44 51 AM" src="https://github.com/user-attachments/assets/cc9ec604-ec17-4e51-acd2-c42eca67c2ab" />
 <br>
 <br>
 
