@@ -330,12 +330,12 @@ Description: An adaptation of the pipeline originally developed by Viana et al. 
 
 1. PCA clustering based on shape similarity.
 2. Quantitative analysis of dinoflagellate chromosome shape characteristics.
-<img width="1790" height="499" alt="SHE PCA" src="https://github.com/user-attachments/assets/9fc170e1-f14d-4c5b-bf15-a69c45452af0" />
+<img width="1725" height="523" alt="Screenshot 2026-07-08 at 1 37 07 PM" src="https://github.com/user-attachments/assets/370069b9-9e18-477d-a39b-dac39b0bf265" />
 <br>
 <br>
 
 3. Comparison of chromosome shape variation across species.
-<img width="1765" height="496" alt="Screenshot 2026-05-17 at 1 11 25 PM" src="https://github.com/user-attachments/assets/13a7594c-11fd-41eb-a542-4e06275c593e" />
+<img width="1698" height="480" alt="Screenshot 2026-07-08 at 1 37 37 PM" src="https://github.com/user-attachments/assets/874a943c-172b-4150-82a2-16affef4269e" />
 
 ## 4. Analysis of Chromosome Cross-sections:
 ### cross_section.py
