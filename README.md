@@ -3,8 +3,7 @@
 
 bioRxiv link to pre-print: __________ (coming soon) <br />
 
-Zenodo data repository: https://zenodo.org/records/21478140 <br />
-Zenodo data repository includes: a spreadsheet of volume measurements; 3D binary TIFF files of vertically oriented chromosomes; 3D binary TIFF files of rods, crescents, and toroids; image galleries of extracted surface ridge angles (SI Data 1-21); 3D videos of *F. kawagutii* chromosome network segmentations (SI Videos 1-3); and *F. kawagutii* skeletonization PLY files.
+See also our Zenodo data repository: https://zenodo.org/records/21478140, which includes: a spreadsheet of volume measurements; 3D binary TIFF files of vertically oriented chromosomes; 3D binary TIFF files of rods, crescents, and toroids; image galleries of extracted surface ridge angles (SI Data 1-21); 3D videos of *F. kawagutii* chromosome network segmentations (SI Videos 1-3); and *F. kawagutii* skeletonization PLY files.
 
 # Data Availability:
 In this study we used a roughly 50:50 mix of original image data, and image data available from the literature. <br />
