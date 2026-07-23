@@ -2,6 +2,7 @@
 <img width="1792" height="1006" alt="Screenshot 2026-02-26 at 1 18 15 PM" src="https://github.com/user-attachments/assets/1f78d268-63a3-4d3c-9e4c-33ab8ed80cda" />
 
 bioRxiv link to pre-print: __________ (coming soon) <br />
+
 Accompanying Zenodo repository: https://zenodo.org/records/21478140 <br />
 Zenodo repository includes: a spreadsheet of volume measurements; 3D binary TIFF files of vertically oriented chromosomes; 3D binary TIFF files of rods, crescents, and toroids; image galleries of extracted surface ridge angles (SI Data 1-21); 3D videos of *F. kawagutii* chromosome network segmentations (SI Videos 1-3); and *F. kawagutii* skeletonization PLY files.
 
