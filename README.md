@@ -33,7 +33,7 @@ See also our Zenodo data repository: https://zenodo.org/records/21478140, which 
 This online infrastructure is developed and maintained by Fibics Incorporated. For more information visit: https://www.petapixelproject.com/about.html <br />
 
 Segmented images and 3D reconstructions of dinoflagellate nuclei are available in interactive format online at: <br /> 
-👉👉👉 https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/ 👈👈👈 <br />
+👉👉👉 https://petapixelproject.com/urls/philipp2026 👈👈👈 <br />
 
 No download or installation required. Use the K and L keys to scroll through the z stacks. <br />
 Click the play button to view a slide-show highlighting interesting features in the data.
