@@ -3,8 +3,6 @@
 
 bioRxiv link to pre-print: __________ (coming soon) <br />
 
-See also our Zenodo data repository: https://zenodo.org/records/21478140, which includes: a spreadsheet of volume measurements; 3D binary TIFF files of vertically oriented chromosomes; 3D binary TIFF files of rods, crescents, and toroids; image galleries of extracted surface ridge angles (SI Data 1-21); 3D videos of *F. kawagutii* chromosome network segmentations (SI Videos 1-3); and *F. kawagutii* skeletonization PLY files.
-
 # Data Availability:
 In this study we used a roughly 50:50 mix of original image data, and image data available from the literature. <br />
 
@@ -30,6 +28,7 @@ raw data: https://doi.org/10.1016/j.cub.2025.03.076, EMPIAR-12627
 
 <img width="2520" height="4252" alt="figure_S3" src="https://github.com/user-attachments/assets/601b2069-0a2b-40c8-8bd1-fe03bf1363f4" />
 
+See also our Zenodo data repository: https://zenodo.org/records/21478140, which includes: a spreadsheet of volume measurements; 3D binary TIFF files of vertically oriented chromosomes; 3D binary TIFF files of rods, crescents, and toroids; image galleries of extracted surface ridge angles (SI Data 1-21); 3D videos of *F. kawagutii* chromosome network segmentations (SI Videos 1-3); and *F. kawagutii* skeletonization PLY files.
 # ATLAS Browser Based Viewer:
 This online infrastructure is developed and maintained by Fibics Incorporated. For more information visit: https://www.petapixelproject.com/about.html <br />
 
