@@ -13,7 +13,7 @@ In this study we used a roughly 50:50 mix of original image data, and image data
 *Breviolum minutum* (3 cells) 4x4x4 nm voxels <br />
 *Fugacium kawagutii* (3 cells) 4x4x4 nm voxels <br />
 *Crypthecodinium cohnii* (3 cells) 4x4x4 nm voxels <br />
-Data has been uploaded to EMPIAR: __________ (coming soon)
+Raw image files have been uploaded to EMPIAR under accession code: EMPIAR-13824
 
 ### Image Data From The Literature:
 *Brandtodinium nutricula* (3 cells) 8x8x8 nm voxels <br />
