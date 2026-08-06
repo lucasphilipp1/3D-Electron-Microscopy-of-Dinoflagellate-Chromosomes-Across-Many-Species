@@ -1,7 +1,7 @@
 # This GitHub repository contains content related to:
 <img width="1792" height="1006" alt="Screenshot 2026-02-26 at 1 18 15 PM" src="https://github.com/user-attachments/assets/1f78d268-63a3-4d3c-9e4c-33ab8ed80cda" />
 
-bioRxiv link to pre-print: __________ (coming soon)
+bioRxiv link to pre-print: __________ (coming soon) <br />
 
 # Data Availability:
 In this study we used a roughly 50:50 mix of original image data, and image data available from the literature. <br />
@@ -11,7 +11,7 @@ In this study we used a roughly 50:50 mix of original image data, and image data
 *Breviolum minutum* (3 cells) 4x4x4 nm voxels <br />
 *Fugacium kawagutii* (3 cells) 4x4x4 nm voxels <br />
 *Crypthecodinium cohnii* (3 cells) 4x4x4 nm voxels <br />
-Data has been uploaded to EMPIAR: __________ (coming soon)
+Raw image files have been uploaded to EMPIAR under accession code: EMPIAR-13824
 
 ### Image Data From The Literature:
 *Brandtodinium nutricula* (3 cells) 8x8x8 nm voxels <br />
@@ -28,11 +28,12 @@ raw data: https://doi.org/10.1016/j.cub.2025.03.076, EMPIAR-12627
 
 <img width="2520" height="4252" alt="figure_S3" src="https://github.com/user-attachments/assets/601b2069-0a2b-40c8-8bd1-fe03bf1363f4" />
 
+See also our Zenodo data repository: https://zenodo.org/records/21478140, which includes: a spreadsheet of volume measurements; 3D binary TIFF files of vertically oriented chromosomes; 3D binary TIFF files of rods, crescents, and toroids; image galleries of extracted surface ridge angles (SI Data 1-21); 3D videos of *F. kawagutii* chromosome network segmentations (SI Videos 1-3); and *F. kawagutii* skeletonization PLY files.
 # ATLAS Browser Based Viewer:
 This online infrastructure is developed and maintained by Fibics Incorporated. For more information visit: https://www.petapixelproject.com/about.html <br />
 
 Segmented images and 3D reconstructions of dinoflagellate nuclei are available in interactive format online at: <br /> 
-👉👉👉 https://petapixelproject.com/mosaics/biology/dinoflagellates/philipp2025/ 👈👈👈 <br />
+👉👉👉 https://petapixelproject.com/urls/philipp2026 👈👈👈 <br />
 
 No download or installation required. Use the K and L keys to scroll through the z stacks. <br />
 Click the play button to view a slide-show highlighting interesting features in the data.
@@ -286,7 +287,7 @@ for i in range(len(ROI_list)):
 <img width="800" alt="writing_segmentation_into_image" src="https://github.com/user-attachments/assets/825b3bd0-ea48-4792-951e-b6d1d374b500" />
 
 ## 2. Analysis of Chromosome Surface Ridges:
-<img width="1721" height="556" alt="Screenshot 2025-10-15 at 2 42 21 PM" src="https://github.com/user-attachments/assets/b519d57d-7a43-47b9-b707-0aa5fd5c8da1" />
+<img width="1769" height="582" alt="Screenshot 2026-05-17 at 1 09 06 PM" src="https://github.com/user-attachments/assets/aa98072c-06bf-4be3-8ed5-b0566cb62b81" />
 
 ### project_ROI_front_and_save.m
 Description: Used to extract surface ridge angles from dinoflagellate chromosomes. Input here is output from CropAndRotateAndExportChromosomes.py. Projects 3D binary ROI onto a middle bisecting plane parallel to the z-axis. Front hemi-volume is projected inwards onto the middle plane and saved as an image.
@@ -304,51 +305,59 @@ Description: Synthesizes output from save_clock_images.m into a single .pdf docu
 
 ## 3. Spherical Harmonics Expansion:
 
+After installing the aicsshparam python package. A small modification was made to shparam.py located at /opt/anaconda3/lib/python3.13/site-packages/aicsshparam/. <br>
+A flag is now returned when the spherical harmonics reconstruction fails.
+
+Replace the "if statement" after line 132 in shparam.py with:
+```
+flag = False
+   if not image_[tuple([int(u) for u in centroid[::-1]])]:
+       warnings.warn(
+           "Mesh centroid seems to fall outside the object. This indicates\
+       the mesh may not be a manifold suitable for spherical harmonics\
+       parameterization."
+       )
+       flag = True
+
+   return (coeffs_dict, grid_rec), (image_, mesh, grid_down, transform), flag
+```
+
 ### spherical_harmonics_expansion.py
 Description: An adaptation of the pipeline originally developed by Viana et al. Paper:  https://doi.org/10.1038/s41586-022-05563-7. Github: https://github.com/AllenCell/aics-shparam. <br>
 <br>
-<img width="1129" height="331" alt="SHE Schematic" src="https://github.com/user-attachments/assets/e0bda272-943d-4802-82e9-e02f58a200df" />
+<img width="1612" height="382" alt="Screenshot 2026-07-08 at 5 44 51 AM" src="https://github.com/user-attachments/assets/cc9ec604-ec17-4e51-acd2-c42eca67c2ab" />
 <br>
 <br>
 
 1. PCA clustering based on shape similarity.
 2. Quantitative analysis of dinoflagellate chromosome shape characteristics.
-<img width="1790" height="499" alt="SHE PCA" src="https://github.com/user-attachments/assets/9fc170e1-f14d-4c5b-bf15-a69c45452af0" />
+<img width="1725" height="523" alt="Screenshot 2026-07-08 at 1 37 07 PM" src="https://github.com/user-attachments/assets/370069b9-9e18-477d-a39b-dac39b0bf265" />
 <br>
 <br>
 
 3. Comparison of chromosome shape variation across species.
-<img width="1111" height="310" alt="figure_3 copy" src="https://github.com/user-attachments/assets/d0b73827-a7ac-4bff-b195-51baddea5117" />
+<img width="1698" height="480" alt="Screenshot 2026-07-08 at 1 37 37 PM" src="https://github.com/user-attachments/assets/874a943c-172b-4150-82a2-16affef4269e" />
 
 ## 4. Analysis of Chromosome Cross-sections:
 ### cross_section.py
 Description: Take 3D binary .tiff of segmented dinoflagellate chromosome and view their cross-sectional profiles.
-<img width="1651" height="830" alt="Screenshot 2026-01-09 at 3 06 21 PM" src="https://github.com/user-attachments/assets/dfe3564f-bc26-4bc9-812f-779526b0c31f" />
+<img width="929" height="500" alt="figure_S6_b" src="https://github.com/user-attachments/assets/447a4959-0963-433c-8806-57e628581948" />
 
 ### make_gif_from_cross_sections.py
 Description: Take 3D binary .tiff volumes for shapes along PC1 or PC2 and produce a gif showing how its XY, XZ, YZ cross-sections vary with principal component coordinate. <br>
-<img src="https://github.com/user-attachments/assets/099b7f07-7e86-42c6-a08b-7fedd0cc2157" width="338"/> <img src="https://github.com/user-attachments/assets/555a01f3-9053-48d9-9b38-f88ec9914007" width="560"/>
+<img src="https://github.com/user-attachments/assets/099b7f07-7e86-42c6-a08b-7fedd0cc2157" width="270"/> <img src="https://github.com/user-attachments/assets/555a01f3-9053-48d9-9b38-f88ec9914007" width="448"/>
 
 ## 5. Skeletonization Post-Processing:
 ### plot_skeleton.py
-Description: Plot output skeleton from Voxel Cores (https://github.com/danielyan86129/voxel_ma) and Erosion Thickness (https://github.com/danielyan86129/ET). Colors skeleton according to maximally inscribed ball radii. See Methods section in paper for more details.
+Description: Plot output skeleton from Voxel Cores (https://github.com/danielyan86129/voxel_ma) and Erosion Thickness (https://github.com/danielyan86129/ET). Colors skeleton according to maximally inscribed ball radii, r, centred at points along the skeleton. See Methods section in paper for more details.
 
-<table style="border-collapse: collapse; border: none;">
-  <tr>
-    <td><img width="448" height="280" alt="Screenshot 2026-05-05 at 2 53 01 PM" src="https://github.com/user-attachments/assets/8ab812bb-4d1c-49ba-b7d6-512182561dd5" /></td>
-    <td><img width="448" height="280" alt="Screenshot 2026-05-05 at 2 52 51 PM" src="https://github.com/user-attachments/assets/bcdd20a6-0efd-4972-9f15-452e1da61881" /></td>
-  </tr>
-</table>
+Schematic (left) modified with permission from: Tagliasacchi, A., et al. (2016). 3D Skeletons: A State‐of‐the‐Art Report. In Computer Graphics Forum (Vol. 35, No. 2, pp. 573-597).
+<img width="1769" height="739" alt="Screenshot 2026-05-17 at 1 24 05 PM" src="https://github.com/user-attachments/assets/40cce40b-8383-4d23-b4c7-fa8803115b3f" />
+<img width="1768" height="739" alt="Screenshot 2026-05-17 at 1 24 28 PM" src="https://github.com/user-attachments/assets/aa69e184-0e63-44ac-ae0e-7f6cc5d42e6e" />
 
 ### plot_skeleton_connected_components.py
 Description: Subdivide skeleton into thick tubes and thin bridges by thresholding the max inscribed ball radii. Uses connected components to further subdivide skeleton at junction nodes with connectivity degree >= 3.
-
-<table style="border-collapse: collapse; border: none;">
-  <tr>
-    <td><img width="448" height="280" alt="kawagutii_run2_se2_top_right_cell_low_branches" src="https://github.com/user-attachments/assets/9b80a185-3fb1-4a9c-b38f-2e55ae7c58b5" /></td>
-    <td><img width="448" height="280" alt="kawagutii_run2_se2_top_right_cell_high_branches" src="https://github.com/user-attachments/assets/6b0513f4-8d6d-4c76-afb2-467749acf654" /></td>
-  </tr>
-</table>
+<img width="1774" height="566" alt="Screenshot 2026-05-17 at 1 25 12 PM" src="https://github.com/user-attachments/assets/1250f1a2-61f0-4fa6-b395-f0570acc2649" />
 
 # Questions:
 If you have questions about this repository please contact Lucas Philipp (lucas.philipp@mail.mcgill.ca).
