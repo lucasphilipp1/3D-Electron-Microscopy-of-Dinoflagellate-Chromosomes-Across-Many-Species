@@ -1,7 +1,7 @@
 # This GitHub repository contains content related to:
 <img width="1792" height="1006" alt="Screenshot 2026-02-26 at 1 18 15 PM" src="https://github.com/user-attachments/assets/1f78d268-63a3-4d3c-9e4c-33ab8ed80cda" />
 
-bioRxiv link to pre-print: __________ (coming soon) <br />
+bioRxiv link to pre-print: https://www.biorxiv.org/content/10.64898/2026.08.10.743404v1 <br />
 
 # Data Availability:
 In this study we used a roughly 50:50 mix of original image data, and image data available from the literature. <br />
